@@ -13,8 +13,9 @@
 
 # What to Bring:
 + Computer with Tilemill installed 
-+ (optional) your own data in shapefile or geojson format or csv (with lat/long)
 + Enthusiasm & patience
++ Your own data in shapefile or geojson format or csv with geocoordinates (optional)
+
 
 ***
 # Abstract
