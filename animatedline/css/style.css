@@ -1,0 +1,46 @@
+body {
+ margin:0; 
+ padding:0; 
+ }
+ 
+body> #map { 
+  position:absolute;
+  top:0; 
+  bottom:0; 
+  width:100%; 
+}
+  
+#timerwindow{
+  top:20px;
+  height:55px;
+  background-color: rgba(0,0,0,0.1);
+  color:black;
+  text-align: center;
+  font-family: 'Oswald';
+  font-size: 24px;
+}
+
+#linechart{
+  height:150px;
+}
+
+#linechartwindow{
+  bottom: 20px;
+  background-color: rgba(0,0,0,0.1);
+}
+
+#go{
+  top:100px;
+  background-color: rgba(255,0,0,0.1);
+}
+#stop{
+  top:150px;
+  background-color: rgba(255,0,0,0.1);
+}
+
+path {
+  /*stroke: steelblue;*/
+  stroke:red;
+  stroke-width: 2;
+  fill: none;
+}
