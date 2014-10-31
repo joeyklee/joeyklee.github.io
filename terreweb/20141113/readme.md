@@ -2,13 +2,14 @@
 ## A TerreWEB Workshop 
 ### With: Joey Lee
 ### When: Thursday November 13th, 2014
+### Where: TBD
 
 ***
 
 # Pre-Reqs:
 + Install [Tilemill ](https://www.mapbox.com/tilemill/)
 + Sign up with [Mapbox](https://www.mapbox.com/)
-+ Download zip file data (see:)
++ Download zip file data (see: )
 
 
 # What to Bring:
