@@ -56,17 +56,23 @@ Joey is a geographer from San Francisco, California, working in critical cartogr
   + Legends
   + Exporting
   + Posting/Embedding
+  
   (~60 min)
 
  
 ### Short Presentation
-+ Taking your webmap further: A preview of functionality with mapbox.js/leaflet.(~25 min)js
++ Taking your webmap further: A preview of functionality with mapbox.js/leaflet.js
+
+(~25 min)
 
 
 
 ### Open Lab Time
-+ Ask questions, chat with your neighbor, & make maps!(~35 min)
++ Ask questions, chat with your neighbor, & make maps!
 
+(~35 min)
 
+</br>
+NOTE: Some of the content may change.
 
 
