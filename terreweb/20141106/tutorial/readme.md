@@ -1,4 +1,4 @@
-# Let's Make a Map!
+I# Let's Make a Map!
 ***
 ## Getting Started:
 1. ### Fire up Tilemill!
@@ -43,5 +43,6 @@
 
 </br>
 ## References:
-+ [Lyzi Diamond's nice presentation](http://lyzidiamond.com/leaflet/#1) - covers the basics of maptiles and creating your first leaflet project
++ [Lyzi Diamond's nice presentation](http://lyzidiamond.com/leaflet/#1) - covers the basics of maptiles and creating your first leaflet project.
 + [Mapbox tutorial for making your first map](https://www.mapbox.com/tilemill/docs/crashcourse/introduction/) - this is where it all started for me...
++ [Google chart parameters list](https://developers.google.com/chart/image/docs/chart_params) - documentation of the parameters for the google charts.
