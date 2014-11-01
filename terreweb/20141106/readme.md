@@ -1,7 +1,7 @@
 # "Let's Make an Interactive Map for the Web" 
 ## A TerreWEB Workshop 
 ### With: Joey Lee
-### When: [Thursday November 6th, 2014, 3:30pm - 6:00pm](assets/ical/"Let's Make an Interactive Map".ics)
+### When: Thursday November 6th, 2014, 3:30pm - 6:00pm
 ### Where: UBC, [MacMillan (Land and Food Systems Building)](http://www.maps.ubc.ca/PROD/index_detail.php?locat1=386), Room 258   
 
 ***
