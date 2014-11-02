@@ -46,6 +46,19 @@ div {
   top:0;
   left:0;
 }
+
+.exampleimg{
+  width:50%;
+  vertical-align: center;
+}
+
+.tutorial{
+  width:75%;
+  /*height:400px;*/
+}
+
+
+
 </style>
 <script type='text/javascript'>
   window.onload = function() {
@@ -97,8 +110,246 @@ div {
 </script>
 </head>
 <body>
-  <div> Hello world</div>
-  <div> Here's another page!</div>
-  <div> And Another!</div>
+  <div> 
+    <h1>"Let's make an interactive map for the web" </h1> 
+    <h2> With: Joey Lee</h2> 
+    *Thanks Lyzi Diamond for the presentation js!
+  </div>
+  <!-- Introduction -->
+  <div> Hello, Hi</div>
+  <div> 
+    <center><h1>Who am I?</h1> </center>
+    <h2> San Francisco, Ca, USA</h2>
+    <h2> MSc Department of Geography (2015)</h2>
+    <h2> Geography </h2> 
+    <h3> Critical Cartography | Remote sensing <h3> 
+    <h3> Data Visualization | Smart Cities | Urban climates</h3>
+    <h4> Skateboarding | Cycling | Making Digital Things</h4> 
+  </div>
+  <!-- The why and what -->
+  <div> Why make interactive web maps?</div>
+  <div> 
+    <h1>Interactive maps are powerful for visualization, presentation, sharing, and communication</h1>
+    <br>
+    <h2> Using & abusing the web browser to allow exploration and enhance relevancy </h2>
+  </div>
+  <div> What are the tools?</div>
+  <div> 
+    <h1> Lots out there, but some big ones: </h1>
+    <h2> <a href="https://www.mapbox.com/tilemill/">Tilemill</a>, 
+         <a href="https://www.mapbox.com/mapbox.js/api/v2.1.4/">Mapbox.js</a>, 
+         <a href="http://leafletjs.com/">Leaflet.js</a>, 
+         <a href="http://d3js.org/">D3.js</a>, 
+         <a href="http://cartodb.com/">CartoDB</a>, 
+         <a href="https://developers.google.com/maps/">Google Maps API</a>, 
+         <a href="http://openlayers.org/">Openlayers</a>, 
+         and many many more!, 
+    </h2> <br>
+    <h3> Non web based interactive map making worth checking out:</h3>
+    <h3> <a href="http://unfoldingmaps.org/">Unfolding Maps</a>, 
+         <a href="http://rmaps.github.io/">RMaps</a>
+    </h3>
+  </div>
+  <div> We will focus on Tilemill & Mapbox today :)</div>
+  <div> Just a few example projects</div>
+    <div> 
+    <h1> Boston 311 <br>(My first Tilemill Project!) </h1>
+    <img src="img-presentation/bos311.png" alt="bos311" class='exampleimg' align='left'> 
+    <img src="img-presentation/bos311_2.png" alt="bos311_2" class='exampleimg' align='right'><br> 
+    <h2><a href="http://senseable.mit.edu/bos311/">Boston 3-1-1 (2012)</a></h2>
+  </div>
+  <div> 
+    <h1>Hubcab: Exploring New York City taxi trails and sharing our way to a more sustainable urban future </h1>
+    <img src="img-presentation/hubcab.png" alt="hub.cab" class='exampleimg' align='left'> <br>
+    <h2><a href="hub.cab">HubCab (2014)</a></h2>
+  </div>
+  <div> 
+    <h1>Community Energy Explorer</h1>
+    <img src="img-presentation/cee.png" alt="cee" class='exampleimg' align='left'> <br>
+    <h2><a href="hub.cab">Community Energy Explorer (forthcoming)</a></h2>
+  </div>
+  <div>
+    <h1> Other projects</h1>
+    <h3> <a href="https://www.kickstarter.com/projects/357538735/aerial-bold-kickstart-the-planetary-search-for-let"> Aerial Bold</a> </h3> <br>
+    <h3> <a href="http://jk-lee.com/The-Big-Atlas-of-LA-Pools"> The Big Atlas of LA Pools</a> </h3>
+  </div>
+  <div> 
+    <h1>Ferguson, Mo Tweets</h1> <br>
+    <img src="img-presentation/mb-ferg1.png" alt="mb-ferg1" class='exampleimg' align='left'> 
+    <img src="img-presentation/mb-ferg2.png" alt="mb-ferg1" class='exampleimg' align='right'> 
+    <br>
+    <h2><a href="https://www.mapbox.com/labs/ferguson/">Mapbox: Ferguson, Mo Tweets</a></h2>
+  </div>
+  <div> 
+    <h1>Losing Ground </h1> <br>
+    <img src="img-presentation/propublica-lg.png" alt="propublica" class='exampleimg' align='middle'> 
+    <br>
+    <h2><a href="http://projects.propublica.org/louisiana/#">Propublica: Losing Ground</a></h2>
+  </div>
+  <!-- Computers are friends -->
+  <div> 
+    <h1>Computers are friends...</h1>
+    <h1>...and google searching is your best friend</h1>
+    <h4> *The answer to most (all?) of your questions are somewhere on the web!</h4> 
+  </div>
+  <!-- Getting Started -->
+  <div> Before Getting Started</div>
+  <!-- What makes a web map-->
+  <div>
+    <h1> What makes a web map?</h1>
+    <h2> 1. Maptiles*, <br> 
+         2.Geodata / Feature Layers <br>
+         3. "The Web"</h2>
+  </div>
+  <!-- maptiles -->
+  <div> 
+    <h1>1.Maptiles*</h1>
+    <h4>*This isn't always the case, but for simplicity, let's just assume so :)</h4>
+  </div>
+  <div> 
+    "... web maps are made out of many small square images called <a href="https://www.mapbox.com/foundations/how-web-maps-work/">tiles</a>"
+  </div>
+  <div>"These tiles are typically 256x256 pixels and placed sided-by-side in order to create the illusion of a seamless image."</div>
+  <div> 
+    <h1> See: They are just little images stitched together!</h1><br>
+    <img src="img-presentation/tiles-example.png" alt="tiles-example" class='exampleimg' align='middle'> 
+    <br>
+    <h3> Thanks @lyzidiamond & Mapbox for the info! </h3> 
+  </div>
+  <div> Oh! So that's how GoogleMaps works? Yeah!</div>
+  <!-- geodata -->
+  <div> 2.Geodata / Feature Layers </div>
+  <div> "Feature layers are map layers that live on top of your base tiles. Sometimes you can interact with them (clicking to produce a popup, for example). "</div>
+  <div> Feature layers are typically geospatial datasets such as...</div>
+  <div> GeoJSON, Shapefiles, & CSV</div>
+  <div>
+    <h1> GeoJSON & Shapefiles</h1>
+    <h1> Imagine: Spreadsheet + Polygons in geospace</h1>
+    <img src="img-presentation/shapefile-example.png" alt="shapefile" class='exampleimg' align='middle'> <br>
+    <h2> Probably your most common geospatial data types - supported in tilemill and all (most) mapping applications!</h2>
+  </div>
+  <div>
+    <h1> CSV</h1>
+    <h1>(comma separated values) </h1>
+    <h1> Basically: Spreadsheet </h1> <br>
+    <img src="img-presentation/csv-example.png" alt="csv" class='exampleimg' align='middle'> <br>
+    <h2> Note: we can directly upload a .csv file into Tilemill if it includes columns with latitude & longitude coordinates</h2>
+  </div>
+  <div> The cool thing is, we can render Feature layers as tiles or as vector (svg) depending on our needs, how big our data is, etc.
+    <h2>Today, we will render Feature Layers as Tiles!</h2>
+  </div>
+  <!-- "The Web" -->
+  <div>3. "The Web"</div>
+  <div> With web maps, the power to zoom, pan, toggle, click, drag, etc. comes from the friendly "web stack" of HTML, CSS, and Javascript. </div>
+  <div> While the web stack is indeed a magical combo, today let's not worry about those gritty details. 
+    <h2> Instead, let's let Tilemill and Mapbox work their magic and help us build our first interactive we map.</h2>
+  </div>
+  <!-- Getting Started -->
+  <div> Getting Started</div>
+  <div> 
+    <h3> + Fire up Tilemill <br> + Create a [new project]</h3>
+    <img src="../tutorial-img/00_landing.png" alt="start" class='tutorial' align='left'> 
+  </div>
+  <div> 
+    <h3> + Add project name </h3>
+    <img src="../tutorial-img/01_newproj.png" alt="projname" class='tutorial' align='left'> 
+  </div>
+  <div> 
+    <h3> + Tilemill Interface <br> + CartoCSS </h3>
+    <img src="../tutorial-img/02_interface.png" alt="interface" class='tutorial' align='left'> 
+  </div>
+  <div> 
+    <h1> Basic CartoCSS Anatomy </h3>
+    <img src="img-presentation/Cartocss-example.png" alt="styling" class='exampleimg' align='left'> <br>
+    <h2> *Points, lines, and Polygons will have different properties for styling</h2>
+  </div>
+  <div> 
+    <h1> Basic CartoCSS Anatomy: Example</h3>
+    <img src="img-presentation/Cartocss-layer.png" alt="styling" class='exampleimg' align='left'> <br>
+    <h2> *Notice the "marker-fill" property? That's a <a href ="http://www.w3schools.com/tags/ref_colorpicker.asp">"hex color code"</a></h2>
+  </div>
+  <div> + Add a Layer
+    <img src="../tutorial-img/03_addlayer.png" alt="addlayer" class='exampleimg' align='left'> <br>
+    <img src="../tutorial-img/04_addlayerdetails.png" alt="addlayerdetails" class='exampleimg' align='left'> <br>
+  </div>
+  <div> + Check settings <br> + Adjust Bounding Box & Zoom levels
+    <img src="../tutorial-img/05_addedlayercss.png" alt="layercss" class='exampleimg' align='left'> <br>
+    <img src="../tutorial-img/06_adjustbbox.png" alt="settings" class='exampleimg' align='left'> <br>
+  </div>
+  <div> + Adjust Marker style
+    <img src="../tutorial-img/07_crime.png" alt="layercss" class='exampleimg' align='left'> <br>
+    <img src="../tutorial-img/08_crimeaddedstyle.png" alt="settings" class='exampleimg' align='left'> <br>
+  </div>
+  <div> 
+    <h1>What we changed</h1>
+    <img src="img-presentation/Cartocss-crime.png" alt="settings" class='exampleimg' align='left'> <br>
+    <h2> The double forward slashes (//) create a comment. These are "invisible" to Tilemill and are helpful for making notes on your stylesheet.</h2>
+  </div>
+   <div> + Comment out "World Layers" using /* */
+    <img src="../tutorial-img/09_commentout.png" alt="layercss" class='exampleimg' align='left'>
+    <img src="../tutorial-img/10_crimestyle.png" alt="settings" class='exampleimg' align='left'> <br>
+  </div>
+  <div> 
+    <h1> + Adding Tooltips </h1>
+    <img src="../tutorial-img/11_tooltips.png" alt="layercss" class='exampleimg' align='left'> <br>
+    <h3>1. Click "pointer" icon, 2. Click "teaser, 3. toggle "disabled" to "crime"</h3>
+  </div>
+  <div> 
+    <h1> + Adding Tooltips </h1>
+    <img src="../tutorial-img/12_tooltips.png" alt="layercss" class='exampleimg' align='left'> <br>
+    <h3>The Mustache tags '{{{ }}}' reference the named columns in the data, making them accessible on mouse hover.</h3>
+  </div>
+  <div> 
+    <h1> + Adding Tooltips </h1>
+    <img src="img-presentation/tooltips.png"  alt="layercss" class='exampleimg' align='left'> <br>
+    <h4> We introduce the linebreak tags to separate the data onto new lines. </h4>
+  </div>
+  <div> 
+    <h1> + Wow! Cool Tooltips! </h1>
+    <img src="img-presentation/tooltips-hover11.png"  alt="layercss" class='exampleimg' align='left'>
+    <img src="img-presentation/tooltips-hover14.png"  alt="layercss" class='exampleimg' align='left'>
+  </div>
+  <div> Let's export our map!</div>
+  <div> 
+    <h1> + Export and Upload!</h1>
+    <img src="../tutorial-img/13_exporting.png" alt="layercss" class='exampleimg' align='left'>
+    <img src="../tutorial-img/14_exporting.png" alt="settings" class='exampleimg' align='left'> <br>
+  </div>
+  <!-- Mapbox -->
+  <div> Enter Mapbox</div>
+  <div> 
+    <h1> + Start a new Mapbox Project</h1>
+    <img src="../tutorial-img/15_mapbox.png" alt="layercss" class='exampleimg' align='left'>
+    <img src="../tutorial-img/16_mapbox.png" alt="settings" class='exampleimg' align='left'> <br>
+  </div>
+  <div> 
+    <h1> + Start a new Mapbox Project</h1>
+    <img src="../tutorial-img/17_mapbox.png" alt="layercss" class='exampleimg' align='left'>
+    <img src="../tutorial-img/18_mapbox.png" alt="settings" class='exampleimg' align='left'> <br>
+  </div>
+  <div> 
+    <h1> + Configuring the baselayer</h1>
+    <img src="../tutorial-img/19_mapbox.png" alt="layercss" class='exampleimg' align='left'>
+    <img src="../tutorial-img/20_mapbox.png" alt="settings" class='exampleimg' align='left'> <br>
+    <h3> NOTE: You will have to zoom in and out and pan/zoom to Vancouver</h3>
+  </div>
+  <div> This is cool, but let's style the baselayer a bit.</div>
+  <div> 
+    <h1> + Styling the baselayer</h1>
+    <img src="../tutorial-img/21_mapbox.png" alt="layercss" class='exampleimg' align='left'>
+    <img src="../tutorial-img/22_mapbox.png" alt="settings" class='exampleimg' align='left'> <br>
+    <h3> Hide Layers, adjust colors, & have fun!</h3>
+  </div>
+  <div> And drumroll...</div>
+  <div>
+    <img src="../tutorial-img/23_mapbox.png" alt="layercss">
+  </div>
+  <div> Now take the embed code and put it on your blog!</div>
+  <div>
+    <h1></h1>
+    <img src="../tutorial-img/24_mapbox.png" alt="layercss">
+  </div>
+  <div> You just made your first map!</div>
+
 </body>
 </html>
