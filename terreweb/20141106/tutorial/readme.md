@@ -189,6 +189,8 @@ For this exercise, we didn't need a legend, but should you be interested in incl
 ### Styling data based on attribute value
 We also show all the crime data in 1 color, but we might gain more insight from the data if we were to style each crime differently. There's a [Mapbox styling data tutorial](https://www.mapbox.com/tilemill/docs/crashcourse/styling/) that can help you understand how to style data properties differently based on their value.
 
+### Styling data according to zoom levels
+And you guessed it, there's a [Mapbox tutorial for styling for different zoom levels](https://www.mapbox.com/tilemill/docs/guides/advanced-map-design/). You may notice that since we kept the points are pretty small at zoom level 15. You can changed how they scale to make them more visible. 
 	
 </br>
 ## References:
