@@ -9,7 +9,7 @@
 # Pre-Reqs:
 + Install [Tilemill ](https://www.mapbox.com/tilemill/)
 + Sign up with [Mapbox](https://www.mapbox.com/)
-+ Download zip file data (see: )
++ Download data (see "data" folder)
 
 
 # What to Bring:
