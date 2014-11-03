@@ -62,7 +62,6 @@ Joey is a geographer from San Francisco, California, working in critical cartogr
   + Data input
   + Styling data
   + Interactivity
-  + Adding a chart
   + Legends
   + Exporting
   + Posting/Embedding
