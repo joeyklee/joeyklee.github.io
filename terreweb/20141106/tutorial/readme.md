@@ -197,3 +197,4 @@ And you guessed it, there's a [Mapbox tutorial for styling for different zoom le
 + [Lyzi Diamond's nice presentation](http://lyzidiamond.com/leaflet/#1) - covers the basics of maptiles and creating your first leaflet project.
 + [Mapbox tutorial for making your first map](https://www.mapbox.com/tilemill/docs/crashcourse/introduction/) - this is where it all started for me...
 + [Google chart parameters list](https://developers.google.com/chart/image/docs/chart_params) - documentation of the parameters for the google charts.
++ [A really super cool presentation by Eric Thiese on the Geostack](http://erictheise.github.io/geostack-deck/#/) - Definitely check this out.
