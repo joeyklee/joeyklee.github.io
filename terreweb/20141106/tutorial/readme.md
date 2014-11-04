@@ -40,9 +40,9 @@
 	
 	***marker-comp-op*** is a property with many magical modes for feature & color blending, among other things. Definitely worth reading the documentation. 
 	
-       #crime {
+        #crime {
            marker-width:5; // changed marker size
-  	       marker-fill:#f45;
+           marker-fill:#f45;
            marker-line-color:#813;
            marker-allow-overlap:true;
            marker-ignore-placement:false;
@@ -50,7 +50,7 @@
            marker-opacity:0.35;
            marker-line-opacity:0;
            marker-comp-op:lighten;
-       } 
+        } 
 
 
 	You will see this on the screen. Don't worry, we'll be able to see our styled crime data in a second.
