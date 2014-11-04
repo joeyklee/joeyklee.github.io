@@ -10,7 +10,18 @@
 + Install [Tilemill ](https://www.mapbox.com/tilemill/)
 + Sign up with [Mapbox](https://www.mapbox.com/)
 + Download data (see "data" folder)
-+ **IF YOU'RE RUNNING OSX YOSEMITE**: You have to build from source which is not so straightforward if you're not used to using the terminal and/or if you don't know what the Terminal is. I can help set this up for you, but may take some time. You're still welcome to check out the talk and hang out. If you want to set it up yourself:
++ **IF YOU'RE RUNNING OSX YOSEMITE**: 
+	
+	**Option 1**:
+		1. Download Tilemill as normal
+		2. Open Tilemill
+		3. Go to 'Updates Preferences'
+		4. Check: "Install Developer Builds"
+		Fingers crossed! 
+
+	**Option 2**:
+
+		You have to build from source which is not so straightforward if you're not used to using the terminal and/or if you don't know what the Terminal is. I can help set this up for you, but may take some time. You're still welcome to check out the talk and hang out. If you want to set it up yourself:
 		 
 		NOTE: If npm or homebrew aren't things you have yet on your machine, then you might need those before continuing.
 
