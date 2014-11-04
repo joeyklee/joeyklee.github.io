@@ -2,6 +2,13 @@
 ## By: Joey Lee
 ### Prepared: Nov. 2014 for the TerreWEB Mapping Workshop @ UBC, Vancouver
 ***
+## What's in store:
+I've always liked seeing projects and understanding how the artist/designer put them together. It was helpful for me to visualize what each step of the process was doing to contribute to the final product. So today, here is an image of what you will be able to walk away with by following this tutorial:
+	![](../assets/tutorial-img/final.png)
+
+Here we have **an interactive web map** that is comprised of a **baselayer** which we style in **Mapbox** and an interactive **feature layer** which shows the **crime** data from 2013 in Vancouver that we style and export from **Tilemill**. Its a fully functioning web map that shows data on your mouse **hover** and can be **embedded** in your **blog** or **webpage**.  
+
+
 ## Getting Started:
 1. ### Fire up Tilemill!
 	The Tilemill interface looks like this. If you fall in love with geomapping, you might spend a lot of time here :)
