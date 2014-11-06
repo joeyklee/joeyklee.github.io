@@ -119,6 +119,7 @@ div {
     <h2> With: Joey Lee</h2> 
   </div>
   <!-- Introduction -->
+  <div> Download the repo: <br> <a href="http://bit.ly/letsmap">bit.ly/letsmap</a> </div>
   <div> Hello, Hi</div>
   <div> 
     <center><h1>Who am I?</h1> </center>
@@ -154,6 +155,7 @@ div {
     </h2>
   </div>
   <div> We will focus on <em>Tilemill</em> & <em>Mapbox</em> today :)</div>
+  <!-- example projects -->
   <div> Just a few example <em>projects</em></div>
     <div> 
     <h1> Boston 311 <br>(My <em>first</em> Tilemill Project!) </h1>
@@ -170,13 +172,13 @@ div {
   <div> 
     <h1>Community Energy Explorer</h1>
     <img src="img-presentation/cee.png" alt="cee" class='exampleimg' align='left'> <br>
-    <h2><a href="hub.cab">Community Energy Explorer (forthcoming)</a></h2>
+    <h2><a href="http://energyexplorer.ca/">Community Energy Explorer (forthcoming)</a></h2>
   </div>
-  <div>
+<!--   <div>
     <h1> Other projects</h1>
     <h1> <a href="https://www.kickstarter.com/projects/357538735/aerial-bold-kickstart-the-planetary-search-for-let"> Aerial Bold</a> </h1> <br>
     <h1> <a href="http://jk-lee.com/The-Big-Atlas-of-LA-Pools"> The Big Atlas of LA Pools</a> </h1>
-  </div>
+  </div> -->
   <div> 
     <h1>Ferguson, Mo Tweets</h1> <br>
     <img src="img-presentation/mb-ferg1.png" alt="mb-ferg1" class='exampleimg' align='left'> 
@@ -190,14 +192,25 @@ div {
     <img src="img-presentation/propublica-lg-2.png" alt="propublica_2" class='exampleimg' align='left'> 
     <h2><a href="http://projects.propublica.org/louisiana/#">Propublica: Losing Ground</a></h2>
   </div>
-  <!-- Computers are friends -->
+  <div> 
+    <h1>How <em>leaky</em> is your city? </h1> <br>
+    <img src="img-presentation/leaky-1.png" alt="leaky-1" class='exampleimg' align='right'> 
+    <img src="img-presentation/leaky-2.png" alt="leaky-22" class='exampleimg' align='left'> 
+    <h2><a href="http://content.stamen.com/edf-methane-maps">Stamen (2014)</a></h2>
+  </div>
+  <div> 
+    <h1><em>Fatalatour</em>: To Live and Die in LA </h1> <br>
+    <img src="img-presentation/fatalatour-1.png" alt="fatalatour-1" class='exampleimg' align='right'> 
+    <img src="img-presentation/fatalatour-2.png" alt="fatalatour-2" class='exampleimg' align='left'> 
+    <h2><a href="http://www.fatalatour.com/">David Leonard</a></h2>
+  </div>
+  <!-- Getting Started -->
+  <div> <em>Before</em> Getting Started</div>
   <div> 
     <h1>Computers are friends...</h1>
     <h1>...and google searching is your <em>best friend</em></h1>
     <h4> *The answer to most (all?) of your questions are somewhere <em>on the web</em>!</h4> 
   </div>
-  <!-- Getting Started -->
-  <div> <em>Before</em> Getting Started</div>
   <!-- What makes a web map-->
   <div>
     <h1> What makes <em>a web map</em> ?</h1>
@@ -221,14 +234,14 @@ div {
     <br>
     <h3> Thanks <em>@lyzidiamond & Mapbox</em> for the info! </h3> 
   </div>
-  <div> Oh! So that's how <em>GoogleMaps</em> works? Yeah!</div>
+  <div> Oh! So that's how <em>GoogleMaps</em> (and pretty much everything else) works? Yeah!</div>
   <!-- geodata -->
   <div> 2.Geodata /<em> Feature Layers</em> </div>
   <div> "Feature layers are map layers that <em>live on top </em> of your base tiles. Sometimes you can <em>interact</em> with them (clicking to produce a popup, for example). "</div>
   <div> Feature layers are typically <em>geospatial datasets</em> such as...</div>
-  <div> <em>GeoJSON</em>, <em>Shapefiles</em>, & <em>CSV</em></div>
+  <div> <em>GeoJSON</em>, <em>Shapefiles</em>,<em>KML</em>, & <em>CSV</em></div>
   <div>
-    <h1> GeoJSON & Shapefiles</h1>
+    <h1> GeoJSON, KML & Shapefiles</h1>
     <h1> Imagine: <em>Spreadsheet</em> + <em>Polygons</em> in geospace</h1>
     <img src="img-presentation/shapefile-example.png" alt="shapefile" class='exampleimg' align='left'>
     <img src="img-presentation/geojson.png" alt="shapefile" class='exampleimg' align='right'> 
@@ -242,7 +255,7 @@ div {
     <h2> Note: we can directly upload a .csv file into Tilemill if it includes columns with <em>latitude & longitude</em> coordinates</h2>
   </div>
   <div> 
-    <h1> The cool thing is, we can render Feature layers as tiles or as vector (svg) depending on our needs, the sizes of our data, etc.</h1>
+    <h1> The cool thing is, we can render Feature layers as <em>tiles</em> or as <em>vector</em> (svg) depending on our needs, the sizes of our data, etc.</h1>
     <h2>Today, we will render <em>Feature Layers as Tiles</em>!</h2>
   </div>
   <!-- "The Web" -->
@@ -294,7 +307,7 @@ div {
     <img src="img-presentation/Cartocss-crime.png" alt="settings" class='exampleimg' align='left'> <br>
     <h2> The double forward slashes (<em>//</em>) create a comment. These are "<em>invisible</em>" to Tilemill and are helpful for making notes on your stylesheet.</h2>
   </div>
-   <div> + Comment out "World Layers" using <em>/* */</em>
+   <div> + Comment out "Map" and "#countries" layers using <em>/* */</em>
     <img src="../tutorial-img/09_commentout.png" alt="layercss" class='exampleimg' align='left'>
     <img src="../tutorial-img/10_crimestyle.png" alt="settings" class='exampleimg' align='left'> <br>
   </div>
@@ -365,12 +378,12 @@ div {
   <div> You just made <em>your first map</em>!</div>
 
   <div> So what have we learned so far?</div>
-  <div> We've been introduced to Tilemill & Mapbox...</div>
-  <div> ... the very basics of geospatial data...</div>
-  <div>.. We know a bit about CartoCSS, setting the bounding box, and zoom levels...</div>
-  <div> ... and finally how to overlay a dataset onto a Mapbox baselayer.</div>
+  <div> We've been introduced to <em>Tilemill</em> & <em>Mapbox</em>...</div>
+  <div> ... the very basics of <em>geospatial</em> data...</div>
+  <div>.. We know a bit about <em>CartoCSS</em>, setting the <em>bounding box</em>, and <em>zoom</em> levels...</div>
+  <div> ... and finally how to <em>overlay</em> a dataset onto a Mapbox baselayer.</div>
   <div> Wow! So many new things!</div>
-  <div> Lucky for you, it's not over! </div>
+  <div> Lucky for you, <em>it's not over</em>! </div>
   <!-- Part II: diving deeper -->
   <div> Let's take our map further by:</div>
   <div> 1. <em>Scaling the marker</em> size at different zoom levels, 2. <em>styling data</em> with different values, & 3. adding a <em>legend</em>.</div>
@@ -384,48 +397,52 @@ div {
   <!-- scaling the marker -->
   <div>1. Scaling the marker size at different zoom levels</div>
   <div> 
-    <h1>Remember the inequality signs?</h1>
+    <h1>Remember the <em>inequality</em> signs?</h1>
     <img src="img-presentation/inequalities_alligator.gif" alt="inequalities">
   </div>
   <div> 
     <h1>Let's use them to set the zoom levels like this:</h1>
   </div>
   <div>
-    <img src="img-presentation/zoomlevels.png" alt="zoomlevels">
+    <h1> Notice: we enclose the zoom in <em>brackets</em> [ ] and the properties we want to style at zoom level/range within <em>mustaches</em> { }</h1>
+    <img src="img-presentation/zoomlevels.png" class="exampleimg" alt="zoomlevels">
+    <h2> We also <em>add values</em> to the marker-size to visualize how we're scaling up</h2>
   </div>
-  <div> Don't forget to "//" comment out the original marker-width</div>
+  <div> Don't forget to <em>comment out</em> "//" the original marker-width</div>
   <div> 
     <h1> Now that we style marker-size at different zooms, remove the 'global' one! </h1>
-    <img src="img-presentation/commentoutsize.png" alt="commentout">
+    <img src="img-presentation/commentoutsize.png" class="exampleimg" alt="commentout">
   </div>
   <div> Now zoom in and out, notice the points scale better and are more visible?</div>
   <!-- Styling data -->
-  <div>2. Styling data based on their value</div>
+  <div>2. Styling data based on their <em>value</em></div>
   <div> 
     <h1>Before, all of our crimes were one color...</h1>
     <img src="../tutorial-img/24_mapbox.png" alt="layercss">
   </div>
   <div> 
     <h1>But now, we'll color each crime differently:</h1>
-    <img src="../../Tutorial II/img/legend copy.png" alt="final">
+    <img src="../../Tutorial II/img/legend copy.png" alt="final" class="exampleimg">
   </div>
-  <div> First things first, what is name of the field that contains the crime type? </div>
+  <div> First things first, what is name of the field that contains the<em> crime type</em> ? </div>
   <div>
     <h1> Check the data table!</h1>
     <img src="../../Tutorial II/img/datatable.png" alt="final" class="exampleimg" align="left">
     <img src="../../Tutorial II/img/datatable-2.png" alt="final" class="exampleimg" align="right"> <br>
   </div>
-  <div>Simple enough, it is just called "TYPE'</div>
+  <div>Simple enough, it is just called <em>"TYPE"</em></div>
   <div> 
     <h1>Now we can reference each 'TYPE' by its specific value like this:</h1>
   </div>
   <div>
-    <img src="img-presentation/crimetype.png" alt="type">
+    <h1> In <em>brackets</em> [ ] we query whether 'TYPE' is equal to variable x,y,z & style the marker properties within the <em>mustaches</em> { } </h1>
+    <img src="img-presentation/crimetype.png" alt="type" class="exampleimg" >
+    <h2>Look familiar to how we <em>styled the zoom</em>?</h2>
   </div>
   <div>
     <h1>Notice:</h1>
-    <h2> lighten('hexcolor', '%')</h2>
-    <h4>we can also do: darken()</h4>
+    <h2> <em>lighten</em>('hexcolor', '%')</h2>
+    <h4>we can also do: <em>darken</em>()</h4>
   </div>
   <div> If we styled everything alright then we should get...</div>
   <div> 
@@ -435,17 +452,17 @@ div {
   </div>
   <div> HOW EXCITING!</div>
   <div> 3. Adding a legend</div>
-  <div> Because we have a fancy thing going on here, let's cue viewers into what they're seeing.</div>
-  <div> In Tilemill, there are 2 ways to add a legend</div>
-  <div>1. By making a legend in an image making environment (e.g. photoshop) and adding the png OR</div>
-  <div>2. By using html & css in Tilemill to create a simple legend </div>
-  <div> For today, we will just use a png image made in Photoshop as our legend</div>
+  <div> Because we have a fancy thing going on here, let's <em>cue</em> viewers into what they're seeing.</div>
+  <div> In Tilemill, there are <em>2 ways</em> to add a legend</div>
+  <div>1. By making a legend in an image making environment (e.g. <em>photoshop</em>) and adding the <em>png</em> OR</div>
+  <div>2. By using <em>html & css</em> in Tilemill to create a simple legend </div>
+  <div> For today, we will just use a <em>png</em> image made in Photoshop as our legend</div>
   <div>To do this, we follow the <a href='https://www.mapbox.com/tilemill/docs/guides/advanced-legends/'>The Mapbox legends tutorial </a></div>
   <div> Essentially the main steps are: <br>
-    1. Create your legend as a png <br>
-    2. Convert the png to a base64-encoded image <br>
+    1. Create your legend as a <em>png</em> <br>
+    2. <em>Convert</em> the png to a base64-encoded image <br>
     3. &lt;img&gt; src='data:image/png;base64,[image-data]' /&gt; <br>
-    4. Paste #3 into the "legend" content box 
+    4. <em>Paste</em> #3 into the "legend" content box 
   </div>
   <div> 
     <h1>To save time, copy and paste <a href='https://github.com/joeyklee/joeyklee.github.io/blob/master/terreweb/20141106/Tutorial%20II/stylesheet/legend.txt'>this code</a> here: </h1>
@@ -453,29 +470,31 @@ div {
     <img src="../../Tutorial II/img/withlegend.png" alt="withlegend" class="exampleimg" align="right"><br>
   </div>
   <div>
-    <h1> Now upload to mapbox!</h1>
+    <h1> Now <em>upload</em> to mapbox!</h1>
   </div>
-  <div> Before embedding to your blog or webpage...</div>
+  <div> <em>Before</em> embedding to your blog or webpage...</div>
   <div> 
-    <h1> Legends aren't referenced by default in the embed code, so we have to add it in manually </h1>
+    <h1> Legends aren't referenced by default in the embed code, so we have to <em>add it in manually</em> </h1>
     <img src="../../Tutorial II/img/embed.png" alt="embed" class="exampleimg" align="left"> 
     <img  src="img-presentation/embed.png" alt="embed" class="exampleimg" align="right"> 
   </div>
-  <div> And now, map disco!</div>
+  <div> And now, map <em>disco</em>!</div>
   <div>
     <iframe id='map2' frameBorder='0' src='https://a.tiles.mapbox.com/v4/joeyklee.k5840079/attribution,zoompan,zoomwheel,legend,geocoder,share.html?access_token=pk.eyJ1Ijoiam9leWtsZWUiLCJhIjoiMlRDV2lCSSJ9.ZmGAJU54Pa-z8KvwoVXVBw'></iframe>
   </div>
   <div> 
-   <h1>Not to rain on the parade but some last things to consider:</h1> <br> 
-    <h2>mousehover issues? color issues? data accuracy issues? - all nontrivial things</h2>
+   <h1>Not to rain on the parade but some <em>last things to consider</em>:</h1> <br> 
+    <h2>mousehover issues? color issues? data accuracy issues? - all <em>nontrivial</em> things</h2>
+    <h2>Complexity is masked? There's a lot more under the hood</h2>
   </div>
-  <div> Major takeaway: You can make a web map! </div>
-  <div> I hope you had a blast! Happy Mapping!</div>
-  <div> Special thanks to: <br><em>@sarahmprz</em>, <br> <em>@mappingmashups</em>, <br> <em>@lyzidiamond</em>, <br> the <em>Geoweb community</em>, <br> <em>Terreweb</em>, <br> <em>UBC Geography</em>, <br> And <em> YOU!</em> </div>
+  <div> Major <em>takeaway</em>: You can make a web map! </div>
+  <div> I hope you had a blast! <em>Happy Mapping</em>!</div>
+  <div> Special thanks to: <br><em>@bndktgrs</em><br> <em>@st_phan</em><br><em>@sarahmprz</em>, <br> <em>@mappingmashups</em>, <br> <em>@lyzidiamond</em>, <br> the <em>Geoweb community</em>, <br> <em>Terreweb</em>, <br> <em>UBC Geography</em>, <br> And <em> YOU!</em> </div>
   <div> This presentaiton was made with:  <em>Tom Macwright's <a href="http://www.macwright.org/big/">BIG</a></em></div>
   <div> Questions? Comments?</div>
 
-  <div>  Open lab time </div>
+  <div> <em>www.jk-lee.com</em> <br> twitter: <em>@leejoeyk</em> </div>
+  <div> Open lab time </div>
 
 </body>
 </html>
