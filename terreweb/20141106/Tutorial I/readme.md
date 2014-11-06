@@ -96,7 +96,7 @@ Here we have **an interactive web map** that is comprised of a **baselayer** whi
 	 
 	 Let's show the "type of crime", "year" and "month", and "address" of the crimes. Thus let's use these:
 	  
-	     {{{type}}} 
+	     {{{TYPE}}} 
 	  
 	     {{{YEAR}}}
 	  
