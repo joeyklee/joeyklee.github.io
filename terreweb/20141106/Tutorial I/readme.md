@@ -63,8 +63,8 @@ Here we have **an interactive web map** that is comprised of a **baselayer** whi
 	You will see this on the screen. Don't worry, we'll be able to see our styled crime data in a second.
 	![](../assets/tutorial-img/08_crimeaddedstyle.png)
 
-6. ### Comment out the 'World Layers' and 'Map' Styles
-	Since we want to use the crime layer as an overlay feature layer, let's comment out the 'World' and 'Map' layers so we can see our styled crime layer.
+6. ### Comment out the '#countries' and 'Map' Styles
+	Since we want to use the crime layer as an **overlay** feature layer, let's comment out the '#countries' and 'Map' layers so we can see our styled crime layer.
 	
 	We are using another style of CSS commenting syntax here to comment out a large code block. Everything between the set of /* ... */ will not be interpreted by Tilemill.
 	   
