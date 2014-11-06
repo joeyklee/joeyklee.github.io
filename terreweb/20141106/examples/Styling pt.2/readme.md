@@ -1,7 +1,7 @@
 # Styling Data: Part II
 ===
 ## Overview
-Now that we are familiar with **Tilemill** & **Mapbox**, let's take our Tilemill skills a bit further by styling different our crime data based on the **type of crime** that was committed. Let's also change the **size of the points** depending on the zoom level to enhance their **visibility**.
+Now that we are familiar with **Tilemill** & **Mapbox**, let's take our Tilemill skills a bit further by styling different our crime data based on the **type of crime** that was committed. Let's also change the **size of the points** depending on the zoom level to enhance their **visibility** and add a **legend**.
 
 
 ## Ready, go!
@@ -100,7 +100,7 @@ Take a look at the existing style for our crime data. It should look like this:
 	
 	<br>
 	
-	**Next** We know from the crime data provided by the [City of Vancouver](http://vancouver.ca/news-calendar/from-mischief-to-theft-vancouver-s-crime-data-for-2003-to-2011-now-available-for-download.aspx) that the types of crimes available are:
+	**Next** We know from the crime data provided by the [City of Vancouver](http://vancouver.ca/news-calendar/from-mischief-to-theft-vancouver-s-crime-data-for-2003-to-2011-now-available-for-download.aspx) that the types of crimes available are: (***NOTE: these names are typed differently in the data -always be sure ot check or else your data won't be styled how you want!***)
 
         Mischief under $5,000
         Mischief over $5,000
@@ -157,32 +157,32 @@ Take a look at the existing style for our crime data. It should look like this:
            // styling data color by crime
            ['TYPE' = 'Mischief Under $5000']{
 			  marker-fill:lighten(#0000FF, 10%);
-			}
-		   ['TYPE' = 'Mischief Over $5000']{
-		      marker-fill: #0000FF;
-		   }
-		   ['TYPE' = 'Theft From Auto Under $5000']{
-		      marker-fill: lighten(#FF0000, 10%);
-		   }
-		   ['TYPE' = 'Theft from auto over $5000']{
+		    }
+            ['TYPE' = 'Mischief Over $5000']{
+	   		  marker-fill: #0000FF;
+	   		}
+	   	    ['TYPE' = 'Theft From Auto Under $5000']{
+			  marker-fill: lighten(#FF0000, 10%);
+		    }
+		    ['TYPE' = 'Theft from auto over $5000']{
 			  marker-fill: #FF0000;
-		   }
-		   ['TYPE' = 'Theft Of Auto Under $5000']{
-		      marker-fill: lighten(#CC33FF, 10%);
-		   }
-		   ['TYPE' = 'Theft Of Auto Over $5000']{
-		      marker-fill: #CC33FF;
-		   }
-		   ['TYPE' = 'Commercial Break and Enter']{
-		      marker-fill: #00FF00;
-		   }
-		} // crime closing bracket
+			}
+			['TYPE' = 'Theft Of Auto Under $5000']{
+			  marker-fill: darken(#FF0000, 10%);
+			}
+			['TYPE' = 'Theft Of Auto Over $5000']{
+			  marker-fill: darken(#FF0000, 20%);
+			}
+			['TYPE' = 'Commercial Break and Enter']{
+			  marker-fill: #00FF00;
+			}
+		 } // crime closing bracket
    
    
    We should end up with something like this - Cool, RGB disco party!:
    ![](img/rgbcolors.png)
  	  
-5. ### We've done it! We've styled our data based on the specific values we wanted! 
+5. ### Hooray! We've styled our data! 
 The cool thing is that because we've used the RGB color combination, we can see based on the colors of the points where combinations of crimes where geolocated to the same spot. So our legend might look something like this:
 
 	![](img/legend.png)
@@ -196,9 +196,27 @@ The cool thing is that because we've used the RGB color combination, we can see 
 	+ Followed the steps from the [The Mapbox legends tutorial](https://www.mapbox.com/tilemill/docs/guides/advanced-legends/)  to convert an image (e.g. the legend png) to a base-64 encoded image.
 	+ Pasted [this code](data/legends.txt) into the Legend section of the 'Templates'.
 	+ and Voila! a legend! 
+	+ **NOTE:** Using a png is a quick and dirty way to add a legend if you don't plan on making changes later. The disadvantage is that it's not easily shared and can't be easily fixed if you need to update it. However it does get around the limitation of styling <div> boxes in Tilemill.
 	       
 	<br>     
 	Now we should have something like this:
 	  ![](img/withlegend.png)
 
 7. ### Export/Upload your map to Mapbox, give it a baselayer in Mapbox, and share it with the world!
+	Now that you've uploaded your map to Mapbox and you've styled your baselayer, you might have something like this as your final product:
+	
+	![](img/final.png)
+	
+	Cool! It feels like a whole new world is unfolding, hey? Well, before you embed your map this time, be sure to add in 'legends' into the embed link. By default, the legends aren't referenced in the embed code, so you have to add it in yourself. See: [Mapbox reminds us to include our legend when embedding](https://www.mapbox.com/help/add-legend/).
+
+	My code looks like this:
+	
+         <iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/joeyklee.k5840079/attribution,zoompan,zoomwheel,legend,geocoder,share.html?access_token=pk.eyJ1Ijoiam9leWtsZWUiLCJhIjoiMlRDV2lCSSJ9.ZmGAJU54Pa-z8KvwoVXVBw'></iframe>
+         
+    ![](img/embed.png)
+    
+
+
+
+# Happy Mapping! 
+
