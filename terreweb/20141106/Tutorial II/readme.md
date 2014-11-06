@@ -64,30 +64,30 @@ Take a look at the existing style for our crime data. It should look like this:
 	6. I've chosen to increase the marker width size by 2, 4, and 6 from the original marker size. This is just my way to keeping track of the up-scaling, but you can develop the way that works best for you!
 	<br>
 	
-         #crime {
-           // marker-width:5; // NOTICE: COMMENT OUT MARKER WIDTH
-           marker-fill:#f45;
-           marker-line-color:#813;
-           marker-allow-overlap:true;
-           marker-ignore-placement:false;
-           // added styles
-           marker-opacity:0.35;
-           marker-line-opacity:0;
-           marker-comp-op:lighten;
-           // Changing marker widths by zoom level
-           [zoom <= 11]{
-              marker-width:2.5;
-           }
-           [zoom > 11][zoom <= 13]{
-              marker-width:2.5 + 2;
-           } 
-           [zoom = 14]{
-              marker-width: 2.5 + 4;
-           }
-           [zoom >= 15]{
-              marker-width: 2.5 + 6;
-           }
-        } // closing bracket 
+            #crime {
+              // marker-width:5; // NOTICE: COMMENT OUT MARKER WIDTH
+              marker-fill:#f45;
+              marker-line-color:#813;
+              marker-allow-overlap:true;
+              marker-ignore-placement:false;
+              // added styles
+              marker-opacity:0.35;
+              marker-line-opacity:0;
+              marker-comp-op:lighten;
+              // Changing marker widths by zoom level
+              [zoom <= 11]{
+                 marker-width:2.5;
+              }
+              [zoom > 11][zoom <= 13]{
+                 marker-width:2.5 + 2;
+              } 
+              [zoom = 14]{
+                 marker-width: 2.5 + 4;
+              }
+              [zoom >= 15]{
+                 marker-width: 2.5 + 6;
+              }
+           } // closing bracket 
         
      Here's what you might find after you've done this - notice the points are larger than they were before! How cool!   
      ![](img/zoomstyle.png)
