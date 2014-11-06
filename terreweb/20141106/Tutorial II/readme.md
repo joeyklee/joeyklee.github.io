@@ -1,7 +1,12 @@
-# Styling Data: Part II
+# Let's Make a Map: Part II!
+## By: Joey Lee
+### Prepared: Nov. 2014 for the TerreWEB Mapping Workshop @ UBC, Vancouver
 ===
 ## Overview
 Now that we are familiar with **Tilemill** & **Mapbox**, let's take our Tilemill skills a bit further by styling different our crime data based on the **type of crime** that was committed. Let's also change the **size of the points** depending on the zoom level to enhance their **visibility** and add a **legend**.
+
+We're going to end up with something like this:
+	![](img/final.png)
 
 
 ## Ready, go!

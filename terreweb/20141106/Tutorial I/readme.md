@@ -1,4 +1,4 @@
-# Let's Make a Map!
+# Let's Make a Map: Part I!
 ## By: Joey Lee
 ### Prepared: Nov. 2014 for the TerreWEB Mapping Workshop @ UBC, Vancouver
 ***
@@ -190,6 +190,8 @@ Here we have **an interactive web map** that is comprised of a **baselayer** whi
 	
 
 ## Note:
+In this tutorial, we didn't go over the three points listed below, BUT if you navigate to **Tutorial II**, we can go over these major points and take our map further. 
+
 ### Legends
 For this exercise, we didn't need a legend, but should you be interested in including one, you can flex your copy/paste and hex color muscles based on this super nice [Mapbox legends tutorial](https://www.mapbox.com/tilemill/docs/crashcourse/tooltips/)
 
