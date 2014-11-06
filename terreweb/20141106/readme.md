@@ -9,7 +9,7 @@
 # Pre-Reqs:
 + Install [Tilemill ](https://www.mapbox.com/tilemill/)
 + Sign up with [Mapbox](https://www.mapbox.com/)
-+ Download data (see "data" folder)
++ Download this Workshop [Github repository](https://github.com/joeyklee/joeyklee.github.io)
 + **IF YOU'RE RUNNING OSX YOSEMITE**: 
 	
 	**Option 1**:
@@ -66,26 +66,29 @@ Joey is a geographer from San Francisco, California, working in critical cartogr
 
 
  
-### Tutorial 
+### Tutorial I
   What we will cover: 
   
   + Setup & Tilemill tour
   + Data input
-  + Styling data
+  + Basic Data styling
   + Interactivity
-  + Legends
   + Exporting
   + Posting/Embedding
   
   (~60 min)
 
  
-### Short Presentation
-+ Taking your webmap further: A preview of functionality with mapbox.js/leaflet.js
+### Tutorial II
+   What we will cover:
+   
+   + styling at different zoom levels
+   + Styling data based on attributes
+   + Images as legends
 
-(~25 min)
-
-
+   (~30 min)
+  
+  **NOTE**: The short presentation on mapbox.js/leaflet.js was replaced with Tutorial II. 
 
 ### Open Lab Time
 + Ask questions, chat with your neighbor, & make maps!
