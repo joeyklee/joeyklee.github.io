@@ -229,3 +229,16 @@ The cool thing is that because we've used the RGB color combination, we can see 
 
 # Happy Mapping! 
 
+
+## Note:
+In this tutorial, we did not go over [mapbox.js](https://www.mapbox.com/mapbox.js/api/v2.1.4/)/[leaflet.js](http://leafletjs.com/). While Tilemill is a nice start to the world of web maps, the possibilities become infinitely more exciting with these mapping libraries. One step at a time.
+
+
+</br>
+## References:
++ [Lyzi Diamond's nice presentation](http://lyzidiamond.com/leaflet/#1) - covers the basics of maptiles and creating your first leaflet project.
++ [Alan McConchie and Beth Schetcher on the Anatomy of a web map](http://maptime.io/anatomy-of-a-web-map/#0) - A really comprehensive and digestible overview of web maps, what makes them unique, and how they work.
++ [Mapbox tutorial for making your first map](https://www.mapbox.com/tilemill/docs/crashcourse/introduction/) - this is where it all started for me...
++ [Google chart parameters list](https://developers.google.com/chart/image/docs/chart_params) - documentation of the parameters for the google charts.
++ [A really super cool presentation by Eric Thiese on the Geostack](http://erictheise.github.io/geostack-deck/#/) - Definitely check this out.
++ The presentation was made with [Tom Macwright's BIG presentation](http://www.macwright.org/big/)
