@@ -173,7 +173,7 @@ Take a look at the existing style for our crime data. It should look like this:
 	   	    ['TYPE' = 'Theft From Auto Under $5000']{
 			  marker-fill: lighten(#FF0000, 10%);
 		    }
-		    ['TYPE' = 'Theft from auto over $5000']{
+		    ['TYPE' = 'Theft From Auto Over $5000']{
 			  marker-fill: #FF0000;
 			}
 			['TYPE' = 'Theft Of Auto Under $5000']{
