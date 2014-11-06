@@ -95,7 +95,7 @@ Take a look at the existing style for our crime data. It should look like this:
 4. ### Styling Data by Attributes
 	Right now all of the crimes are red, but not all crimes are created equal. So, let's go ahead and change the colors of the crimes based on the type of crime that was committed.
 	
-	**Start** by examing the data to find the field that specifies the crime of the data. To do this, click on the layers icon ![layers](../../assets/tutorial-img/layers.png) and then click the icon that looks like a little data table:
+	**Start** by examing the data to find the field that specifies the crime of the data. To do this, click on the layers icon ![layers](../assets/tutorial-img/layers.png) and then click the icon that looks like a little data table:
 	![](img/datatable.png)
 	
 	And we will see a spreadsheet like structure:
@@ -119,9 +119,6 @@ Take a look at the existing style for our crime data. It should look like this:
  	   
  	**Plan**: Similar to how we planned how to change the marker size for each zoom level, let's think of specific colors to assign each crime: **again this is pseudocode**.
  	
- 	**Notice:**: 1. we're using hex color codes to specify the colors 2. the **lighten(<hexcode>, <%>)** & **darken(<hexcode>, <%>)** function allows us to lighten a specified color by a certain percentage. A handy tool for managing your color palette!
-		<br>
-	
 	    Blue for Mischief
         	Mischief under $5,000: lighten(#0000FF, 10%)
         	Mischief over $5,000: #0000FF
@@ -134,11 +131,18 @@ Take a look at the existing style for our crime data. It should look like this:
         Green for Commercial break and enter:
         	Commercial break and enter: #00FF00
     
+   **Notice**: 
+   
+   1. we're using hex color codes to specify the colors 
+   2. the **lighten(<hexcode>, <%>)** & **darken(<hexcode>, <%>)** function allows us to lighten a specified color by a certain percentage. A handy tool for managing your color palette!
+   
+    <br>
+    
    **So let's style it!**
 		
 		#crime {
            // marker-width:5; // NOTICE: COMMENT OUT MARKER WIDTH
-           marker-fill:#f45;
+           // marker-fill:#f45; //NOTICE: COMMENT OUT MARKER-FILL
            marker-line-color:#813;
            marker-allow-overlap:true;
            marker-ignore-placement:false;
@@ -195,11 +199,11 @@ The cool thing is that because we've used the RGB color combination, we can see 
 6. ### Adding a legend:
 [The Mapbox legends tutorial](https://www.mapbox.com/tilemill/docs/guides/advanced-legends/) goes over how to add your legend, so I won't go over it extensively. 
 
-	Basically we do is:
+	Basically what we do is:
 	+ Make an image in photoshop (or your favorite image making environment) with the RGB circles and added the text
-	+ Resized the legend to around 150px x 150px
+	+ Resize the legend to around 150px x 150px
 	+ Followed the steps from the [The Mapbox legends tutorial](https://www.mapbox.com/tilemill/docs/guides/advanced-legends/)  to convert an image (e.g. the legend png) to a base-64 encoded image.
-	+ Pasted [this code](data/legends.txt) into the Legend section of the 'Templates'.
+	+ Pasted [this code](stylesheet/legend.txt) into the Legend section of the 'Templates'.
 	+ and Voila! a legend! 
 	+ **NOTE:** Using a png is a quick and dirty way to add a legend if you don't plan on making changes later. The disadvantage is that it's not easily shared and can't be easily fixed if you need to update it. However it does get around the limitation of styling <div> boxes in Tilemill.
 	       
