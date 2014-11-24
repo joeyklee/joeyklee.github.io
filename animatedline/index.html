@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 />
+        <title>Realtime viewer</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+        
+        <!-- mapbox -->
+        <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css' rel='stylesheet' />
+        <link href='https://www.mapbox.com/base/latest/base.css' rel='stylesheet' />
+        <!-- bootstrap -->
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <!-- proj css -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+        <!-- Oswald and Open Sans font -->
+        <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+        
+    </head>
+    <body>
+        <div id='map'></div>
+
+        <!-- disclaimer -->
+        <div class='disclaimer'>
+            <div class="he">Urban CO<sub>2</sub> Emissions</div>
+            <div class="he2"><textsemi>Mobile Emissions Mapping</textsemi>: Currently, the tools don't exist to monitor and map Greenhouse Gases (GHGs) at the local to city scale. At UBC, we're developing sensors that can be attached to vehicles and/bikes to map GHG at policy relevant scales. </div>
+            <div class="enter"><img src="img/icon_5670.png" width=125px><br>
+            GO
+            </div>
+        </div>
+
+        <!-- TODO: Add info sidebar - closed on open -->
+
+  
+        <!-- Go button -->
+        <div class='row1 col1 pin-right pad2 fill-none dark margin8r'>
+            <!-- <p>GO!</p> -->
+            <img src="img/icon_5670.png" height="30px" id="go">
+            <img src="img/icon_56016.png" height="30px"  id="stop">
+        </div>
+        <!-- Stop button -->
+        <!-- <div class='row2 col1 pin-right pad2 fill-none dark margin8r' id="stop">
+            <img src="img/icon_56016.png" height="30px">
+        </div> -->
+
+        <!-- the timer window -->
+        <div class='row2 col4 pin-right pad2 fill-none dark margin4r' id="timerwindow">
+            <div id='timer'>
+                <p1>    </p1>
+                <p2>    </p2>
+            </div>
+        </div>
+
+        <!-- The linechart window -->
+        <div class='row4 col10 pin-bottomright pad2 fill-none dark margin1r' id="linechartwindow">
+            <div></div>
+        </div>
+
+
+        <!-- mapbox -->
+        <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>
+        <!-- jquery -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!-- d3 -->
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+
+        <!-- Flot -->
+        <script src='libs/flot/jquery.flot.js'></script>
+
+        <!-- bootstrap -->
+        <!-- // <script src = "js/bootstrap.min.js"></script> -->
+        <!-- app -->
+        <script src="js/app.js"></script>
+    </body>
+</html>
