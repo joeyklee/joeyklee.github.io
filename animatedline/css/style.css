@@ -12,11 +12,20 @@ body> #map {
   bottom:0; 
   width:100%; 
 }
-  
+
+.header2{
+  font-size:50px;
+  font-family: 'Oswald';
+}
+.p1{
+  font-size:18px;
+  font-family: 'Oswald';
+}
+
 #timerwindow{
   top:20px;
   height:55px;
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(0,0,0,0.5);
   color:black;
   text-align: center;
   font-family: 'Oswald';
@@ -32,13 +41,6 @@ body> #map {
   background-color: rgba(0,0,0,0.5);
 }
 
-/*#go{
-  top:100px;
-  background-color: rgba(255,0,0,0.1);
-}*/
-/*#stop{
-  right:20px;
-}*/
 
 path {
   /*stroke: steelblue;*/
