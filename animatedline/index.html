@@ -16,7 +16,9 @@
         <!-- Oswald and Open Sans font -->
         <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
-        
+
+        <!-- Side bar -->
+        <link rel="stylesheet" href="css/L.Control.Sidebar.css" />
     </head>
     <body>
         <div id='map'></div>
@@ -31,18 +33,32 @@
         </div>
 
         <!-- TODO: Add info sidebar - closed on open -->
+        <div id='info'></div>
+        <div id="sidebar">
+            <h2 class='header2'>A Mobile CO<sub>2</sub> Monitoring Platform</h2>
+
+                <p class='p1'> The global average CO2 mixing ratio is 397.8 ppm. This means that globally, this is the baseline of CO2 in the atmosphere. Any measured value above this level is CO2 that is put into the atmosphere through fossil fuel combustion from heating, ventilation, and cooling systems, transportation, industrial processes, human respiration, and to a lesser degree plant respiration. </p>
+
+                <p class='p1'>Research by the Urban Climate Group at University of British Columbia is currently focused on trying to understand the complex interplay between the social and physical dimensions of cities that result in their increased emissions. They are particularly interested to map the spatial and temporal dimensions of emissions so that cities - their governments and residents - can begin to find ways to reduce emissions and build more sustainable and liveable cities.</p>
+
+                <p class='p1'>Reducing GHG emissions will be critical for mitigating global climate uncertainty. When looking at the measured emissions a long the various routes, notice where emissions might be high or low. Do you notice any trends or patterns? Do you notice anything surprising? Can you imagine what the map would look like if it were completely sampled?</p>
+        </div>
 
   
         <!-- Go button -->
-        <div class='row1 col1 pin-right pad2 fill-none dark margin8r'>
-            <!-- <p>GO!</p> -->
+<!--         <div class='row1 col1 pin-right pad2 fill-none dark margin8r'>
             <img src="img/icon_5670.png" height="30px" id="go">
             <img src="img/icon_56016.png" height="30px"  id="stop">
-        </div>
-        <!-- Stop button -->
-        <!-- <div class='row2 col1 pin-right pad2 fill-none dark margin8r' id="stop">
-            <img src="img/icon_56016.png" height="30px">
         </div> -->
+        <!-- on/off buttons -->
+        <div class='go'>
+            <!-- <img src="img/icon_5670.png" height="30px" id="go"> -->
+        </div>
+        <div vlass='stop'>
+            <!-- <img src="img/icon_56016.png" height="30px"  id="stop"> -->
+        </div>
+
+
 
         <!-- the timer window -->
         <div class='row2 col4 pin-right pad2 fill-none dark margin4r' id="timerwindow">
@@ -64,9 +80,8 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <!-- d3 -->
         <script src="http://d3js.org/d3.v3.min.js"></script>
-
-        <!-- Flot -->
-        <script src='libs/flot/jquery.flot.js'></script>
+        <!-- side bar js -->
+        <script src="js/L.Control.Sidebar.js"></script>
 
         <!-- bootstrap -->
         <!-- // <script src = "js/bootstrap.min.js"></script> -->
