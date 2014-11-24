@@ -1,4 +1,5 @@
 $( document ).ready(function() {
+     // -------- diclaimer click on/off ---------- //
     $('.enter').on('click', function() {
         $('.disclaimer').toggleClass('clicked');
     });
@@ -25,6 +26,53 @@ $( document ).ready(function() {
     var baseMaps = { "toner": Stamen_TonerBackground};
     var overlayMaps = { "labels":Stamen_TonerLabels };
     L.control.layers(baseMaps, overlayMaps ,{position:"topleft"}).addTo(map);
+
+    // --- Side bar --- //
+    // add info button
+    var info = L.control({position:'topleft'});
+    info.onAdd = function (map) {
+        var div = L.DomUtil.create('div', 'info');
+        div.innerHTML +=
+        '<img src="img/info2.png" alt="legend" width="25" height="30">';
+        return div;
+     // $("#info").append("<img src='img/info.png></img>'");
+    };
+    info.addTo(map); 
+
+    var sidebar = L.control.sidebar('sidebar', {
+        closeButton: true,
+        position: 'left'
+    });
+    map.addControl(sidebar);
+
+    $(".info").on('click', function () {
+        sidebar.toggle();
+    })
+
+    L.DomEvent.on(sidebar.getCloseButton(), 'click', function () {
+        console.log('Close button clicked.');
+    });
+
+    // ----------- go/stop --------- //
+    // Go Button
+    var gobutton = L.control({position:'topleft'});
+    gobutton.onAdd = function (map) {
+        var div = L.DomUtil.create('div', 'go');
+        div.innerHTML +=
+        '<img src="img/icon_5670.png" alt="go" width="20" height="20">';
+        return div;
+    };
+    gobutton.addTo(map); 
+    // Stop button
+    var stopbutton = L.control({position:'topleft'});
+    stopbutton.onAdd = function (map) {
+        var div = L.DomUtil.create('div', 'stop');
+        div.innerHTML +=
+        '<img src="img/icon_56016.png" alt="stop" width="20" height="20">';
+        return div;
+    };
+    stopbutton.addTo(map); 
+
 
     // --- animate line --- // 
     d3.json("data/traverse_20140912.geojson", function(data){
@@ -68,10 +116,12 @@ $( document ).ready(function() {
 
 
         // --- Make the graph -- add points later --- //
+        // var parse = d3.time.format("%b %Y").parse;
         var m = [0, 0, 35, 35]; // margins
         var chartWidth = $('#linechartwindow').width()
         var chartHeight = $('#linechartwindow').height()
         var x = d3.scale.linear().domain([0,line.co2.length]).range([0, chartWidth-m[3]]);
+        // var x = d3.time.scale().domain([d3.min(line.datetime),d3.max(line.datetime)]).range([0, chartWidth-m[3]]);
         var y = d3.scale.linear().domain([0,dataMax]).range([chartHeight,0]);
         // Add an SVG element with the desired dimensions and margin.
         var graph = d3.select("#linechartwindow").append("svg:svg")
@@ -97,36 +147,25 @@ $( document ).ready(function() {
         var makeline = d3.svg.line()
             // assign the X function to plot our line as we wish
             .x(function(d,i) { 
-                // verbose logging to show what's actually being done
-                // console.log('Plotting X value for data point: ' + d + ' using index: ' + i + ' to be at: ' + x(i) + ' using our xScale.');
-                // return the X coordinate where we want to plot this datapoint
-                // return x(d[0][0]); 
-                // console.log(i)
                 return x(i);
             })
             .y(function(d) { 
-                // verbose logging to show what's actually being done
-                // console.log('Plotting Y value for data point: ' + d + ' to be at: ' + y(d) + " using our yScale.");
-                // return the Y coordinate where we want to plot this datapoint
-                // return y(d[0][1]);
-                // console.log(d[1]);
                 return y(d[1]); 
             })
 
-        // graph.append("svg:path").attr("d", makeline(line.co2));
-
         //  On click start and stop animation
         var pause = false;
-        $( "#go" ).click(function() {
+        $( ".go" ).click(function() {
             pause = false;
             add();
         });
-        $( "#stop" ).click(function() {
+        $( ".stop" ).click(function() {
             pause = true;
         });
 
+        // Make an array to store refactored co2 data
         var temp = []
-
+        // The animation function
         function add() {
             // `addLatLng` takes a new latLng coordinate and puts it at the end of the line. 
             polyline.addLatLng(L.latLng(
@@ -141,12 +180,12 @@ $( document ).ready(function() {
             // Continue to draw and pan the map by calling `add()`until `pointsAdded` reaches 360.
             // if (++pointsAdded < line.coordinates.length) window.setTimeout(add, 10);
 
-            temp.push([pointsAdded, line.co2[pointsAdded]])
-
+            // Push the data to the temp array
+            temp.push([line.datetime[pointsAdded], line.co2[pointsAdded]])
+            // First: add an inital line --> then build onto that line to avoid redrawing the entire thing
             if (temp.length == 2) graph.append("svg:path").attr("d", makeline(temp)).attr("class", "line");
             if (temp.length >2)  graph.select(".line").attr("d", makeline(temp));
-            
-            
+            // Loop through calling the add() function to animate the line
             if(pointsAdded < line.coordinates.length){
                 pointsAdded++;
                 if (pause == false){
@@ -158,130 +197,3 @@ $( document ).ready(function() {
     }); // d3 end
     
 });
-
-        // makeChart();
-        // function makeChart(){
-        //     var m = [0, 0, 35, 35]; // margins
-        //     var chartWidth = $('#linechartwindow').width()
-        //     var chartHeight = $('#linechartwindow').height()
-        //     var x = d3.scale.linear().domain([0,line.co2.length]).range([0, chartWidth-m[3]]);
-        //     var y = d3.scale.linear().domain([0,dataMax]).range([chartHeight,0]);
-
-        //     // create a line function that can convert data[] into x and y points
-        //     var makeline = d3.svg.line()
-        //         // assign the X function to plot our line as we wish
-        //         .x(function(d,i) { 
-        //             // verbose logging to show what's actually being done
-        //             // console.log('Plotting X value for data point: ' + d + ' using index: ' + i + ' to be at: ' + x(i) + ' using our xScale.');
-        //             // return the X coordinate where we want to plot this datapoint
-        //             return x(i); 
-        //         })
-        //         .y(function(d) { 
-        //             // verbose logging to show what's actually being done
-        //             // console.log('Plotting Y value for data point: ' + d + ' to be at: ' + y(d) + " using our yScale.");
-        //             // return the Y coordinate where we want to plot this datapoint
-        //             return y(d); 
-        //         })
-            
-        //     // Add an SVG element with the desired dimensions and margin.
-        //     var graph = d3.select("#linechartwindow").append("svg:svg")
-        //           .attr("width", chartWidth + m[1] + m[3])
-        //           .attr("height", chartHeight + m[0] + m[2])
-        //         .append("svg:g")
-        //           .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
-
-        //     var xAxis = d3.svg.axis()
-        //                .scale(x);
-        //                // .tickvalues();
-        //     var xAxisGroup = graph.append("g")
-        //                 .attr("transform", "translate(" + 0 + "," + chartHeight + ")")
-        //                 .call(xAxis);
-        //     var yAxis = d3.svg.axis()
-        //                .scale(y)
-        //                .ticks(4)
-        //                .orient("left");
-        //     var yAxisGroup = graph.append("g")
-        //                 .attr("transform", "translate(" + 0 + "." + chartWidth+ ")")
-        //                 .call(yAxis); 
-
-        //     // Add the line by appending an svg:path element with the data line we created above
-        //     // do this AFTER the axes above so that the line is above the tick-lines
-        //     graph.append("svg:path").attr("d", makeline(line.co2));
-        // } // end make chart
-
-// latest
-        // makeChart();
-        // function makeChart(){
-        //     var m = [0, 0, 0, 0]; // margins
-        //     var chartWidth = $('#linechartwindow').width()
-        //     var chartHeight = $('#linechartwindow').height()
-        //     var x = d3.scale.linear().domain([0,line.co2.length]).range([0, chartWidth]);
-        //     var y = d3.scale.linear().domain([0,dataMax]).range([chartHeight,chartHeight-100]);
-
-        //     // create a line function that can convert data[] into x and y points
-        //     var makeline = d3.svg.line()
-        //         // assign the X function to plot our line as we wish
-        //         .x(function(d,i) { 
-        //             // verbose logging to show what's actually being done
-        //             // console.log('Plotting X value for data point: ' + d + ' using index: ' + i + ' to be at: ' + x(i) + ' using our xScale.');
-        //             // return the X coordinate where we want to plot this datapoint
-        //             return x(i); 
-        //         })
-        //         .y(function(d) { 
-        //             // verbose logging to show what's actually being done
-        //             // console.log('Plotting Y value for data point: ' + d + ' to be at: ' + y(d) + " using our yScale.");
-        //             // return the Y coordinate where we want to plot this datapoint
-        //             return y(d); 
-        //         })
-        //     // Add an SVG element with the desired dimensions and margin.
-        //     var graph = d3.select("#linechartwindow").append("svg:svg")
-        //           .attr("width", chartWidth + m[1] + m[3])
-        //           .attr("height", chartHeight + m[0] + m[2])
-        //         .append("svg:g")
-        //           .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
-        //     // Add the line by appending an svg:path element with the data line we created above
-        //     // do this AFTER the axes above so that the line is above the tick-lines
-        //     graph.append("svg:path").attr("d", makeline(line.co2));
-
-        // } // end make chart
-
-
-//  OLD
-
-            // //  Create an animated line
-            // var w = 700;
-            // var h = 100;
-
-            // var svg = d3.select("#line")
-            //     .append("svg")
-            //     .attr("width", w)
-            //     .attr("height",h)
-            //     .attr("id","linegraph");
-            // var x = d3.scale.linear()
-            //     .domain([0,line.co2.length()])
-            // var y = d3.scale.linear()
-            //     .domain([0,10])
-            //     .range([dataMin, dataMax])
-            // var line = d3.svg.line()
-            //     .interpolate("cardinal")
-            //     .x(function(d,i){
-            //         return x(i); })
-            //     .y(function(d){
-            //         return y(d);})
-            // var path = svg.append("path")
-            //     .attr("d", line(line.co2))
-            //     .attr("stroke", "steelblue")
-            //     .attr("stroke-width", "2")
-            //     .attr("fill", "none");
-            // var totalLength = path.node().getTotalLength();
-            // path
-            //   .attr("stroke-dasharray", totalLength + " " + totalLength)
-            //   .attr("stroke-dashoffset", totalLength)
-            //   .transition()
-            //     .duration(2000)
-            //     .ease("linear")
-            //     .attr("stroke-dashoffset", 0);
-
-
-
-
