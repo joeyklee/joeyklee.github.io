@@ -1,0 +1,106 @@
+@import url('http://fonts.googleapis.com/css?family=Oswald:400,700|Open+Sans:200,400,600,800');
+
+body {
+ margin:0; 
+ padding:0; 
+ }
+
+ 
+body> #map { 
+  position:absolute;
+  top:0; 
+  bottom:0; 
+  width:100%; 
+}
+  
+#timerwindow{
+  top:20px;
+  height:55px;
+  background-color: rgba(0,0,0,0.1);
+  color:black;
+  text-align: center;
+  font-family: 'Oswald';
+  font-size: 24px;
+}
+
+#linechart{
+  height:150px;
+}
+
+#linechartwindow{
+  bottom: 20px;
+  background-color: rgba(0,0,0,0.5);
+}
+
+/*#go{
+  top:100px;
+  background-color: rgba(255,0,0,0.1);
+}*/
+/*#stop{
+  right:20px;
+}*/
+
+path {
+  /*stroke: steelblue;*/
+  stroke:red;
+  stroke-width: 2;
+  fill: none;
+}
+
+/* --- disclaier --- */
+.center {
+  margin: auto;
+  width: 80%;
+  text-align: center;
+}
+
+.disclaimer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 5;
+}
+
+.disclaimer.clicked {
+  -webkit-animation: byebye 1.1s;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes byebye {
+  0% {opacity: 1.0; }
+  85% {z-index: 0; }
+  90% {opacity: 0.0; }
+  100% {z-index: -1; }
+}
+
+.he {
+  position: relative;
+  font-family: 'Oswald', sans-serif;
+  font-size: 72px;
+  width: 750;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 700;
+  letter-spacing: 2px;
+  opacity: 1.0;
+  color: white;
+  text-align: center;
+  top: 75px;
+}
+
+.he2 {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Open+Sans', sans-serif;
+  font-size: 16pt;
+  font-weight: 200;
+  color: white;
+  width: 725px;
+  letter-spacing: 1px;
+  line-height: 150%;
+  top: 150px;
+  text-align: justify;
+}
