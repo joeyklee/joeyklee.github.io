@@ -242,7 +242,7 @@ $( document ).ready(function() {
             d3.select("#co2text").text("CO2: "+ line.co2[pointsAdded].toString());
 
             // Pan the map along with where the line is being added.
-            if (pointsAdded % 13 ==0) map.setView([line.coordinates[pointsAdded][1],line.coordinates[pointsAdded][0]], 12);
+            if (pointsAdded % 5 ==0) map.setView([line.coordinates[pointsAdded][1],line.coordinates[pointsAdded][0]], 12);
             // Continue to draw and pan the map by calling `add()`until `pointsAdded` reaches 360.
             // if (++pointsAdded < line.coordinates.length) window.setTimeout(add, 10);
 
@@ -256,7 +256,7 @@ $( document ).ready(function() {
             if(pointsAdded < line.coordinates.length){
                 pointsAdded++;
                 if (pause == false){
-                    window.setTimeout(add, 10);
+                    window.setTimeout(add, 50);
                 }
             }
         } // add function end
