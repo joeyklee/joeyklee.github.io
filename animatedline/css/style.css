@@ -5,27 +5,29 @@ body {
  padding:0; 
  }
 
- 
-body> #map { 
+body>#map { 
   position:absolute;
   top:0; 
   bottom:0; 
   width:100%; 
 }
 
-.header2{
+.header1 h1{
   font-size:50px;
   font-family: 'Oswald';
+  font-weight: 700;
 }
-.p1{
+.p1 p{
   font-size:18px;
   font-family: 'Oswald';
+  /*font-weight: 700;*/
 }
 
 #timerwindow{
   top:20px;
+  padding-top: 20px;
   height:55px;
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(0,0,0,0.2);
   color:black;
   text-align: center;
   font-family: 'Oswald';
@@ -37,17 +39,62 @@ body> #map {
 }
 
 #linechartwindow{
-  bottom: 20px;
-  background-color: rgba(0,0,0,0.1);
+  height: 200px;
+  bottom:10px;
+  /*width:60%;*/
+  background-color: rgba(255,255,255,0.7);
 }
 
 
-path {
+#sidecontrol{
+  height:100%;
+  background-color:  #CCE0F5;
+  opacity:0.5;
+  z-index:1;
+}
+
+
+#toplogo, {
+  text-align: center;
+}
+#toplogo h2{
+  font-size: 28px;
+  font-family: 'Oswald';
+  font-weight: 900;
+}
+#toplogo h3{
+  font-size: 18px;
+  font-family: 'Oswald';
+  font-weight: 200;
+}
+
+#learnmore, #go, #stop{
+  background-color: rgba(255,255,255,0.5);
+  top:15px;
+  text-align: center;
+}
+#learnmore, #go, #stop, h3{
+  font-size: 24px;
+  font-family: 'Oswald';
+  font-weight: 500;
+}
+h3:hover{
+  font-size: 24px;
+  font-family: 'Oswald';
+  font-weight: 700;
+  cursor:pointer;
+  cursor:hand;
+  color: #FF4719; 
+  /*color: #05AC96;*/
+}
+
+path{
   /*stroke: steelblue;*/
-  stroke:red;
+  stroke:#FF4719;
   stroke-width: 2;
   fill: none;
 }
+
 
 /* --- disclaimer --- */
 .enter {
@@ -64,7 +111,8 @@ path {
   z-index:5;
 }
 .enter p:hover {
-  color: #05AC96;
+  color: #FF4719; 
+  /*color: #05AC96;*/
   cursor: pointer;
   cursor: hand;
   }
@@ -74,7 +122,7 @@ path {
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.85);
   z-index: 5;
 }
 
