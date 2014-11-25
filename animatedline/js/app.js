@@ -173,7 +173,7 @@ $( document ).ready(function() {
                     line.coordinates[pointsAdded][0]));
             // Print the co2 values to the screen
             // $('#timer p1').text("CO2: "+ line.co2[pointsAdded].toString() + " PPM");
-            $('#timer p2').text(line.datetime[pointsAdded]);
+            $('#timer p1').text(line.datetime[pointsAdded]);
 
             // Pan the map along with where the line is being added.
             if (pointsAdded % 5 ==0) map.setView([line.coordinates[pointsAdded][1],line.coordinates[pointsAdded][0]], 12);
