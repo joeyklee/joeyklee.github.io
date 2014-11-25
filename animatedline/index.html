@@ -21,44 +21,89 @@
         
     </head>
     <body>
+        <!-- Map -->
         <div id='map'></div>
+        <!-- on/off buttons -->
+        <div class='go'></div>
+        <div vlass='stop'></div>
+
+        <!-- Sidecontrol -->
+       <!--  <div class="col0 pin-right" id='sidecontrol'></div> -->
+
+        <!-- Upper right logo -->
+        <div class="col3 pin-topleft margin1 fill-none pad1" id="toplogo">
+            <h2> Visualizing Your City CO<sub>2</sub></h2>
+            <h3> A Mobile Sensing Approach</h3>
+        </div>
+        <div class="col2 pin-topleft pad2 margin6 fill-none" id="learnmore">
+            <h3>Learn More</h3>
+        </div>
+        <div class="col1 pin-topleft pad2 margin4 fill-none" id="go">
+            <h3> Play</h3>
+        </div>
+        <div class="col1 pin-topleft pad2 margin5 fill-none" id="stop">
+            <h3> Pause</h3>
+        </div>
+
+        <!-- the timer window -->
+        <!-- <div class='row2 col4 pin-topleft pad0 fill-none dark margin6' id="timerwindow">
+            <div id='timer'>
+                <p1>    </p1>
+            </div>
+        </div> -->
+
+        <!-- The linechart window -->
+        <div class='row4 col10 pin-bottomleft pad4 fill-none dark' id="linechartwindow">
+            <div></div>
+        </div>
 
         <!-- disclaimer -->
-        <div class='disclaimer'>
-            <div class="he">Urban CO<sub>2</sub> Emissions</div>
-            <div class="he2"><b>Mobile Emissions Mapping</b>: Currently, the tools don't exist to monitor and map greenhouse gases (GHGs) at the local to city scale, particularly for CO<sub>2</sub>. At UBC, we're developing sensors that can be attached to vehicles and bikes so that we can map GHGs at policy relevant scales, from your community to the metropolitan region. By capturing these microscale concentrations we might be able to develop strategies to reduce our impact on the environment.</div>
+       <div class='disclaimer'>
+            <div class="he">Visualizing Your City CO<sub>2</sub></div>
+            <div class="he2"><b></b>A Mobile Sensing Approach: Currently, the tools don't exist to monitor and map greenhouse gases (GHGs) in cities, particularly for CO<sub>2</sub>. At UBC, we're developing sensors that can be attached to vehicles and bikes so that we can map GHGs at policy relevant scales, from your community to the metropolitan region. By capturing these microscale concentrations we might be able to develop strategies to reduce our impact on the environment. Check out this animated visualization of CO<sub>2</sub> measurements taken from one of our mobile sensors.</div>
             <div class = 'enter'>
-                <!-- <img src="img/icon_5670.png" width='125px'> <br> -->
+                
                 <p> GO! <p>
             </div>
         </div>
 
+
         <!-- TODO: Add info sidebar - closed on open -->
         <div id='info'></div>
         <div id="sidebar">
-            <h2 class='header2'> <b> Play the Animation </b></h2>
-                <p class = 'p1'>Pause and play this animation of several hours of CO<sub>2</sub> measurements taken over several days while driving around the Metro Vancouver Area. </p>
-                <p class = 'p1'>The graph shows CO<sub>2</sub> concentrations measured in parts per million (PPM). </p>
 
-            <h2 class='header2'> <b> A Mobile CO<sub>2</sub> Monitoring Platform </b></h2>
+            <h1 class='header1'> <b> Background </b></h1>
                 <p class='p1'> The global average CO<sub>2</sub>  mixing ratio is 397.8 ppm. This means that globally, this is the baseline of CO<sub>2</sub> concentrations in the atmosphere. Any measured value above this level is CO<sub>2</sub>  that is put into the atmosphere through fossil fuel combustion from heating, ventilation, and cooling systems, transportation, industrial processes, human respiration, and to a lesser degree plant respiration. </p>
-
+                <center> 
+                    <br>
+                    <img src="img/co2model.png" width="211" height="105"> <br>
+                    Modeled global CO<sub>2</sub> emissions. Source: NASA 
+                </center>
+                <br>
                 <p class='p1'>However, the current tools monitoring our GHG emissions can not give us feedback at the spatial scales we can relate to and plan around. Traditional methods operate at coarse spatial resolutions (e.g. measured from space over thousands of kilometers) or at sparsely located fixed points.How can we as communities and individuals begin to make more conscious decisions about reducing our emissions if we dont have the tools to take ownership of our emissions?</p>
-
+            <br> 
+            <h1 class='header1'> <b> A Mobile CO<sub>2</sub> Monitoring Platform </b></h1>
                 <p class='p1'>Given improvements in technology and the growth of the opensource community, new opportunities exist to help benchmarch our emissions in our communities. Using a mobile approach to sensing and monitoring emissions, we can use cars and bikes to measure greenhouse gas concentrations at a local level/neighborhood level.</p> 
                 <br>
                 <img src="img/sensor-system.png" id="sensorsystem">
                 <p><center>Basic Schematic diagram of compact, mobile CO<sub>2</sub> sensor platform</center> </p>
                 <br>
 
-                <p class='p1'>Reducing GHG emissions will be critical for mitigating global climate uncertainty. When looking at the measured emissions a long the various routes, notice where concentrations might be high or low. Do you notice any trends or patterns?</p>
+                <p class='p1'>Reducing GHG emissions will be critical for mitigating global climate uncertainty. When looking at the measured emissions along the various routes, notice where concentrations might be high or low. Do you notice any trends or patterns?</p>
 
+            <br>
+            <h1 class='header1'> <b> Play the Animation </b></h1>
+                <p class = 'p1'>Pause and play this animation of several hours of CO<sub>2</sub> concentrations measurements (measured in parts per million) taken over several days while driving around the Metro Vancouver Area. </p>
+                <p class = 'p1'>Disclaimer: The data shown was not collected continuously and is not conclusive. </p>
+
+            <br>
             <h2 class='header2'> <b> Funding and Support by: </b></h2>
             <p class='p1'>
                 <ul class='p1'>
                     <li class='p1'> 
                         <center> 
-                            <img src="img/tweb.png" width="258" height="84"> <br>
+                            <br>
+                            <img src="img/tweb.png" width="129" height="42"> <br>
                             Terrestrial Research on Ecosystems & World-wide Education & Broadcast (TerreWEB)
                         </center>
                     </li>
@@ -71,6 +116,8 @@
                     </li>
                 </ul>
             </p>
+
+            <br>
             <h2 class='header2'> <b> Credits:</b></h2>
             <p class='p1'>
                 <ul class='p1'> 
@@ -80,21 +127,30 @@
             </p>
         </div>
   
-        <!-- on/off buttons -->
-        <div class='go'></div>
-        <div vlass='stop'></div>
+        
 
-        <!-- the timer window -->
-        <div class='row2 col4 pin-right pad0 fill-none dark margin4r' id="timerwindow">
-            <div id='timer'>
-                <p1>    </p1>
+        <!-- <div class='row4 col12 pin-bottom clearfix fill-none' id="bottombox">
+
+            <div class='row4 pin-left pad4 fill-none dark' id="linechartwindow">
+                
             </div>
-        </div>
 
-        <!-- The linechart window -->
-        <div class='row4 col10 pin-bottomright pad2 fill-none dark margin1r' id="linechartwindow">
-            <div></div>
-        </div>
+            <div class='row4 pin-right pad2 fill-none dark' id="bottomlogo">
+                <center> 
+                            <img src="img/tweb.png" width="258" height="84"> <br>
+                            Terrestrial Research on Ecosystems & World-wide Education & Broadcast (TerreWEB)
+                        </center>
+            </div>
+        </div> -->
+
+    
+
+
+
+
+              
+
+        <!-- </div>  -->
 
 
         <!-- mapbox -->
