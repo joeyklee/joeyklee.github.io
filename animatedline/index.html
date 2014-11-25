@@ -8,17 +8,17 @@
         <!-- mapbox -->
         <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css' rel='stylesheet' />
         <link href='https://www.mapbox.com/base/latest/base.css' rel='stylesheet' />
+        <!-- Side bar -->
+        <link rel="stylesheet" href="css/L.Control.Sidebar.css" />
         <!-- bootstrap -->
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
         <!-- proj css -->
         <link rel="stylesheet" type="text/css" href="css/style.css">
-
         <!-- Oswald and Open Sans font -->
         <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
 
-        <!-- Side bar -->
-        <link rel="stylesheet" href="css/L.Control.Sidebar.css" />
+        
     </head>
     <body>
         <div id='map'></div>
@@ -26,7 +26,7 @@
         <!-- disclaimer -->
         <div class='disclaimer'>
             <div class="he">Urban CO<sub>2</sub> Emissions</div>
-            <div class="he2"><b>Mobile Emissions Mapping</b>: Currently, the tools don't exist to monitor and map Greenhouse Gases (GHGs) at the local to city scale. At UBC, we're developing sensors that can be attached to vehicles and/bikes to map GHG at policy relevant scales. </div>
+            <div class="he2"><b>Mobile Emissions Mapping</b>: Currently, the tools don't exist to monitor and map greenhouse gases (GHGs) at the local to city scale, particularly for CO<sub>2</sub>. At UBC, we're developing sensors that can be attached to vehicles and bikes so that we can map GHGs at policy relevant scales, from your community to the metropolitan region. By capturing these microscale concentrations we might be able to develop strategies to reduce our impact on the environment.</div>
             <div class = 'enter'>
                 <!-- <img src="img/icon_5670.png" width='125px'> <br> -->
                 <p> GO! <p>
@@ -36,12 +36,48 @@
         <!-- TODO: Add info sidebar - closed on open -->
         <div id='info'></div>
         <div id="sidebar">
-            <h2 class='header2'>A Mobile CO<sub>2</sub> Monitoring Platform</h2>
-                <p class='p1'> The global average CO2 mixing ratio is 397.8 ppm. This means that globally, this is the baseline of CO2 in the atmosphere. Any measured value above this level is CO2 that is put into the atmosphere through fossil fuel combustion from heating, ventilation, and cooling systems, transportation, industrial processes, human respiration, and to a lesser degree plant respiration. </p>
+            <h2 class='header2'> <b> Play the Animation </b></h2>
+                <p class = 'p1'>Pause and play this animation of several hours of CO<sub>2</sub> measurements taken over several days while driving around the Metro Vancouver Area. </p>
+                <p class = 'p1'>The graph shows CO<sub>2</sub> concentrations measured in parts per million (PPM). </p>
 
-                <p class='p1'>Research by the Urban Climate Group at University of British Columbia is currently focused on trying to understand the complex interplay between the social and physical dimensions of cities that result in their increased emissions. They are particularly interested to map the spatial and temporal dimensions of emissions so that cities - their governments and residents - can begin to find ways to reduce emissions and build more sustainable and liveable cities.</p>
+            <h2 class='header2'> <b> A Mobile CO<sub>2</sub> Monitoring Platform </b></h2>
+                <p class='p1'> The global average CO<sub>2</sub>  mixing ratio is 397.8 ppm. This means that globally, this is the baseline of CO<sub>2</sub> concentrations in the atmosphere. Any measured value above this level is CO<sub>2</sub>  that is put into the atmosphere through fossil fuel combustion from heating, ventilation, and cooling systems, transportation, industrial processes, human respiration, and to a lesser degree plant respiration. </p>
 
-                <p class='p1'>Reducing GHG emissions will be critical for mitigating global climate uncertainty. When looking at the measured emissions a long the various routes, notice where emissions might be high or low. Do you notice any trends or patterns? Do you notice anything surprising? Can you imagine what the map would look like if it were completely sampled?</p>
+                <p class='p1'>However, the current tools monitoring our GHG emissions can not give us feedback at the spatial scales we can relate to and plan around. Traditional methods operate at coarse spatial resolutions (e.g. measured from space over thousands of kilometers) or at sparsely located fixed points.How can we as communities and individuals begin to make more conscious decisions about reducing our emissions if we dont have the tools to take ownership of our emissions?</p>
+
+                <p class='p1'>Given improvements in technology and the growth of the opensource community, new opportunities exist to help benchmarch our emissions in our communities. Using a mobile approach to sensing and monitoring emissions, we can use cars and bikes to measure greenhouse gas concentrations at a local level/neighborhood level.</p> 
+                <br>
+                <img src="img/sensor-system.png" id="sensorsystem">
+                <p><center>Basic Schematic diagram of compact, mobile CO<sub>2</sub> sensor platform</center> </p>
+                <br>
+
+                <p class='p1'>Reducing GHG emissions will be critical for mitigating global climate uncertainty. When looking at the measured emissions a long the various routes, notice where concentrations might be high or low. Do you notice any trends or patterns?</p>
+
+            <h2 class='header2'> <b> Funding and Support by: </b></h2>
+            <p class='p1'>
+                <ul class='p1'>
+                    <li class='p1'> 
+                        <center> 
+                            <img src="img/tweb.png" width="258" height="84"> <br>
+                            Terrestrial Research on Ecosystems & World-wide Education & Broadcast (TerreWEB)
+                        </center>
+                    </li>
+
+                    <li class='p1'>
+                        <center>
+                            <img src="img/GEOGlogo.png" width="120" height="100"> <br>
+                            UBC Geography
+                        </center>
+                    </li>
+                </ul>
+            </p>
+            <h2 class='header2'> <b> Credits:</b></h2>
+            <p class='p1'>
+                <ul class='p1'> 
+                    <li class='p1'> Visualization: Joey Lee </li>
+                    <li class='p1'> Team: Andreas Christen, Zoran Nesic, & Rick Ketler</li>
+                </ul>
+            </p>
         </div>
   
         <!-- on/off buttons -->
@@ -52,7 +88,6 @@
         <div class='row2 col4 pin-right pad0 fill-none dark margin4r' id="timerwindow">
             <div id='timer'>
                 <p1>    </p1>
-                <p2>    </p2>
             </div>
         </div>
 
@@ -70,7 +105,6 @@
         <script src="http://d3js.org/d3.v3.min.js"></script>
         <!-- side bar js -->
         <script src="js/L.Control.Sidebar.js"></script>
-
         <!-- bootstrap -->
         <!-- // <script src = "js/bootstrap.min.js"></script> -->
         <!-- app -->
