@@ -82,63 +82,8 @@ body>#map {
   color: #26b99a; 
 }
 
+/*https://github.com/novus/nvd3/issues/365*/
 .leaflet-overlay-pane svg {
     width: auto;
     height: auto;
 }
-
-
-/*.leaflet-control-layers.leaflet-control {
-display: none;
-}*/
-
-
-/*  --- not used ---- */
-/*
-#infosidebox1{
-  background-color: #fff;
-  opacity:0.85;
-}
-#infosidebox1 h1{
-  font-size:20px;
-  font-family: 'Oswald';
-  font-weight: 600;
-  text-align: center;
-}
-#infosidebox1 p{
-  font-size:14px;
-  font-family: 'Helvetica';
-}
-#infosidebox2{
-  background-color: #fff;
-  opacity:0.85;
-  text-align: center;
-}
-#infosidebox2 h1{
-  font-size:16px;
-  font-family: 'Oswald';
-  font-weight: 600;
-  text-align: center;
-}
-
-#infosidebox3{
-  background-color: #fff;
-  opacity:0.85;
-  text-align: center;
-}
-#infosidebox3 h1{
-  font-size:16px;
-  font-family: 'Oswald';
-  font-weight: 600;
-  text-align: center;
-}
-#pietemp{
-  height:100%;
-  width:100%;
-}
-
-#infobottom{
-  border-top: solid 2px #000;
-  background-color: #fff;
-  opacity: 0.75;
-}*/
