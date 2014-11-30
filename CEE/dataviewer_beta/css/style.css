@@ -82,7 +82,10 @@ body>#map {
   color: #26b99a; 
 }
 
-
+.leaflet-overlay-pane svg {
+    width: auto;
+    height: auto;
+}
 
 
 /*.leaflet-control-layers.leaflet-control {
