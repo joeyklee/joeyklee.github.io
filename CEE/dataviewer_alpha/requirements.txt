@@ -1,0 +1,7 @@
+Map UI Ideas:
+
++ Map should limit number of layers possible (Max 2)
+
++ Option should be available to change the basemap
+
++ 
