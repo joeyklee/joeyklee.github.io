@@ -147,7 +147,7 @@ $(document).ready(function(){
         }
     });
 
-
+    // ---------------- industrial hydro ------------------ //
     // --- Industrial Layer --- //
     d3.json("data/industrial.geojson", function(data) {
         // console.log(data);
@@ -236,67 +236,211 @@ $(document).ready(function(){
 
 
     // ---------------- Donut chart ----------------- //
-    // Donut chart example
-    nv.addGraph(function() {
-      var chart = nv.models.pieChart()
-          .x(function(d) { return d.label })
-          .y(function(d) { return d.value })
-          .margin({top: -10, right: -10, bottom:-10, left: -10})
-          .showLegend(false)
-          .showLabels(true)     //Display pie labels
-          .labelThreshold(.05)  //Configure the minimum slice size for labels to show up
-          .labelType("percent") //Configure what type of data to show in the label. Can be "key", "value" or "percent"
-          .donut(true)          //Turn on Donut mode. Makes pie chart look tasty!
-          .donutRatio(0.35)     //Configure how big you want the donut hole size to be.
-          ;
+    d3.json('data/metrovan_sector_ceei_pie.geojson', function(data){
+        // console.log(data);
 
-        d3.select("#pietemp")
-            .datum(exampleData())
-            .transition().duration(350)
-            .style({ 'width': '100%', 'height': '100%' })
-            .style("padding", "0")
-            .call(chart);
+        var svgstyle = function style(feature) {
+            return {
+                fillColor: "#fff",
+                weight: 1,
+                opacity: 0.75,
+                color: 'white',
+                // dashArray: '3',
+                fillOpacity: 0
+            };
+        }
 
-      return chart;
-    });
+        function highlightFeature(e) {
+            var layer = e.target;
 
-    function exampleData() {
-      return  [
-          { 
-            "label": "One",
-            "value" : 29.765957771107
-          } , 
-          { 
-            "label": "Two",
-            "value" : 0
-          } , 
-          { 
-            "label": "Three",
-            "value" : 32.807804682612
-          } , 
-          { 
-            "label": "Four",
-            "value" : 196.45946739256
-          } , 
-          { 
-            "label": "Five",
-            "value" : 0.19434030906893
-          } , 
-          { 
-            "label": "Six",
-            "value" : 98.079782601442
-          } , 
-          { 
-            "label": "Seven",
-            "value" : 13.925743130903
-          } , 
-          { 
-            "label": "Eight",
-            "value" : 5.1387322875705
-          }
-        ];
-    }
+            layer.setStyle({
+                weight: 2,
+                opacity: 0.85,
+                color: '#fff',
+                dashArray: '',
+                fillOpacity: 0
+            });
+
+            if (!L.Browser.ie && !L.Browser.opera) {
+                layer.bringToFront();
+            }
+        }
+
+        function resetHighlight(e) {
+            geojson.resetStyle(e.target);
+        }
+
+        // TODO: Add graph on click event
+        function makegraph(e){
+            console.log(e.target.feature.properties);
+
+            var temp = e.target.feature.properties;
+            delete temp.city;
+            console.log(temp)
+
+            var keys = [];
+            for(var k in temp) keys.push(k);
+
+            var dat = [];
+            for (var i in temp) dat.push(temp[i]);
+
+            var listOfObjects = [];
+            for(var i = 0; i < keys.length; i++){
+                var singleObj = {}
+                singleObj['label'] = keys[i];
+                singleObj['value'] = dat[i];
+                listOfObjects.push(singleObj);
+            }
+            // Donut chart example
+            var energypie = nv.addGraph(function() {
+              var chart = nv.models.pieChart()
+                  .x(function(d) { return d.label })
+                  .y(function(d) { return d.value })
+                  .margin({top: -10, right: -10, bottom:-10, left: -10})
+                  .showLegend(false)
+                  .showLabels(true)     //Display pie labels
+                  .labelThreshold(.05)  //Configure the minimum slice size for labels to show up
+                  .labelType("percent") //Configure what type of data to show in the label. Can be "key", "value" or "percent"
+                  .donut(true)          //Turn on Donut mode. Makes pie chart look tasty!
+                  .donutRatio(0.35)     //Configure how big you want the donut hole size to be.
+                  ;
+
+                d3.select("#pietemp")
+                    .datum(listOfObjects)
+                    .transition().duration(350)
+                    .style({ 'width': '100%', 'height': '100%' })
+                    .style("padding", "0")
+                    .call(chart);
+
+              return chart;
+            }); // nvd3 end
+        }
 
 
+        function onEachFeature(feature, layer) {
+            layer.on({
+                mouseover: highlightFeature,
+                mouseout: resetHighlight,
+                click: makegraph
+            });
+        }
 
+        geojson = L.geoJson(data, {
+            style: svgstyle,
+            onEachFeature: onEachFeature
+        }).addTo(map);
+
+    }); // d3 end
+
+
+    
+
+
+    
+    // d3.json('data/metrovan_sector_ceei_pie.geojson', function(data){
+    //     // console.log(data);
+    //     // console.log(data.features[1].properties);
+
+    //     var temp = data.features[1].properties;
+    //     delete temp.city;
+    //     // console.log(temp);
+
+    //     var keys = [];
+    //     for(var k in temp) keys.push(k);
+    //     // console.log(keys.length);
+
+    //     var dat = [];
+    //     for (var i in temp) dat.push(temp[i]);
+    //     // console.log(dat);
+
+    //     var listOfObjects = [];
+    //     for(var i = 0; i < keys.length; i++){
+    //         var singleObj = {}
+    //         singleObj['label'] = keys[i];
+    //         singleObj['value'] = dat[i];
+    //         listOfObjects.push(singleObj);
+    //     }
+
+    //     console.log(listOfObjects);
+
+    //     // Donut chart example
+    //     var energypie = nv.addGraph(function() {
+    //       var chart = nv.models.pieChart()
+    //           .x(function(d) { return d.label })
+    //           .y(function(d) { return d.value })
+    //           .margin({top: -10, right: -10, bottom:-10, left: -10})
+    //           .showLegend(false)
+    //           .showLabels(true)     //Display pie labels
+    //           .labelThreshold(.05)  //Configure the minimum slice size for labels to show up
+    //           .labelType("percent") //Configure what type of data to show in the label. Can be "key", "value" or "percent"
+    //           .donut(true)          //Turn on Donut mode. Makes pie chart look tasty!
+    //           .donutRatio(0.35)     //Configure how big you want the donut hole size to be.
+    //           ;
+
+    //         d3.select("#pietemp")
+    //             .datum(listOfObjects)
+    //             .transition().duration(350)
+    //             .style({ 'width': '100%', 'height': '100%' })
+    //             .style("padding", "0")
+    //             .call(chart);
+
+    //       return chart;
+    //     }); // nvd3 end
+
+    // }); // d3 end
+    
 }); // docready end
+
+
+// vars of interest: 
+/*
+   Diesel Fue
+   Electricit
+   Gasoline
+   Heating Oi
+   Hybrid
+   Natural Ga
+   Other Fuel
+   Propane
+   Solid Wast
+   Wood
+
+
+*/
+
+// function exampleData() {
+//   return  [
+//       { 
+//         "label": "One",
+//         "value" : 29.765957771107
+//       } , 
+//       { 
+//         "label": "Two",
+//         "value" : 0
+//       } , 
+//       { 
+//         "label": "Three",
+//         "value" : 32.807804682612
+//       } , 
+//       { 
+//         "label": "Four",
+//         "value" : 196.45946739256
+//       } , 
+//       { 
+//         "label": "Five",
+//         "value" : 0.19434030906893
+//       } , 
+//       { 
+//         "label": "Six",
+//         "value" : 98.079782601442
+//       } , 
+//       { 
+//         "label": "Seven",
+//         "value" : 13.925743130903
+//       } , 
+//       { 
+//         "label": "Eight",
+//         "value" : 5.1387322875705
+//       }
+//     ];
+// }
