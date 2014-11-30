@@ -17,19 +17,13 @@ $(document).ready(function(){
             zIndex:1,
 	       attribution: 'Map tiles by CIRs, Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
 	    }).addTo(map); 
-    // var Stamen_TonerBackground = L.tileLayer('http://{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png', {
-    //        attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
-    //        subdomains: 'abcd',
-    //        minZoom: 9,
-    //        maxZoom: 20
-    //    }).addTo(map);
 	// add toner labels
 	var Stamen_TonerLabels = L.tileLayer('http://{s}.tile.stamen.com/toner-labels/{z}/{x}/{y}.png', {
 	    attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
 	    subdomains: 'abcd',
+        zIndex:6,
 	    minZoom: 10,
-	    maxZoom: 15,
-	    zIndex:6
+	    maxZoom: 15
 	}).addTo(map);
     // Roads layer
     var CEE_roads = L.tileLayer('https://tileserver-jklee.rhcloud.com/CEE_V001_grey_roads/{z}/{x}/{y}.png', {
@@ -38,7 +32,6 @@ $(document).ready(function(){
             zIndex:5,
            attribution: 'Map tiles by CIRs, Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
     }).addTo(map);
-
 
 	// --- openshift tiles --- //
     // cloud tiles - tileserver-jklee
@@ -99,6 +92,7 @@ $(document).ready(function(){
     var solarclouds = L.layerGroup([solarTiles, solarGrid, cloudTiles]);
     var biomassag = L.layerGroup([biomassTiles, biomassGrid, agTiles, agGrid]);
     var windgroup = L.layerGroup([windTiles, windGrid]);
+
     var industrialhydro = L.layerGroup([]);
 
 
@@ -108,7 +102,7 @@ $(document).ready(function(){
 		}
 		else{
 			solarclouds.addTo(map);
-            map.setView([49.2503, -123.062], 11);
+            // map.setView([49.2503, -123.062], 10);
 		}
 	});
 
@@ -118,7 +112,7 @@ $(document).ready(function(){
     	}
     	else{
     		biomassag.addTo(map);
-            map.setView([49.156277, -122.895648], 11);
+            // map.setView([49.156277, -122.895648], 10);
     	}
     });
 
@@ -128,7 +122,7 @@ $(document).ready(function(){
     	}
     	else{
     		windgroup.addTo(map);
-            map.setView([49.2503, -123.062], 11);
+            // map.setView([49.2503, -123.062], 10);
     	}
     });
 
@@ -138,7 +132,7 @@ $(document).ready(function(){
     	}
     	else{
     		population.addTo(map);
-            map.setView([49.2503, -123.062], 11);
+            // map.setView([49.2503, -123.062], 10);
     	}
     });
 
@@ -148,14 +142,14 @@ $(document).ready(function(){
         }
         else{
             industrialhydro.addTo(map);
-            map.setView([49.387656, -122.968961], 11);
-
+            // map.setView([49.387656, -122.968961], 10);
+            // console.log('button clicked!')
         }
     });
 
     // --- Industrial Layer --- //
     d3.json("data/industrial.geojson", function(data) {
-        console.log(data);
+        // console.log(data);
         // -------------- Set Scales -------------- //
         // get max and min
         var dataMax = d3.max(data.features, function(d){
@@ -197,7 +191,7 @@ $(document).ready(function(){
 
     // --- Hydro Layer --- // 
     d3.json("data/bchydro_data.geojson", function(data){
-        console.log(data);
+        // console.log(data);
         // console.log("hydro");
         // -------------- Set Scales -------------- //
         // get max and min
@@ -240,6 +234,7 @@ $(document).ready(function(){
 
 
 
+    // ---------------- Donut chart ----------------- //
     // Donut chart example
     nv.addGraph(function() {
       var chart = nv.models.pieChart()
