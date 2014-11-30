@@ -21,9 +21,9 @@ $(document).ready(function(){
 	var Stamen_TonerLabels = L.tileLayer('http://{s}.tile.stamen.com/toner-labels/{z}/{x}/{y}.png', {
 	    attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
 	    subdomains: 'abcd',
-        zIndex:6,
 	    minZoom: 10,
-	    maxZoom: 15
+	    maxZoom: 15,
+	    zIndex:6
 	}).addTo(map);
     // Roads layer
     var CEE_roads = L.tileLayer('https://tileserver-jklee.rhcloud.com/CEE_V001_grey_roads/{z}/{x}/{y}.png', {
@@ -146,6 +146,7 @@ $(document).ready(function(){
             // console.log('button clicked!')
         }
     });
+
 
     // --- Industrial Layer --- //
     d3.json("data/industrial.geojson", function(data) {
