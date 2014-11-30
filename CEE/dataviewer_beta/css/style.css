@@ -1,0 +1,157 @@
+@import url('http://fonts.googleapis.com/css?family=Oswald:400,700|Open+Sans:200,400,600,800');
+
+body {
+ margin:0; 
+ padding:0; 
+ }
+
+body>#map { 
+  position:absolute;
+  top:0; 
+  bottom:0; 
+  width:100%; 
+}
+
+#homelogo{
+  width:100px;
+  height:100px;
+}
+
+#toplogo h1{
+  font-size:33px;
+  font-family: 'Oswald';
+  font-weight: 700;
+}
+#toplogo h3{
+  font-size:16px;
+  font-family: 'Oswald';
+  font-weight: 400;
+}
+
+#infoside{
+  /*height:75%;*/
+  right: 20px;
+  top: 20px;
+  border: solid 2px #000;
+  /*background-color: #fff;
+  opacity:0.75;*/
+  background-color: rgba(255,255,255,0.85);
+  color:#000;
+}
+#infoside h1{
+  font-size:20px;
+  font-family: 'Oswald';
+  font-weight: 600;
+  text-align: center;
+}
+#infoside p{
+  font-size:16px;
+  font-family: 'Helvetica';
+  font-weight: 10;
+  text-align: left;
+}
+
+/*#hover{ font-family: Sans-Serif;
+        position: absolute;
+        color: #2C2C2C;
+        background: white;
+        padding: 10px 25px;
+        border: 2px solid #8DC9D6;
+        border-radius: 4px;
+    }*/
+#infoside img{
+  width:100%;
+  text-align: center;
+}
+
+#pietemp{
+  z-index: 10;
+  display: block;
+  margin:0 auto;
+  padding:0;
+  /*height: 100%;*/
+}
+
+
+#dataselector{
+  /*height:75%;*/
+  left: -50px;
+  top: 150px;
+  /*text-align: center;*/
+}
+.dataselectoritem{
+  /*border: solid 2px #000;*/
+  background: #fff;
+  color:#000;
+  opacity:0.85;
+  padding-top: 10px;
+  padding-bottom:10px;
+  font-size:20px;
+  font-family: 'Oswald';
+  font-weight: 600;
+  text-align: center;
+  /*padding:;*/
+}
+.dataselectoritem:hover{
+  cursor:pointer;
+  cursor:hand;
+  color: #26b99a; 
+}
+
+
+
+
+/*.leaflet-control-layers.leaflet-control {
+display: none;
+}*/
+
+
+/*  --- not used ---- */
+/*
+#infosidebox1{
+  background-color: #fff;
+  opacity:0.85;
+}
+#infosidebox1 h1{
+  font-size:20px;
+  font-family: 'Oswald';
+  font-weight: 600;
+  text-align: center;
+}
+#infosidebox1 p{
+  font-size:14px;
+  font-family: 'Helvetica';
+}
+#infosidebox2{
+  background-color: #fff;
+  opacity:0.85;
+  text-align: center;
+}
+#infosidebox2 h1{
+  font-size:16px;
+  font-family: 'Oswald';
+  font-weight: 600;
+  text-align: center;
+}
+
+#infosidebox3{
+  background-color: #fff;
+  opacity:0.85;
+  text-align: center;
+}
+#infosidebox3 h1{
+  font-size:16px;
+  font-family: 'Oswald';
+  font-weight: 600;
+  text-align: center;
+}
+#pietemp{
+  height:100%;
+  width:100%;
+}
+
+#infobottom{
+  border-top: solid 2px #000;
+  background-color: #fff;
+  opacity: 0.75;
+}*/
