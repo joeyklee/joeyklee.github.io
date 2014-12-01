@@ -6,7 +6,7 @@ $(document).ready(function(){
 	    zoom: 11,
 	    maxZoom:20,
 	    attributionControl:false,
-	    zoomControl:false
+	    zoomControl:true
 	});
 	var info = L.mapbox.infoControl();
 	info.addTo(map);
@@ -45,7 +45,7 @@ $(document).ready(function(){
         });
     biomassGrid.on('mouseover', function (e) {
             if (e.data) {
-                document.getElementById('hover').innerHTML = "Biomass Harvest Potential (tonnes hectares <sup>-1</sup> year<sup>-1</sup>): <br> <center>" + e.data.Biomass + "</center>";
+                document.getElementById('hover').innerHTML = "<center>Biomass Harvest Potential (tonnes hectares <sup>-1</sup> year<sup>-1</sup>): <br> " + e.data.Biomass + "</center>";
             } else {
                 document.getElementById('hover').innerHTML = 'Hover on features';
             }
@@ -57,7 +57,7 @@ $(document).ready(function(){
         });
     solarGrid.on('mouseover', function (e) {
             if (e.data) {
-                document.getElementById('hover').innerHTML = "Solar Radiation Potential (kWh): <br> <center>" + e.data.S_Rad_kWh + "</center";
+                document.getElementById('hover').innerHTML = "<center>Solar Radiation Potential (kWh): <br> " + e.data.S_Rad_kWh + "</center";
             } else {
                 document.getElementById('hover').innerHTML = 'Hover on features';
             }
@@ -69,7 +69,7 @@ $(document).ready(function(){
         });
     agGrid.on('mouseover', function (e) {
             if (e.data) {
-                document.getElementById('hover').innerHTML = "Land Use Category: <br> <center>" + e.data.cat + "</center>";
+                document.getElementById('hover').innerHTML = "<center> Land Use Category: <br> " + e.data.cat + "</center>";
             } else {
                 document.getElementById('hover').innerHTML = 'Hover on features';
             }
@@ -81,7 +81,7 @@ $(document).ready(function(){
         });
     windGrid.on('mouseover', function (e) {
             if (e.data) {
-                document.getElementById('hover').innerHTML = "Average wind speed at 80m (ms<sup>-1</sup>): <br> <center>" + e.data.EU_12031_C + "</center>";
+                document.getElementById('hover').innerHTML = "<center>Average wind speed at 80m height (ms<sup>-1</sup>): <br> " + e.data.EU_12031_C + "</center>";
             } else {
                 document.getElementById('hover').innerHTML = 'Hover on features';
             }
@@ -237,14 +237,31 @@ $(document).ready(function(){
 
     // ---------------- Donut chart ----------------- //
     d3.json('data/metrovan_sector_ceei_pie.geojson', function(data){
-        // console.log(data);
+        console.log(data);
+
+        //  ---- info over hover ---- //
+        // var info = L.control();
+        // info.onAdd = function (map) {
+        //     this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+        //     this.update();
+        //     return this._div;
+        // };
+        // // method that we will use to update the control based on feature properties passed
+        // info.update = function (props) {
+        //     this._div.innerHTML = (props ?
+        //                     '<b>' + props.city + '</b><br />'
+        //                     : 'Hover over a city');
+        //             };
+                    
+
+        // info.addTo(map);
 
         var svgstyle = function style(feature) {
             return {
                 fillColor: "#fff",
                 weight: 1,
                 opacity: 0.75,
-                color: 'white',
+                color: '#fff', //#fff
                 // dashArray: '3',
                 fillOpacity: 0
             };
@@ -256,27 +273,31 @@ $(document).ready(function(){
             layer.setStyle({
                 weight: 2,
                 opacity: 0.85,
-                color: '#fff',
+                color: '#fff', //#fff
                 dashArray: '',
-                fillOpacity: 0
+                fillOpacity: 0.15
             });
 
             if (!L.Browser.ie && !L.Browser.opera) {
                 layer.bringToFront();
             }
+
+            // info.update(layer.feature.properties);
         }
 
         function resetHighlight(e) {
             geojson.resetStyle(e.target);
+            // info.update();
         }
+
+
 
         // TODO: Add graph on click event
         function makegraph(e){
-            console.log(e.target.feature.properties);
-
+            // console.log(e.target.feature.properties);
             var temp = e.target.feature.properties;
             delete temp.city;
-            console.log(temp)
+            // console.log(temp)
 
             var keys = [];
             for(var k in temp) keys.push(k);
@@ -323,6 +344,7 @@ $(document).ready(function(){
                 mouseout: resetHighlight,
                 click: makegraph
             });
+
         }
 
         geojson = L.geoJson(data, {
@@ -331,116 +353,5 @@ $(document).ready(function(){
         }).addTo(map);
 
     }); // d3 end
-
-
-    
-
-
-    
-    // d3.json('data/metrovan_sector_ceei_pie.geojson', function(data){
-    //     // console.log(data);
-    //     // console.log(data.features[1].properties);
-
-    //     var temp = data.features[1].properties;
-    //     delete temp.city;
-    //     // console.log(temp);
-
-    //     var keys = [];
-    //     for(var k in temp) keys.push(k);
-    //     // console.log(keys.length);
-
-    //     var dat = [];
-    //     for (var i in temp) dat.push(temp[i]);
-    //     // console.log(dat);
-
-    //     var listOfObjects = [];
-    //     for(var i = 0; i < keys.length; i++){
-    //         var singleObj = {}
-    //         singleObj['label'] = keys[i];
-    //         singleObj['value'] = dat[i];
-    //         listOfObjects.push(singleObj);
-    //     }
-
-    //     console.log(listOfObjects);
-
-    //     // Donut chart example
-    //     var energypie = nv.addGraph(function() {
-    //       var chart = nv.models.pieChart()
-    //           .x(function(d) { return d.label })
-    //           .y(function(d) { return d.value })
-    //           .margin({top: -10, right: -10, bottom:-10, left: -10})
-    //           .showLegend(false)
-    //           .showLabels(true)     //Display pie labels
-    //           .labelThreshold(.05)  //Configure the minimum slice size for labels to show up
-    //           .labelType("percent") //Configure what type of data to show in the label. Can be "key", "value" or "percent"
-    //           .donut(true)          //Turn on Donut mode. Makes pie chart look tasty!
-    //           .donutRatio(0.35)     //Configure how big you want the donut hole size to be.
-    //           ;
-
-    //         d3.select("#pietemp")
-    //             .datum(listOfObjects)
-    //             .transition().duration(350)
-    //             .style({ 'width': '100%', 'height': '100%' })
-    //             .style("padding", "0")
-    //             .call(chart);
-
-    //       return chart;
-    //     }); // nvd3 end
-
-    // }); // d3 end
     
 }); // docready end
-
-
-// vars of interest: 
-/*
-   Diesel Fue
-   Electricit
-   Gasoline
-   Heating Oi
-   Hybrid
-   Natural Ga
-   Other Fuel
-   Propane
-   Solid Wast
-   Wood
-
-
-*/
-
-// function exampleData() {
-//   return  [
-//       { 
-//         "label": "One",
-//         "value" : 29.765957771107
-//       } , 
-//       { 
-//         "label": "Two",
-//         "value" : 0
-//       } , 
-//       { 
-//         "label": "Three",
-//         "value" : 32.807804682612
-//       } , 
-//       { 
-//         "label": "Four",
-//         "value" : 196.45946739256
-//       } , 
-//       { 
-//         "label": "Five",
-//         "value" : 0.19434030906893
-//       } , 
-//       { 
-//         "label": "Six",
-//         "value" : 98.079782601442
-//       } , 
-//       { 
-//         "label": "Seven",
-//         "value" : 13.925743130903
-//       } , 
-//       { 
-//         "label": "Eight",
-//         "value" : 5.1387322875705
-//       }
-//     ];
-// }
