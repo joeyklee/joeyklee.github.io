@@ -6,7 +6,7 @@ $(document).ready(function(){
 	    zoom: 11,
 	    maxZoom:20,
 	    attributionControl:false,
-	    zoomControl:true
+	    zoomControl: false
 	});
 	var info = L.mapbox.infoControl();
 	info.addTo(map);
