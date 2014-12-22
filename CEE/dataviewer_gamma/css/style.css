@@ -1,0 +1,144 @@
+@import url('http://fonts.googleapis.com/css?family=Oswald:400,700|Open+Sans:200,400,600,800');
+
+html,body {
+ margin:0; 
+ padding:0; 
+ height:100%;
+ width:100%;
+ }
+
+#map { 
+  position:absolute;
+  top:0; 
+  bottom:0; 
+  width:100%; 
+}
+
+.container-fluid{
+  margin-left: 10px;
+  margin-right:10px;
+} 
+
+#homelogo{
+  width:100px;
+  height:100px;
+  top: 20px;
+  /*right:0px;*/
+  z-index: 10;
+}
+
+
+.nopadding {
+   padding: 0 !important;
+   margin-left: 0 !important;
+}
+
+.padding20 {
+   padding: 20 !important;
+   margin: 20 !important;
+}
+
+.temp{
+  background:#fff;
+}
+
+
+#toplogo h1{
+  font-size:28px;
+  font-family: 'Oswald';
+  font-weight: 700;
+}
+#toplogo h3{
+  font-size:18px;
+  font-family: 'Oswald';
+  font-weight: 400;
+}
+
+#infoside{
+  /*right: 20px;*/
+  /*right:100px;*/
+  top: 30px;
+  border: solid 2px #fff;
+  background-color: rgba(255,255,255,0.85);
+  color:#000;
+}
+#infoside h1{
+  font-size:20px;
+  font-family: 'Oswald';
+  font-weight: 400;
+  text-align: center;
+}
+#infoside p{
+  font-size:12px;
+  font-family: 'Helvetica';
+  font-weight: 10;
+  text-align: center;
+}
+
+#infosideheader h1{
+  font-size:26px;
+  font-family: 'Oswald';
+  font-weight: 400;
+  text-align: center;
+  text-decoration: underline;
+}
+
+#instruction{
+  /*text-align: center;*/
+  opacity:0.5;
+}
+
+
+#infoside img{
+  width:100%;
+  text-align: center;
+}
+
+#pietemp{
+  /*z-index: 10;*/
+  display: block;
+  margin:0 auto;
+  padding:0;
+}
+
+
+#dataselector{
+  left: -50px;
+  top: 150px;
+}
+.dataselectoritem{
+  background: #fff; /*#fff*/
+  color:#000;
+  opacity:0.85;
+  padding-top: 10px;
+  padding-bottom:10px;
+  font-size:16px;
+  font-family: 'Oswald';
+  font-weight: 600;
+  text-align: left;
+}
+.dataselectoritem:hover{
+  cursor:pointer;
+  cursor:hand;
+  color: #26b99a; 
+}
+
+/*https://github.com/novus/nvd3/issues/365*/
+.leaflet-overlay-pane svg {
+    width: auto;
+    height: auto;
+}
+
+/* --- info hover */
+.info {
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+.info h4 {
+    margin: 0 0 5px;
+    color: #777;
+}
