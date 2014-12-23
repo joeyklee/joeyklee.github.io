@@ -48,6 +48,7 @@ $(document).ready(function(){
     biomassGrid.on('mouseover', function (e) {
             if (e.data) {
                 document.getElementById('hover').innerHTML = "<center>Biomass Harvest Potential (tonnes hectares <sup>-1</sup> year<sup>-1</sup>): <br> " + e.data.Biomass + "</center>";
+                // document.getElementById('hover').innerHTML = "<center>" + e.data.Biomass +"</center>";
             } else {
                 document.getElementById('hover').innerHTML = 'Hover on features';
             }
@@ -106,7 +107,88 @@ $(document).ready(function(){
     };
     L.control.layers(toggler,null, {position:'bottomleft'}).addTo(map); //bottomright
 
+    // LEGENDs
+    // solar checkbox
+    var legendlayers = ["Solar Potential & Cloud Days","Biomass Potential & Agriculture","Wind Energy"]
+    
 
+    // $( "input:radio:eq(1)").change(function(){
+    //     if (this.checked){
+    //         // solarLegend();
+    //         $('.legend').append('<img id="solarlegend" src="img/SOLAR.png" />')
+    //         map.setView([49.2503, -123.062], 11);
+    //     } else{
+    //         $('.solarlegend').remove()
+    //     }
+    // });
+
+    // console.log($("input:radio:eq(1)"));
+    $("input:radio[name=leaflet-base-layers]").click(function() {
+        var value = $(this).parent().children('span').text();
+        console.log(value);
+
+
+        // Solar & clouds
+        if($.trim(value) === 'Solar Potential & Cloud Days'){
+           console.log('true'); 
+           $('.legend').append('<img class="solarlegend" src="img/SOLAR.png" />');
+           $('.legend').append('<p class="solarlegend"> Modeled solar energy from low (0.2 kWh) to high (1.2 kWh)</p>');
+           map.setView([49.2503, -123.062], 11);
+        } else {
+            console.log('false');
+            $('.solarlegend').remove();
+        }
+        //  biomass & agriculture
+        if($.trim(value) === 'Biomass Potential & Agriculture'){
+           console.log('true'); 
+           $('.legend').append('<img class="biomassag" src="img/BIOMASS.png" />');
+           $('.legend').append('<p class="biomassag"> Modeled harvestable biomass energy from low (29.6 tonnes hectares <sup>-1</sup> year<sup>-1</sup>). to high (342.3 tonnes hectares <sup>-1</sup> year<sup>-1</sup>)</p>');
+           $('.legend').append('<img class="biomassag" src="img/AG.png" />');
+           $('.legend').append('<p class="biomassag"> Agricultural land use types associated with various harvestable energy (e.g. methane production)</p>');
+
+           map.setView([49.281732, -122.831565], 11);
+        } else {
+            console.log('false');
+            $('.biomassag').remove();
+        }
+        //  wind energy
+        if($.trim(value) === 'Wind Energy'){
+           console.log('true'); 
+           $('.legend').append('<img class="wind" src="img/WIND.png" />');
+           $('.legend').append('<p class="wind">Observed average wind speeds at 80m height from low (1.8 ms<sup>-1</sup>) to high (7.8ms<sup>-1</sup>)</p>');
+           map.setView([49.2503, -123.062], 11);
+        } else {
+            console.log('false');
+            $('.wind').remove();
+        }
+
+        // Industrial & Hydro
+        if($.trim(value) === 'Industrial Heat & Hydropower'){
+           console.log('true'); 
+           $('.legend').append('<img class="industrialhydro" src="img/INDUSTRIAL.png" />');
+           $('.legend').append('<p class="industrialhydro">Potential Industrial heat recovery from low (8.0 units) to high (39554.7 units), labeled by industry.</p>');
+           $('.legend').append('<img class="industrialhydro" src="img/HYDRO.png" />');
+           $('.legend').append('<p class="industrialhydro">Potential run-of-river power from low (0.5 units) to high (79.1 units).</p>');
+           map.setView([49.343507, -122.997733], 11);
+        } else {
+            console.log('false');
+            $('.industrialhydro').remove();
+        }
+
+        //  Population Density
+        if($.trim(value) === 'Population Density'){
+           console.log('true'); 
+           $('.legend').append('<img class="pop" src="img/POP.png" />');
+           $('.legend').append('<p class="pop">Population density of Metro Vancouver (Each dot = 1 person).</p>');
+           map.setView([49.212254, -122.951041], 11);
+        } else {
+            console.log('false');
+            $('.pop').remove();
+        }
+
+    });
+
+    
 	// $('#solarclouds').click(function() {
 	// 	if(map.hasLayer(solarclouds)){
 	// 		map.removeLayer(solarclouds);
