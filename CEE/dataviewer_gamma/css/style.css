@@ -72,8 +72,15 @@ html,body {
   font-size:12px;
   font-family: 'Helvetica';
   font-weight: 10;
-  text-align: center;
+  text-align: left;
 }
+#infoside h2{
+  font-size:16px;
+  font-family: 'Helvetica';
+  font-weight: 10;
+  text-align: left;
+}
+
 
 #infosideheader h1{
   font-size:26px;
@@ -82,6 +89,15 @@ html,body {
   text-align: center;
   text-decoration: underline;
 }
+
+/*#infosideheader h2{
+  font-size:18px;
+  font-family: 'Oswald';
+  font-weight: 400;
+  text-align: center;
+  text-decoration: underline;
+}*/
+
 
 #instruction{
   /*text-align: center;*/
