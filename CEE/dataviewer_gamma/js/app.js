@@ -250,25 +250,8 @@ $(document).ready(function(){
 
 
     // ---------------- Donut chart ----------------- //
-    d3.json('data/metrovan_sector_ceei_pie.geojson', function(data){
+    d3.json('data/ceei_2010_metrovan_formatted.geojson', function(data){
         console.log(data);
-
-        //  ---- info over hover ---- //
-        // var info = L.control();
-        // info.onAdd = function (map) {
-        //     this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
-        //     this.update();
-        //     return this._div;
-        // };
-        // // method that we will use to update the control based on feature properties passed
-        // info.update = function (props) {
-        //     this._div.innerHTML = (props ?
-        //                     '<b>' + props.city + '</b><br />'
-        //                     : 'Hover over a city');
-        //             };
-                    
-
-        // info.addTo(map);
 
         var svgstyle = function style(feature) {
             return {
@@ -310,7 +293,7 @@ $(document).ready(function(){
         function makegraph(e){
             // console.log(e.target.feature.properties);
             var temp = e.target.feature.properties;
-            delete temp.city;
+            delete temp.metroname;
             // console.log(temp)
 
             var keys = [];
