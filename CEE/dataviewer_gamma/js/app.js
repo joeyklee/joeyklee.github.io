@@ -251,7 +251,7 @@ $(document).ready(function(){
 
     // ---------------- Donut chart ----------------- //
     d3.json('data/ceei_2010_metrovan_formatted.geojson', function(data){
-        console.log(data);
+        // console.log(data);
 
         var svgstyle = function style(feature) {
             return {
@@ -287,20 +287,16 @@ $(document).ready(function(){
             // info.update();
         }
 
-
-
-        // TODO: Add graph on click event
-        function makegraph(e){
-            // console.log(e.target.feature.properties);
+        function makegraph(e){     
             var temp = e.target.feature.properties;
-            delete temp.metroname;
-            // console.log(temp)
+            // delete temp.metroname;
+            document.getElementById('piecity').innerHTML = temp.metroname
 
             var keys = [];
-            for(var k in temp) keys.push(k);
+            for(var k in temp) if(k !== "metroname") keys.push(k);
 
             var dat = [];
-            for (var i in temp) dat.push(temp[i]);
+            for (var i in temp) if(i !== "metroname") dat.push(temp[i]);
 
             var listOfObjects = [];
             for(var i = 0; i < keys.length; i++){
