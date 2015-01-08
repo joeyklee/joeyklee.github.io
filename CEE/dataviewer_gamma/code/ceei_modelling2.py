@@ -55,7 +55,7 @@ def main():
 	newdata_pivot.to_csv('/Users/Jozo/Dropbox/UBC/cirs/energyexplorer/data/optimized/energy/consumption/ceei_2010_metrovan_grouped_metronames_formatted.csv', index='metroname')
 
 	''' --- merge with shapefile --- '''
-	metrovan =  GeoDataFrame.from_file('/Users/Jozo/Dropbox/UBC/cirs/energyexplorer/data/optimized/metroVan/formatted_metroVan.shp')
+	metrovan =  GeoDataFrame.from_file('/Users/Jozo/Dropbox/UBC/CIRs/EnergyExplorer/data/optimized/metroVan/metroVan.shp')
 	joindata = pd.read_csv('/Users/Jozo/Dropbox/UBC/cirs/energyexplorer/data/optimized/energy/consumption/ceei_2010_metrovan_grouped_metronames_formatted.csv', header=False)
 
 	output = GeoDataFrame.merge(metrovan, joindata, left_on="NAMEMUNI", right_on="metroname")
