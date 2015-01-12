@@ -96,7 +96,7 @@ $(document).ready(function(){
     var biomassag = L.layerGroup([biomassTiles, biomassGrid, agTiles, agGrid]);
     var windgroup = L.layerGroup([windTiles, windGrid]);
 
-    var industrialhydro = L.layerGroup([]);
+    var industrialhydro = L.featureGroup([]).bringToFront();
 
     var toggler = {
         "Solar Potential & Cloud Days": solarclouds,
@@ -118,6 +118,8 @@ $(document).ready(function(){
         if($.trim(value) === 'Solar Potential & Cloud Days'){
            $('.legend').append('<img class="solarlegend" src="img/SOLAR.png" />');
            $('.legend').append('<p class="solarlegend"> Modeled solar energy from low (0.2 kWh) to high (1.2 kWh)</p>');
+           $('.legend').append('<img class="solarlegend" src="img/clouds_legend.png" />');
+           $('.legend').append('<p class="solarlegend"> Modeled cloud days from low (192 days) to high (304 days)</p>');
            map.setView([49.2503, -123.062], 11);
         } else {
             $('.solarlegend').remove();
@@ -274,10 +276,10 @@ $(document).ready(function(){
                 dashArray: '',
                 fillOpacity: 0
             });
-
-            if (!L.Browser.ie && !L.Browser.opera) {
-                layer.bringToFront();
-            }
+            //  uncomment if you want this layer to render on top
+            // if (!L.Browser.ie && !L.Browser.opera) {
+            //     layer.bringToFront();
+            // }
 
             // info.update(layer.feature.properties);
         }
@@ -287,7 +289,7 @@ $(document).ready(function(){
             // info.update();
         }
 
-        function makegraph(e){     
+        function makegraph(e){   
             var temp = e.target.feature.properties;
             // delete temp.metroname;
             document.getElementById('piecity').innerHTML = temp.metroname
@@ -328,6 +330,8 @@ $(document).ready(function(){
 
               return chart;
             }); // nvd3 end
+
+
         }
 
 
@@ -339,6 +343,7 @@ $(document).ready(function(){
             });
 
         }
+
 
         geojson = L.geoJson(data, {
             style: svgstyle,
