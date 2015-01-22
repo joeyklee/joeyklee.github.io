@@ -313,6 +313,7 @@ $(document).ready(function(){
                   .x(function(d) { return d.label })
                   .y(function(d) { return d.value })
                   .margin({top: -10, right: -10, bottom:-10, left: -10})
+                  // .margin({top: 0, right: 0, bottom:0, left: 0})
                   .showLegend(false)
                   .showLabels(true)     //Display pie labels
                   .labelThreshold(.05)  //Configure the minimum slice size for labels to show up
@@ -327,6 +328,7 @@ $(document).ready(function(){
                     .style({ 'width': '100%', 'height': '100%' })
                     .style("padding", "0")
                     .call(chart);
+
 
               return chart;
             }); // nvd3 end
