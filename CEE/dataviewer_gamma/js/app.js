@@ -18,13 +18,20 @@ $(document).ready(function(){
 	       attribution: 'Map tiles by CIRs, Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
 	    }).addTo(map); 
 	// add toner labels
-	var Stamen_TonerLabels = L.tileLayer('http://{s}.tile.stamen.com/toner-labels/{z}/{x}/{y}.png', {
-	    attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
-	    subdomains: 'abcd',
-	    minZoom: 10,
-	    maxZoom: 15,
-	    zIndex:6
-	}).addTo(map);
+	// var Stamen_TonerLabels = L.tileLayer('http://{s}.tile.stamen.com/toner-labels/{z}/{x}/{y}.png', {
+	//     attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+	//     subdomains: 'abcd',
+	//     minZoom: 10,
+	//     maxZoom: 15,
+	//     zIndex:6
+	// }).addTo(map);
+    var Stamen_TonerLabels = L.tileLayer('https://tileserver-geog.rhcloud.com/metro_labels_overlap/{z}/{x}/{y}.png', {
+        attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+        subdomains: 'abcd',
+        minZoom: 10,
+        maxZoom: 15,
+        zIndex:20
+    }).addTo(map);
     // Roads layer
     var CEE_roads = L.tileLayer('https://tileserver-jklee.rhcloud.com/CEE_V001_grey_roads/{z}/{x}/{y}.png', {
             maxZoom: 15,
@@ -120,7 +127,7 @@ $(document).ready(function(){
            $('.legend').append('<p class="solarlegend"> Modeled solar energy from low (0.2 kWh) to high (1.2 kWh)</p>');
            $('.legend').append('<img class="solarlegend" src="img/clouds_legend.png" />');
            $('.legend').append('<p class="solarlegend"> Modeled cloud days from low (192 days) to high (304 days)</p>');
-           map.setView([49.2503, -123.062], 11);
+           // map.setView([49.2503, -123.062], 11);
         } else {
             $('.solarlegend').remove();
         }
@@ -130,8 +137,7 @@ $(document).ready(function(){
            $('.legend').append('<p class="biomassag"> Modeled harvestable biomass energy from low (29.6 tonnes hectares <sup>-1</sup> year<sup>-1</sup>). to high (342.3 tonnes hectares <sup>-1</sup> year<sup>-1</sup>)</p>');
            $('.legend').append('<img class="biomassag" src="img/AG.png" />');
            $('.legend').append('<p class="biomassag"> Agricultural land use types associated with various harvestable energy (e.g. methane production)</p>');
-
-           map.setView([49.281732, -122.831565], 11);
+           // map.setView([49.281732, -122.831565], 11);
         } else {
             $('.biomassag').remove();
         }
@@ -139,7 +145,7 @@ $(document).ready(function(){
         if($.trim(value) === 'Wind Energy'){
            $('.legend').append('<img class="wind" src="img/WIND.png" />');
            $('.legend').append('<p class="wind">Observed average wind speeds at 80m height from low (1.8 ms<sup>-1</sup>) to high (7.8ms<sup>-1</sup>)</p>');
-           map.setView([49.2503, -123.062], 11);
+           // map.setView([49.2503, -123.062], 11);
         } else {
             $('.wind').remove();
         }
@@ -149,7 +155,7 @@ $(document).ready(function(){
            $('.legend').append('<p class="industrialhydro">Potential Industrial heat recovery from low (8.0 units) to high (39554.7 units), labeled by industry.</p>');
            $('.legend').append('<img class="industrialhydro" src="img/HYDRO.png" />');
            $('.legend').append('<p class="industrialhydro">Potential run-of-river power from low (0.5 units) to high (79.1 units).</p>');
-           map.setView([49.343507, -122.997733], 11);
+           // map.setView([49.343507, -122.997733], 11);
         } else {
             $('.industrialhydro').remove();
         }
@@ -157,7 +163,7 @@ $(document).ready(function(){
         if($.trim(value) === 'Population Density'){
            $('.legend').append('<img class="pop" src="img/POP.png" />');
            $('.legend').append('<p class="pop">Population density of Metro Vancouver (Each dot = 1 person).</p>');
-           map.setView([49.212254, -122.951041], 11);
+           // map.setView([49.212254, -122.951041], 11);
         } else {
             $('.pop').remove();
         }
@@ -333,6 +339,9 @@ $(document).ready(function(){
               return chart;
             }); // nvd3 end
 
+            // var layer = e.target;
+
+            
 
         }
 
