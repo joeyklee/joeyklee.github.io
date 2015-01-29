@@ -152,14 +152,20 @@ $(document).ready(function(){
             $('.wind').remove();
         }
         // Industrial & Hydro
-        if($.trim(value) === 'Industrial Heat & Hydropower'){
-           $('.legend').append('<img class="industrialhydro" src="img/INDUSTRIAL.png" />');
-           $('.legend').append('<p class="industrialhydro">Potential Industrial heat recovery from low (8.0 units) to high (39554.7 units), labeled by industry.</p>');
-           $('.legend').append('<img class="industrialhydro" src="img/HYDRO.png" />');
-           $('.legend').append('<p class="industrialhydro">Potential run-of-river power from low (0.5 units) to high (79.1 units).</p>');
+        if($.trim(value) === 'Industrial Heat'){
+           $('.legend').append('<img class="industrial" src="img/INDUSTRIAL.png" />');
+           $('.legend').append('<p class="industrial">Potential Industrial heat recovery from low (8.0 units) to high (39554.7 units), labeled by industry.</p>');
            // map.setView([49.343507, -122.997733], 11);
         } else {
-            $('.industrialhydro').remove();
+            $('.industrial').remove();
+        }
+        //Hydropower
+        if($.trim(value) === 'Hydropower'){
+           $('.legend').append('<img class="hydro" src="img/HYDRO.png" />');
+           $('.legend').append('<p class="hydro">Potential run-of-river power from low (0.5 units) to high (79.1 units).</p>');
+           // map.setView([49.343507, -122.997733], 11);
+        } else {
+            $('.hydro').remove();
         }
         //  Population Density
         if($.trim(value) === 'Population Density'){
