@@ -30,7 +30,7 @@ $(document).ready(function(){
         subdomains: 'abcd',
         minZoom: 10,
         maxZoom: 15,
-        zIndex:20
+        zIndex:100
     }).addTo(map);
     // Roads layer
     var CEE_roads = L.tileLayer('https://tileserver-jklee.rhcloud.com/CEE_V001_grey_roads/{z}/{x}/{y}.png', {
