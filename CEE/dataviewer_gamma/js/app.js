@@ -73,8 +73,8 @@ $(document).ready(function(){
             }
         });
     // agriculture
-    var agTiles = L.tileLayer('https://tileserver-geog.rhcloud.com/agriculture/{z}/{x}/{y}.png',{zIndex:3});
-    var agGrid = new L.UtfGrid('https://tileserver-geog.rhcloud.com/agriculture/{z}/{x}/{y}.grid.json', {
+    var agTiles = L.tileLayer('https://tileserver-geog.rhcloud.com/agriculture_col2/{z}/{x}/{y}.png',{zIndex:3});
+    var agGrid = new L.UtfGrid('https://tileserver-geog.rhcloud.com/agriculture_col2/{z}/{x}/{y}.grid.json', {
             useJsonP: false
         });
     agGrid.on('mouseover', function (e) {
