@@ -288,7 +288,7 @@ $(document).ready(function(){
                 opacity: 0.85,
                 color: '#2C3E50', //#fff
                 dashArray: '',
-                fillOpacity: 0.10
+                fillOpacity: 0.30
             });
             //  uncomment if you want this layer to render on top
             // if (!L.Browser.ie && !L.Browser.opera) {
