@@ -103,13 +103,15 @@ $(document).ready(function(){
     var biomassag = L.layerGroup([biomassTiles, biomassGrid, agTiles, agGrid]);
     var windgroup = L.layerGroup([windTiles, windGrid]);
 
-    var industrialhydro = L.featureGroup([]).bringToFront();
+    var industrial = L.featureGroup([]).bringToFront();
+    var hydro = L.featureGroup([]).bringToFront();
 
     var toggler = {
         "Solar Potential & Cloud Days": solarclouds,
         "Biomass Potential & Agriculture": biomassag,
         "Wind Energy": windgroup,
-        "Industrial Heat & Hydropower":industrialhydro,
+        "Industrial Heat":industrial,
+        "Hydropower": hydro,
         "Population Density": population
     };
     L.control.layers(toggler,null, {position:'bottomleft'}).addTo(map); //bottomright
@@ -209,7 +211,7 @@ $(document).ready(function(){
         var industralPoints = L.geoJson(data, {
             onEachFeature: industrialPopUp,
             pointToLayer: industrialStyle
-        }).addTo(industrialhydro);
+        }).addTo(industrial);
     }); // D3 End
 
     // --- Hydro Layer --- // 
@@ -252,7 +254,7 @@ $(document).ready(function(){
         var hydroPoints = L.geoJson(data, {
             onEachFeature: hydroPopUp,
             pointToLayer: hydroStyle
-        }).addTo(industrialhydro);
+        }).addTo(hydro);
     }); // d3 end
 
 
