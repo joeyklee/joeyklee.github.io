@@ -288,6 +288,9 @@ $(document).ready(function(){
             geojson.resetStyle(e.target);
             // info.update();
         }
+
+       
+        var lastClickedLayer;
         function makegraph(e){   
             var temp = e.target.feature.properties;
             // delete temp.metroname;
@@ -331,11 +334,32 @@ $(document).ready(function(){
 
               return chart;
             }); // nvd3 end
-        }
+            
+            // highlight clicked feature
+            if(lastClickedLayer){
+                   geojson.resetStyle(lastClickedLayer);
+            }
+            var layer = e.target;
+            layer.setStyle({
+                weight: 2,
+                opacity: 0.85,
+                // color: '#2C3E50', //#fff
+                fillColor: '#fff',
+                dashArray: '',
+                fillOpacity: 0.15
+                });
+            
+            lastClickedLayer = layer ;
+
+        } // end make graph()
+            
+        
+
+
         function onEachFeature(feature, layer) {
             layer.on({
-                mouseover: highlightFeature,
-                mouseout: resetHighlight,
+                // mouseover: highlightFeature,
+                // mouseout: resetHighlight,
                 click: makegraph
             });
         }
