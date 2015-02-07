@@ -15,29 +15,21 @@ $(document).ready(function(){
 	        maxZoom: 15,
 	        minZoom: 10,
             zIndex:1,
-	       attribution: 'Map tiles by CIRs, Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+	       attribution: 'Map tiles by <a href="http://cirs.ubc.ca/">CIRs</a>, Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
 	    }).addTo(map); 
-	// add toner labels
-	// var Stamen_TonerLabels = L.tileLayer('http://{s}.tile.stamen.com/toner-labels/{z}/{x}/{y}.png', {
-	//     attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
-	//     subdomains: 'abcd',
-	//     minZoom: 10,
-	//     maxZoom: 15,
-	//     zIndex:6
-	// }).addTo(map);
-    var Stamen_TonerLabels = L.tileLayer('https://tileserver-geog.rhcloud.com/metro_labels_overlap/{z}/{x}/{y}.png', {
-        attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+    var CEE_Labels = L.tileLayer('https://tileserver-geog.rhcloud.com/metro_labels_overlap/{z}/{x}/{y}.png', {
+        // attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
         subdomains: 'abcd',
         minZoom: 10,
         maxZoom: 15,
-        zIndex:100
+        zIndex:1000
     }).addTo(map);
     // Roads layer
     var CEE_roads = L.tileLayer('https://tileserver-jklee.rhcloud.com/CEE_V001_grey_roads/{z}/{x}/{y}.png', {
             maxZoom: 15,
             minZoom: 10,
             zIndex:5,
-           attribution: 'Map tiles by CIRs, Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+           // attribution: 'Map tiles by <a href="http://cirs.ubc.ca/">CIRs</a>, Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
     }).addTo(map);
 
    
@@ -97,7 +89,6 @@ $(document).ready(function(){
             }
         });
 	// ----------- Create Layer groups for the layer toggler ----------- //
-
     //  --- define layer groups --- //
     var solarclouds = L.layerGroup([solarTiles, solarGrid, cloudTiles]);
     var biomassag = L.layerGroup([biomassTiles, biomassGrid, agTiles, agGrid]);
@@ -116,13 +107,10 @@ $(document).ready(function(){
     };
     L.control.layers(toggler,null, {position:'bottomleft'}).addTo(map); //bottomright
 
-    
-    
     // console.log($("input:radio:eq(1)"));
     $("input:radio[name=leaflet-base-layers]").click(function() {
         var value = $(this).parent().children('span').text();
-        console.log(value);
-
+        // console.log(value);
         // Solar & clouds
         if($.trim(value) === 'Solar Potential & Cloud Days'){
            $('.legend').append('<img class="solarlegend" src="img/SOLAR.png" />');
@@ -180,7 +168,6 @@ $(document).ready(function(){
     // ---------------- industrial hydro ------------------ //
     // --- Industrial Layer --- //
     d3.json("data/industrial.geojson", function(data) {
-        // console.log(data);
         // -------------- Set Scales -------------- //
         // get max and min
         var dataMax = d3.max(data.features, function(d){
@@ -207,23 +194,23 @@ $(document).ready(function(){
             });
         } 
         // Set the PopUp Content
-        var industrialPopUp = function onEachFeature(feature, layer) {
+        function onEachFeature(feature, layer) {
             // does this feature have a property named popupContent?
             var popupContent = "<p><center>Industry:"+ "<br/>" 
                                 + feature.properties.CATEGORY+ "</center></p>";
             layer.bindPopup(popupContent);
+            console.log(layer);
         }
+
         // Load Geojson Points using Native Leaflet
         var industralPoints = L.geoJson(data, {
-            onEachFeature: industrialPopUp,
+            onEachFeature: onEachFeature,
             pointToLayer: industrialStyle
         }).addTo(industrial);
     }); // D3 End
 
     // --- Hydro Layer --- // 
     d3.json("data/bchydro_data.geojson", function(data){
-        // console.log(data);
-        // console.log("hydro");
         // -------------- Set Scales -------------- //
         // get max and min
         var dataMax = d3.max(data.features, function(d){
@@ -263,8 +250,6 @@ $(document).ready(function(){
         }).addTo(hydro);
     }); // d3 end
 
-
-
     // ---------------- Donut chart ----------------- //
     d3.json('data/ceei_2010_metrovan_formatted.geojson', function(data){
         // console.log(data);
@@ -272,9 +257,9 @@ $(document).ready(function(){
         var svgstyle = function style(feature) {
             return {
                 fillColor: "#fff",
-                weight: 1,
-                opacity: 0.75,
-                color: '#fff', //#fff
+                weight: 2,
+                opacity: 0,
+                color: '#2C3E50', //#fff
                 // dashArray: '3',
                 fillOpacity: 0
             };
@@ -286,9 +271,10 @@ $(document).ready(function(){
             layer.setStyle({
                 weight: 2,
                 opacity: 0.85,
-                color: '#2C3E50', //#fff
+                // color: '#2C3E50', //#fff
+                fillColor: '#fff',
                 dashArray: '',
-                fillOpacity: 0.20
+                fillOpacity: 0.15
             });
             //  uncomment if you want this layer to render on top
             // if (!L.Browser.ie && !L.Browser.opera) {
@@ -302,7 +288,6 @@ $(document).ready(function(){
             geojson.resetStyle(e.target);
             // info.update();
         }
-
         function makegraph(e){   
             var temp = e.target.feature.properties;
             // delete temp.metroname;
@@ -346,23 +331,14 @@ $(document).ready(function(){
 
               return chart;
             }); // nvd3 end
-
-            // var layer = e.target;
-
-            
-
         }
-
-
         function onEachFeature(feature, layer) {
             layer.on({
                 mouseover: highlightFeature,
                 mouseout: resetHighlight,
                 click: makegraph
             });
-
         }
-
 
         geojson = L.geoJson(data, {
             style: svgstyle,
@@ -370,7 +346,4 @@ $(document).ready(function(){
         }).addTo(map);
 
     }); // d3 end
-
-    // --- add ip locator --- //
-    // L.control.locate({position:"bottomright"}).addTo(map);
 }); // docready end
