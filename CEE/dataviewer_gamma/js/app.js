@@ -32,8 +32,6 @@ $(document).ready(function(){
            // attribution: 'Map tiles by <a href="http://cirs.ubc.ca/">CIRs</a>, Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
     }).addTo(map);
 
-   
-
 	// --- openshift tiles --- //
     // cloud tiles - tileserver-jklee
     var cloudTiles = L.tileLayer('https://tileserver-geog.rhcloud.com/clouds/{z}/{x}/{y}.png',{zIndex:7});
@@ -264,7 +262,6 @@ $(document).ready(function(){
                 fillOpacity: 0
             };
         }
-
         function highlightFeature(e) {
             var layer = e.target;
 
@@ -289,7 +286,6 @@ $(document).ready(function(){
             // info.update();
         }
 
-       
         var lastClickedLayer;
         function makegraph(e){   
             var temp = e.target.feature.properties;
@@ -350,11 +346,7 @@ $(document).ready(function(){
                 });
             
             lastClickedLayer = layer ;
-
-        } // end make graph()
-            
-        
-
+        }
 
         function onEachFeature(feature, layer) {
             layer.on({
