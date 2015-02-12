@@ -123,7 +123,7 @@ $(document).ready(function(){
         if($.trim(value) === 'Biomass Potential & Agriculture'){
            $('.legend').append('<img class="biomassag" src="img/BIOMASS.png" />');
            $('.legend').append('<p class="biomassag"> Modeled harvestable biomass energy from low (29.6 tonnes hectares <sup>-1</sup> year<sup>-1</sup>). to high (342.3 tonnes hectares <sup>-1</sup> year<sup>-1</sup>)</p>');
-           $('.legend').append('<img class="biomassag" src="img/AG.png" />');
+           $('.legend').append('<img class="biomassag" src="img/AG_2.png" />');
            $('.legend').append('<p class="biomassag"> Agricultural land use types associated with various harvestable energy (e.g. methane production)</p>');
            // map.setView([49.281732, -122.831565], 11);
         } else {
