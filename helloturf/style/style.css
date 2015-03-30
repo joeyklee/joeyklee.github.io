@@ -1,0 +1,17 @@
+body { margin:0; padding:0; }
+#map { position:absolute; top:0; bottom:40px; width:100%; }
+#steps { position:absolute; bottom:0px; width:100%; height: 40px; background:#000; }
+#steps a {
+  color:#fff;
+  display:inline-block;
+  text-align:center;
+  box-sizing:border-box;
+  max-width:10000px !important;
+}
+.pad1 {
+color: #fff;
+}
+path {
+transition: fill .4s ease;
+-webkit-transition: fill .4s ease;
+}

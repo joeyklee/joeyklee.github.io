@@ -1,0 +1,11 @@
+{
+  "name": "CEE",
+  "version": "0.0.1",
+  "dependencies": {
+    "d3": "3.5.x",
+    "jquery": "2.1.x",
+    "leaflet": "~0.7.3",
+    "bootstrap": "3.3.x"
+  },
+  "private": false
+}

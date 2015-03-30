@@ -1,0 +1,328 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Data Viz Talk</title>
+
+	<meta name="description" content="Data Vis Talk">
+	<meta name="author" content="Joey Lee">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+	<link rel="stylesheet" href="assets/style/reveal.css">
+	<link rel="stylesheet" href="assets/style/night.css" id="theme">
+
+	<!-- Code syntax highlighting -->
+	<link rel="stylesheet" href="assets/style/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<div class="reveal">
+
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+			<section>
+				<!-- <img src="img/octonaut.jpg" /> -->
+				<h1>Visualization Tools for You</h1>
+				<p>
+					<small>
+						<a href="http://www.jk-lee.com">Joey Lee</a> / 
+						<a href="https://github.com/joeyklee">@joeyklee</a>
+					</small>
+					<br />
+					<small>UBC Geography - April 2, 2015</small>
+				</p>
+			</section>
+
+			<section>
+				<h3>The slides & links can be found here:</h3>
+				<h2>
+				<p>
+					<a href='joeyklee.github.io/presentations/ubc_datavizcolloqium2015'>Joey's talk</a>
+				</p>
+				</h2>
+			</section>
+
+			<section>
+				<h1>Why do visualization?</h1>
+				<img src="assets/img/spiderman.gif">
+				<h2>With great <em>power</em> comes great <em>responsibility</em>.</h2>
+			</section>
+
+			<section>
+				<h1>We have the power to...</h1>
+				<img src="assets/img/napolean.gif">
+				<ul>
+					<li class="fragment"> do research, science, art, and everything inbetween.</li>
+					<li class="fragment"> explore our data and make connections previously unknown to us.</li>
+				</ul>
+			</section>
+			<section>
+				<h1>We have the responsibility to...</h1>
+				<ul>
+					<li class="fragment"> translate and map our work to relevant parties</li>
+					<li class="fragment"> make our work understandable and </li>
+					<li class="fragment"> get funding for our work and/or support ourselves</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>
+					Interactive maps are powerful for visualization , presentation, sharing, and <em>communication</em>...
+				</h3>
+				<h3>
+					... and you can (ab)use the power of the web to allow <em>exploration</em> and enhance relevancy!
+				</h3>
+			</section>
+
+			<section>
+				<h2>What are some tools?</h2>
+				<p>
+					Lot's out there, but some big ones:
+				</p>
+				<ul>
+					<li class="fragment"><em>Tilemill & Mapbox Studio</em> / <em>Mapbox</em> & Mapbox.js / Turf.js </li>
+					<li class="fragment">Leaflet.js</li>
+					<li class="fragment">D3.js</li>
+					<li class="fragment">CartoDB</li>
+					<li class="fragment">Google Maps API</li>
+					<li class="fragment">Openlayers</li>
+					<li class="fragment">Unfolding Maps for Processing (not web based but worth looking at)</li>
+				</ul>
+				<!-- <p> Non-web based tool worth checking out: Unfolding Maps for Processing
+				</p> -->
+			</section>
+
+			<section>
+				<h1> We will focus on <em>Tilemill</em> and <em>Mapbox</em> today :)</h1>
+			</section>
+
+			<section>
+				<h1> Just a few example projects for <em>motivation</em>...</h1>
+			</section>
+
+			<section>
+				<h2><a href="http://senseable.mit.edu/bos311/">Boston 3-1-1 (2012)</a></h2>
+				<!-- <img src="assets/img-presentation/bos311.png" alt="bos311" class='exampleimg' height="450px">  -->
+			    <img src="assets/img-presentation/bos311_2.png" alt="bos311_2" height="400px"><br> 
+			    <p> Boston's 3-1-1 Maintenance Phone Calls </p>
+			    <p>(My <em>first</em> Tilemill Project!) </p>
+			</section>
+
+			<section>
+				 <h2><a href="hub.cab">HubCab (2014)</a></h2>
+    			<img src="assets/img-presentation/hubcab.png" alt="hub.cab" height="400px"> 
+    			<!-- <img src="img-presentation/hubcab-2.png" alt="hub.cab" class='exampleimg'>  -->
+    			<p>Hubcab: Exploring New York City <em>taxi trails</em> and sharing our way to a more sustainable urban future</p>
+			</section>
+
+			<section>
+				<h2><a href="http://energyexplorer.ca/">Community Energy Explorer (beta)</a></h2>
+				    <img src="assets/img-presentation/cee-1.png" alt="cee" height="400px">
+				    <p> Exploring Metro Vancouver Renewable Energy</p>
+			</section>
+
+			<section>
+				  <h2><a href="http://projects.propublica.org/louisiana/#">Propublica: Losing Ground</a></h2>
+				  <img src="assets/img-presentation/propublica-lg.png" alt="propublica" height="400px"> 
+				  <!-- <img src="img-presentation/propublica-lg-2.png" alt="propublica_2" class='exampleimg' align='left'>  -->
+				  <p>Visualizing Louisiana's sinking places</p>
+			</section>
+
+			<section>
+				<h2><a href="http://content.stamen.com/edf-methane-maps">Stamen's Methane Visualizer (2014)</a></h2>
+				  <img src="assets/img-presentation/leaky-1.png" alt="leaky-1" height="400px"> 
+				  <!-- <img src="img-presentation/leaky-2.png" alt="leaky-22" class='exampleimg' align='left'>  -->
+				  <p>How <em>leaky</em> is your city? </p>
+			</section>
+			
+			<section>
+				<h2><a href="http://www.fatalatour.com/">David Leonard's Fatalatour</a></h2>
+				<img src="assets/img-presentation/fatalatour-1.png" alt="fatalatour-1" height="400px"> 
+				<!-- <img src="img-presentation/fatalatour-2.png" alt="fatalatour-2" class='exampleimg' align='left'>  -->
+				<p> Los Angeles's Gun Related Deaths</p>
+			</section>
+
+			<section>
+				<h1><em>Before</em> Getting Started</h1>
+			</section>
+
+			<section>
+				<h1>Computers are friends...</h1>
+				<h2>...and google searching is your <em>best friend</em></h2>
+				 <p> *The answer to most (all?) of your questions are somewhere <em>on the web</em>!</p> 
+			</section>
+
+			<section>
+				<!-- What makes a web map-->
+				    <h2> What makes <em>a web map</em> ? </h2>
+				    <h3>
+					    <ul> 
+					    	<li>1. Maptiles*, </li>
+					         <li>2.Geodata / Feature Layers</li>
+					         <li>3. "The Web"</li>
+			         	</ul>
+		         	</h3> 
+			</section>
+
+			<section>
+				<h1>1.<em>Maptiles</em> *</h1>
+				    <h4>*This isn't always the case, but for simplicity, let's just assume so :)</h4>
+			</section>
+
+			<section>
+				<h2> Maptiles</h2>
+				<h3>
+					<ul>
+						<li>"... web maps are made out of many small square images called <a href="https://www.mapbox.com/foundations/how-web-maps-work/">tiles</a>"</li>
+						<li>"These tiles are typically 256x256 pixels and placed sided-by-side in order to create the <em>illusion of a seamless image</em>."</li>
+
+					</ul>
+				</h3>
+			</section>
+
+			<section>
+				<h2>Maptiles</h2>
+					<img src="assets/img-presentation/tiles-example.png" alt="tiles-example" height="400px">
+				    <p>See: They are just little images <em>cleverly</em> stitched together!</p>
+				    <p>Thanks <em>@lyzidiamond & Mapbox</em> for the info! </p>
+			</section>
+
+			<section>
+				<h2>Oh! So <em>that's how OpenStreetMap</em>, GoogleMaps, and those slippy maps <em>work</em>? </h2>
+				<h1>Yeah!</h1>
+			</section>
+
+			<section>
+				<h2>Maptiles == <em>MIND BLOWN</em></h2>
+					 <img src="assets/img-presentation/mindblown.gif" height="400px">
+			</section>
+
+			<section>
+				<h1>2. Feature Layers & <em>Geodata</em></h1>
+				<p> THE BEST STUFF EVER</p>
+			</section>
+
+			<section>
+				<h2>Feature Layers</h2>
+				<h3>
+					<p>"Feature layers are map layers that <em>live on top </em> of your base tiles. Sometimes you can <em>interact</em> with them (clicking to produce a popup, for example). "
+					</P>
+				</h3>
+			</section>
+
+			<section>
+				<h2>Geodata</h2>
+					<p>Feature layers are typically <em>geospatial datasets</em> such as...</p>
+						<ul>
+							<li>GeoJSON</li>
+							<li>Shapefiles</li>
+							<li>KML</li>
+							<li>CSV</li>
+						</ul>
+			</section>
+
+			<section>
+				<h2> GeoJSON, KML & Shapefiles</h2>
+					<img src="assets/img-presentation/shapefile-example.png" alt="shapefile" height="400px">
+				 <p> Imagine: <em>Spreadsheet</em> + <em>Polygons</em> in geospace</p>
+				 <p> Probably your most common geospatial data types. We <em> &lt;3 </em> geojson! </p>
+			</section>
+
+			<section>
+				<h2> CSV (comma separated values) </h2>
+					<img src="assets/img-presentation/csv-example.png" alt="csv" height="400px">
+				<p> Basically: <em>Spreadsheet</em></p>
+				<p>Note: we can directly upload a .csv file into Tilemill if it includes columns with <em>latitude & longitude</em> coordinates</p>
+			</section>
+
+			<section>
+				<h2>The cool thing is, we can render Feature layers as <em>tiles</em> or as <em>vector</em> (svg) depending on our needs, the sizes of our data, etc.</h2>
+				<p>Today, we will render Feature Layers as Tiles</p> <br>
+				<p>There are also things called "vector tiles" but we won't get into those today...</p>
+			</section>
+
+			<section>
+				<!-- "The Web" -->
+				 <h1>3. "The <em>Web</em>"</h1>
+			</section>
+
+			<section>
+				<h2>The Web</h2>
+				<p>With web maps, the power to <em>zoom, pan, toggle, click, drag,</em> etc. comes from the friendly "web stack" of HTML, CSS, and Javascript and a variety of server technologies.</p> <br>
+				<p>Check out <a href="https://github.com/b-g/tilehut"> Tilehut.js</a> to get started setting up your own tileserver! </p>
+			</section>
+
+			<section>
+				<h2>The Web</h2>
+				<p>While the web stack is indeed a magical combo, today <em>let's not worry</em> about those gritty details.</p><br>
+				<p>Instead, let's <em>let Tilemill and Mapbox work their magic</em> and help us build our first interactive web map.</p>
+			</section>
+
+			<section>
+				<h1> Go to <a href='https://github.com/joeyklee/hellowebmaps/tree/master/Tutorial%20I'>Hello Web Maps Tutorial I</a> to get started! </h1>
+			</section>
+
+			<section>
+				<h1> Thanks <em>MaptimeYVR!</em></h1>
+				<h2> Special thanks to <em>Sarah</em> and <em>Dimitry</em> for organizing :)</h2>
+			</section>
+
+			<section>
+				<h2>Vancouver Crime Map (2013)</h2>
+				<iframe id='map2' frameBorder='0' src='https://a.tiles.mapbox.com/v4/joeyklee.k5840079/attribution,zoompan,zoomwheel,legend,geocoder,share.html?access_token=pk.eyJ1Ijoiam9leWtsZWUiLCJhIjoiMlRDV2lCSSJ9.ZmGAJU54Pa-z8KvwoVXVBw' width="960"height="550"></iframe>
+				  </div>
+			</section>
+		</div>
+
+	</div>
+
+	<script src="assets/js/head.min.js"></script>
+	<script src="assets/js/reveal.js"></script>
+
+	<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+	</script>
+
+</body>
+</html>
