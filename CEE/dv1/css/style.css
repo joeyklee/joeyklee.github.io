@@ -58,10 +58,11 @@ html,body {
 .sidebar-nav{
   z-index: 1000;
     position: fixed;
+    top:22px;
     right: 0px;
     width: 50px;
     /*height:70%;*/
-    height:500px;
+    height:475px;
     list-style: none;
     background: rgba(255,255,255,0.85); /*rgba(44, 62, 80, 0.9);*/
 }
