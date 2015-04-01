@@ -1,5 +1,18 @@
 $(document).ready(function(){
-    imagePreview();
+    // ---------- tool tips ------------ //
+    $('.tooltipstered').tooltipster({delay: 0, position:'left'});
+    $('#legend-button').tooltipster({
+        content: $('<span><img src="img/legends-all-white.png" /></span>')
+    , position:'left'});
+    $("#thing").click();
+
+    $('#layertoggler .ic').on({
+        "click":function(e){
+          e.stopPropagation();
+        }
+    });
+
+
 	// ---------- Initialize Map Object ---------- //
 	var southWest = L.latLng(48.909138, -123.736408),
 	    northEast = L.latLng(49.705864, -122.019172),
@@ -12,7 +25,7 @@ $(document).ready(function(){
 	    maxZoom:20,
 	    maxBounds: bounds,
 	    attributionControl:false,
-	    zoomControl: true
+	    zoomControl: false
 	});
 	// var info = L.mapbox.infoControl({position:'bottomleft'});
 	// info.addTo(map);
@@ -285,6 +298,7 @@ $(document).ready(function(){
 
 });
 
+// -----UI interacitons ----- //
 $("#close").click(function(e) {
         e.preventDefault();
         $("#tabs").toggleClass("toggled");
@@ -295,39 +309,3 @@ $(function() {
     $( "#tabs" ).tabs();
 });
 
-$(document).ready(function() {
-    $('.tooltipstered').tooltipster({delay: 0, position:'left'});
-});
-
-$(document).ready(function() {
-    $('#legend-button').tooltipster({
-        content: $('<span><img src="img/legends-all-white.png" /></span>')
-    , position:'left'});
-});
-
-//  image preview
-this.imagePreview = function(){ 
-    /* CONFIG */
-        
-        xOffset = 100;
-        yOffset = -450;
-        
-        // these 2 variable determine popup's distance from the cursor
-        // you might want to adjust to get the right result
-        
-    /* END CONFIG */
-    $("a.preview").hover(function(e){
-        this.t = this.title;
-        this.title = "";    
-        var c = (this.t != "") ? "<br/>" + this.t : "";
-        $("body").append("<p id='preview'><img src='"+ this.href +"' alt='Image preview' />"+ c +"</p>");                                
-        $("#preview")
-            .css("top",(e.pageY - xOffset) + "px")
-            .css("left",(e.pageX + yOffset) + "px")
-            .fadeIn("fast");                        
-    },
-    function(){
-        this.title = this.t;    
-        $("#preview").remove();
-    });         
-};

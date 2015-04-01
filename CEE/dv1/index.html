@@ -27,7 +27,7 @@
         <!-- Map -->
         <div id='map'></div>
 
-        <div id = "header">
+        <!-- <div id = "header">
             <div  id="homelogo">
                 <img src="img/homelogo.png">
             </div>
@@ -35,10 +35,128 @@
                 <h1>Community Energy Explorer</h1>
                 <h3>Renewable Energy in Metro Vancouver</h3>
             </div>
-        </div>
+
+            <div id="community">
+                |   What is community energy?   |
+            </div>
+            <div id="community2">
+                Metro Vancouver Renewable Potential 
+            </div>
+        </div> -->
+
+        <!-- Fixed navbar -->
+        <!-- <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="#" id="headertitle">
+                Community Energy Explorer | <span>Renewable Energy in Metro Vancouver</span>
+                  </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="layertoggler">Add Layers <span class="caret"></span></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li id="solar-button">
+                        <a class="tooltipstered" title="Solar Energy"><span><img src="img/solar_potential.png"></span></a>
+                    </li>
+                    <li id="biomass-button">
+                        <a class="tooltipstered" title="Biomass"><span><img src="img/biom.png"></span></a>
+                    </li>
+                    <li id="ag-button">
+                        <a class="tooltipstered" title="Agriculture"><span><img src="img/agi.png"></span></a>
+                    </li>
+                    <li id="hydro-button">
+                        <a class="tooltipstered" title="Run-of-river Hydro"><span><img src="img/hydro_power.png"></span></a>
+                    </li>
+                    <li id="industry-button">
+                        <a class="tooltipstered" title="Industrial heat recovery"><span><img src="img/indust.png"></span></a>
+                    </li>
+                    <li id="pop-button">
+                        <a class="tooltipstered" title="Population Density"><span><img src="img/peop.png"></span></a>
+                    </li>
+                    <li id="wind-button">
+                        <a class="tooltipstered" title="Wind Energy"><span><img src="img/wind-icon.png"></span></a>
+                    </li>
+                    <li class="divider"></li>
+                    <li id="legend-button">
+                        <a class="tooltipstered"><img src="img/legend-button.png" alt="gallery thumbnail" ></a>
+                    </li>
+                  </ul>
+                </li> 
+              </ul>
+            </div>
+          </div>
+        </nav> -->
+
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#" id="headertitle">
+              <div id="logoimg"><img alt="Brand" src="img/homelogo.png"></div>
+                Community Energy Explorer
+                  </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li><a href="http://www.energyexplorer.ca/renewables"><span> | &nbsp; &nbsp; Renewable Energy in Metro Vancouver </span></a></li>
+                <li><a href="http://www.energyexplorer.ca/blog/"><span> | &nbsp; &nbsp; Learn More </span></a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right" >
+                <li class="dropdown" >
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="thing">Add Layers <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu" id="layertoggler">
+                    <li class="mylayer ic" id="solar-button">
+                        <a class="tooltipstered" title="Solar Energy"><span><img src="img/solar_potential.png"></span></a>
+                    </li>
+                    <li class="mylayer ic"id="biomass-button">
+                        <a class="tooltipstered" title="Biomass"><span><img src="img/biom.png"></span></a>
+                    </li>
+                    <li class="mylayer ic"id="ag-button">
+                        <a class="tooltipstered" title="Agriculture"><span><img src="img/agi.png"></span></a>
+                    </li>
+                    <li class="mylayer ic" id="hydro-button">
+                        <a class="tooltipstered" title="Run-of-river Hydro"><span><img src="img/hydro_power.png"></span></a>
+                    </li>
+                    <li class="mylayer ic"id="industry-button">
+                        <a class="tooltipstered" title="Industrial heat recovery"><span><img src="img/indust.png"></span></a>
+                    </li>
+                    <li class="mylayer ic"id="pop-button">
+                        <a class="tooltipstered" title="Population Density"><span><img src="img/peop.png"></span></a>
+                    </li>
+                    <li class= "ic" id="wind-button">
+                        <a class="tooltipstered" title="Wind Energy"><span><img src="img/wind-icon.png"></span></a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class = "ic" id="legend-button">
+                        <a class="tooltipstered"><img src="img/legend-button.png" alt="gallery thumbnail" ></a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
 
         <!-- Sidebar -->
-        <div id="sidebar-wrapper">
+        <!-- <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <p>  Toggle Layers </p>
@@ -65,11 +183,10 @@
                     <a class="tooltipstered" title="Wind Energy"><span><img src="img/wind-icon.png"></span></a>
                 </li>
                 <li id="legend-button">
-                    <!-- <a href="img/legends-all-white.png" class="preview"><img src="img/legend-button.png" alt="gallery thumbnail" ></a> -->
                     <a class="tooltipstered"><img src="img/legend-button.png" alt="gallery thumbnail" ></a>
                 </li>
             </ul>
-        </div> 
+        </div>  -->
         <!-- /#sidebar-wrapper -->
 
         <!-- infoconsole -->
