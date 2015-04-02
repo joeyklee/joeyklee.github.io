@@ -41,8 +41,7 @@
 		<!-- Any section element inside of this container is displayed as a slide -->
 		<div class="slides">
 			<section>
-				<!-- <img src="img/octonaut.jpg" /> -->
-				<h1>Visualization Tools for You</h1>
+				<h1><em>Oh, all the places your data will go!</em> </h1>
 				<p>
 					<small>
 						<a href="http://www.jk-lee.com">Joey Lee</a> / 
@@ -54,7 +53,7 @@
 			</section>
 
 			<section>
-				<h3>The slides & links can be found here:</h3>
+				<h3>The slides & links can be found on github:</h3>
 				<h2>
 				<p>
 					<a href='joeyklee.github.io/presentations/ubc_datavizcolloqium2015'>Joey's talk</a>
@@ -63,235 +62,316 @@
 			</section>
 
 			<section>
-				<h1>Why do visualization?</h1>
-				<img src="assets/img/spiderman.gif">
-				<h2>With great <em>power</em> comes great <em>responsibility</em>.</h2>
-			</section>
-
-			<section>
-				<h1>We have the power to...</h1>
-				<img src="assets/img/napolean.gif">
+			<h3 align="left">This talk is relevant for you if:</h3> <hr>
+				<h2 align="left">You do great research and...</h2>
 				<ul>
-					<li class="fragment"> do research, science, art, and everything inbetween.</li>
-					<li class="fragment"> explore our data and make connections previously unknown to us.</li>
-				</ul>
-			</section>
-			<section>
-				<h1>We have the responsibility to...</h1>
-				<ul>
-					<li class="fragment"> translate and map our work to relevant parties</li>
-					<li class="fragment"> make our work understandable and </li>
-					<li class="fragment"> get funding for our work and/or support ourselves</li>
+					<li class="fragment">...are trying <em>to communicate</em> your research.</li>
+					<li class="fragment">...want <em>to make</em> compelling figures and graphics.</li>
+					<li class="fragment">...want a way <em>to explore</em> your data visually.</li>
+					<li class="fragment">...don't know how <em>to reach</em> broader audiences and want to.</li>
+					<li class="fragment">...are looking for potential <em>collaborations</em>.</li>
 				</ul>
 			</section>
 
 			<section>
-				<h3>
-					Interactive maps are powerful for visualization , presentation, sharing, and <em>communication</em>...
-				</h3>
-				<h3>
-					... and you can (ab)use the power of the web to allow <em>exploration</em> and enhance relevancy!
-				</h3>
+				<h1>What is<br> <em>Data visualization</em>?</h1>
+			</section>
+			<section>
+				<h3 align="left">Data Viz as a "<em>thing</em>"... </span></h3> <hr>
+				<h2> "...general term that describes any effort <em>to help people understand the significance of data by placing it in a visual context</em>."</h2> <br>
+				<h2> <em>Graphical representations</em> of data (numerical or otherwise) rather than textual.</h2>
+			</section>
+			<section>
+				<h3 align="left">Data Viz as a "<em>process</em>"...</span></h3> <hr>
+				<img src="assets/img/datavizpipeline.png">
+				
+				<h3>*Key word: <em>collaboration</em></h3> <br>
+				<p align="left">Ben Fry's Data Viz Pipeline cc/Benedikt Groß</p>
 			</section>
 
 			<section>
-				<h2>What are some tools?</h2>
-				<p>
-					Lot's out there, but some big ones:
-				</p>
+				<h1> What are the <em>tools</em>? </h1>
+				<h2>(or atleast some of the more <em>popular</em> ones)</h2>
+			</section>
+			<section>
+				<h2> Do you like to <em>code</em> ? </h2>
 				<ul>
-					<li class="fragment"><em>Tilemill & Mapbox Studio</em> / <em>Mapbox</em> & Mapbox.js / Turf.js </li>
-					<li class="fragment">Leaflet.js</li>
-					<li class="fragment">D3.js</li>
-					<li class="fragment">CartoDB</li>
-					<li class="fragment">Google Maps API</li>
-					<li class="fragment">Openlayers</li>
-					<li class="fragment">Unfolding Maps for Processing (not web based but worth looking at)</li>
-				</ul>
-				<!-- <p> Non-web based tool worth checking out: Unfolding Maps for Processing
-				</p> -->
-			</section>
-
-			<section>
-				<h1> We will focus on <em>Tilemill</em> and <em>Mapbox</em> today :)</h1>
-			</section>
-
-			<section>
-				<h1> Just a few example projects for <em>motivation</em>...</h1>
-			</section>
-
-			<section>
-				<h2><a href="http://senseable.mit.edu/bos311/">Boston 3-1-1 (2012)</a></h2>
-				<!-- <img src="assets/img-presentation/bos311.png" alt="bos311" class='exampleimg' height="450px">  -->
-			    <img src="assets/img-presentation/bos311_2.png" alt="bos311_2" height="400px"><br> 
-			    <p> Boston's 3-1-1 Maintenance Phone Calls </p>
-			    <p>(My <em>first</em> Tilemill Project!) </p>
-			</section>
-
-			<section>
-				 <h2><a href="hub.cab">HubCab (2014)</a></h2>
-    			<img src="assets/img-presentation/hubcab.png" alt="hub.cab" height="400px"> 
-    			<!-- <img src="img-presentation/hubcab-2.png" alt="hub.cab" class='exampleimg'>  -->
-    			<p>Hubcab: Exploring New York City <em>taxi trails</em> and sharing our way to a more sustainable urban future</p>
-			</section>
-
-			<section>
-				<h2><a href="http://energyexplorer.ca/">Community Energy Explorer (beta)</a></h2>
-				    <img src="assets/img-presentation/cee-1.png" alt="cee" height="400px">
-				    <p> Exploring Metro Vancouver Renewable Energy</p>
-			</section>
-
-			<section>
-				  <h2><a href="http://projects.propublica.org/louisiana/#">Propublica: Losing Ground</a></h2>
-				  <img src="assets/img-presentation/propublica-lg.png" alt="propublica" height="400px"> 
-				  <!-- <img src="img-presentation/propublica-lg-2.png" alt="propublica_2" class='exampleimg' align='left'>  -->
-				  <p>Visualizing Louisiana's sinking places</p>
-			</section>
-
-			<section>
-				<h2><a href="http://content.stamen.com/edf-methane-maps">Stamen's Methane Visualizer (2014)</a></h2>
-				  <img src="assets/img-presentation/leaky-1.png" alt="leaky-1" height="400px"> 
-				  <!-- <img src="img-presentation/leaky-2.png" alt="leaky-22" class='exampleimg' align='left'>  -->
-				  <p>How <em>leaky</em> is your city? </p>
-			</section>
-			
-			<section>
-				<h2><a href="http://www.fatalatour.com/">David Leonard's Fatalatour</a></h2>
-				<img src="assets/img-presentation/fatalatour-1.png" alt="fatalatour-1" height="400px"> 
-				<!-- <img src="img-presentation/fatalatour-2.png" alt="fatalatour-2" class='exampleimg' align='left'>  -->
-				<p> Los Angeles's Gun Related Deaths</p>
-			</section>
-
-			<section>
-				<h1><em>Before</em> Getting Started</h1>
-			</section>
-
-			<section>
-				<h1>Computers are friends...</h1>
-				<h2>...and google searching is your <em>best friend</em></h2>
-				 <p> *The answer to most (all?) of your questions are somewhere <em>on the web</em>!</p> 
-			</section>
-
-			<section>
-				<!-- What makes a web map-->
-				    <h2> What makes <em>a web map</em> ? </h2>
-				    <h3>
-					    <ul> 
-					    	<li>1. Maptiles*, </li>
-					         <li>2.Geodata / Feature Layers</li>
-					         <li>3. "The Web"</li>
-			         	</ul>
-		         	</h3> 
-			</section>
-
-			<section>
-				<h1>1.<em>Maptiles</em> *</h1>
-				    <h4>*This isn't always the case, but for simplicity, let's just assume so :)</h4>
-			</section>
-
-			<section>
-				<h2> Maptiles</h2>
-				<h3>
-					<ul>
-						<li>"... web maps are made out of many small square images called <a href="https://www.mapbox.com/foundations/how-web-maps-work/">tiles</a>"</li>
-						<li>"These tiles are typically 256x256 pixels and placed sided-by-side in order to create the <em>illusion of a seamless image</em>."</li>
-
-					</ul>
-				</h3>
-			</section>
-
-			<section>
-				<h2>Maptiles</h2>
-					<img src="assets/img-presentation/tiles-example.png" alt="tiles-example" height="400px">
-				    <p>See: They are just little images <em>cleverly</em> stitched together!</p>
-				    <p>Thanks <em>@lyzidiamond & Mapbox</em> for the info! </p>
-			</section>
-
-			<section>
-				<h2>Oh! So <em>that's how OpenStreetMap</em>, GoogleMaps, and those slippy maps <em>work</em>? </h2>
-				<h1>Yeah!</h1>
-			</section>
-
-			<section>
-				<h2>Maptiles == <em>MIND BLOWN</em></h2>
-					 <img src="assets/img-presentation/mindblown.gif" height="400px">
-			</section>
-
-			<section>
-				<h1>2. Feature Layers & <em>Geodata</em></h1>
-				<p> THE BEST STUFF EVER</p>
-			</section>
-
-			<section>
-				<h2>Feature Layers</h2>
-				<h3>
-					<p>"Feature layers are map layers that <em>live on top </em> of your base tiles. Sometimes you can <em>interact</em> with them (clicking to produce a popup, for example). "
-					</P>
-				</h3>
-			</section>
-
-			<section>
-				<h2>Geodata</h2>
-					<p>Feature layers are typically <em>geospatial datasets</em> such as...</p>
+					<li class="fragment"> <a href="http://d3js.org/">D3.js</a>  (data driven documents)
 						<ul>
-							<li>GeoJSON</li>
-							<li>Shapefiles</li>
-							<li>KML</li>
-							<li>CSV</li>
+							<li>Javascript library for doing all things viz - charts, maps, interaction! The name of the game is "data in, visual properties, out".</li>
+							<li>Hands down one of the most successful and powerful viz libraries out there. </li>
 						</ul>
+					</li>
+					<li class="fragment"> <a href="http://www.r-project.org/">R</a>  / <a href="http://rstudio.github.io/shiny/tutorial/#welcome"> R Shiny</a>
+						<ul>
+							<li>R is a language originally built for statistics, but has become one of <em>the tools</em> of choice for data viz as it is nearly an all-in-one solution to the data viz pipeline. It is a go-to for the New York Times, Code for America, propublica, and others. </li>
+							<li> R Shiny is a really lightweight package to make fully functioning web apps in R. Boom.</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h2> Do you like to <em>code</em> ? (contd.) </h2>
+				<ul>
+				<li class="fragment"> <a href="https://www.python.org/">Python</a> / <a href="http://pandas.pydata.org/"> Pandas</a> (Python data analysis library)
+						<ul>
+							<li> Powerful data munging, wrangling, and all-around language, but still could use some work in the graphics. Together with the Pandas library, python is a powerful solution to getting your data in the right shape to be visualized.</li>
+						</ul>
+					</li>
+					<li class="fragment"> <a href="https://processing.org/">Processing</a>
+						<ul>
+							<li>Processing was built for artists and designers so they could focus more on content rather than heavy handed code. Processing has long been a language of choice for data viz, especially since Ben Fry's <a href="http://shop.oreilly.com/product/9780596514556.do">Visualizing Data</a></li>
+							<li>Based on Java, but there's also a javascript version and can be run in python! </li>
+						</ul>
+					</li>
+					<li class="fragment"> <a href="http://leafletjs.com/">Leaflet.js / <a href="https://www.mapbox.com/mapbox.js/api/v2.1.6/">Mapbox.js</a>  & <a href="http://turfjs.org/">Turf.js</a> 
+						<ul>
+							<li>These javascript based web technologies are (for me) the holy grail for map based visualizations. With the advent of Turf.js, now we can even do our data crunching right in the browser!</li>
+						</ul>
+					</li>
+				</ul>
 			</section>
 
 			<section>
-				<h2> GeoJSON, KML & Shapefiles</h2>
-					<img src="assets/img-presentation/shapefile-example.png" alt="shapefile" height="400px">
-				 <p> Imagine: <em>Spreadsheet</em> + <em>Polygons</em> in geospace</p>
-				 <p> Probably your most common geospatial data types. We <em> &lt;3 </em> geojson! </p>
+				<h2> More into <em>software</em>? </h2>
+				<ul>
+					<li class="fragment"> <a href="http://www.tableau.com/">Tableau</a> / <a href="http://www.tableau.com/public/how-it-works">Tableau Public</a>
+						<ul>
+							<li>Tableau may be the most user friendly and well established data viz software. With a free, public version, Tableau is making us all make sense of our data with a nice UI + get it out on the web!</li>
+						</ul>
+					</li>
+					<li class="fragment"> <a href="http://www.qlik.com/us/explore/products/sense/desktop">Qlik</a> 
+						<ul>
+							<li>Qlik, similar to Tableau is another data viz software with a UI. Could be worth checking out. </li>
+						</ul>
+					</li>
+					<li class="fragment"> <a href="http://www.qgis.org/en/site/">QGIS</a>
+						<ul>
+							<li>Qgis is an opensource GIS software that just keeps getting better. With a myriad of handy plugins, easier-to-use UI, map making has never been as accessible.</li>
+						</ul>
+					</li>
+					<li class="fragment"> <a href="https://www.mapbox.com/tilemill/">Tilemill</a> / <a href="https://www.mapbox.com/mapbox-studio/#darwin">Mapbox Studio</a> 
+						<ul>
+							<li> Want to make your own interactive, slippy web maps? Want to show A LOT of data and make it interactive? Here's a fantastic solution. </li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h2> More into <em>software</em>? (contd.)</h2>
+				<ul>
+					<li class="fragment"> <a href="http://cartodb.com/">CartoDB</a>
+						<ul>
+							<li>Make interactive maps for the web with a whole army of customer support, fully functioning backend database, and really nice visual styles for your web mapping needs! </li>
+						</ul>
+					</li>
+				</ul>
+
 			</section>
 
 			<section>
-				<h2> CSV (comma separated values) </h2>
-					<img src="assets/img-presentation/csv-example.png" alt="csv" height="400px">
-				<p> Basically: <em>Spreadsheet</em></p>
-				<p>Note: we can directly upload a .csv file into Tilemill if it includes columns with <em>latitude & longitude</em> coordinates</p>
+				<h3 align="left">On <em>coding</em>...</h3> <hr>
+				<h2><em>Advantages</em> ?</h2>
+					<ul>
+						<li>Customization & freedom</li>
+						<li>Data handling and manipulation</li>
+						<li>Transparency, Replicability, & Automation</li>
+						<li>Most web technologies require some level of coding</li>
+						<li> Free!</li>
+						<li>(Fun!)</li>
+					</ul>
+				<h2> <em>Disadvantages</em> ?</h2>
+					<ul >
+						<li>(steep) Learning curve for beginners</li>
+						<li>Dependencies</li>
+						<li>Time-intensive</li>
+						<li>Setup can be a nightmare!</li>
+					</ul>
+			</section>
+			<section>
+				<h3 align="left">On <em>software</em>...</h3> <hr>
+				<h2><em>Advantages</em> ?</h2>
+					<ul>
+						<li>User friendly</li>
+						<li>Large user communities and customer service ;)</li>
+						<li>Mellower learning curve</li>
+						<li>Can be "handmade"</li>
+					</ul>
+				<h2> <em>Disadvantages</em> ?</h2>
+					<ul >
+						<li>Proprietary softwares can be expensive :(</li>
+						<li>Dependencies - platform specificities, versioning, setup can be a nightmare!</li>
+						<li>Harder to replicate or automate</li>
+						<li>Fewer web-based opportunities (but this is changing)</li>
+						<li>Can be handmade</li>
+					</ul>
 			</section>
 
 			<section>
-				<h2>The cool thing is, we can render Feature layers as <em>tiles</em> or as <em>vector</em> (svg) depending on our needs, the sizes of our data, etc.</h2>
-				<p>Today, we will render Feature Layers as Tiles</p> <br>
-				<p>There are also things called "vector tiles" but we won't get into those today...</p>
+				<h1>What does this look like?</h1>
+			</section>
+			<section>
+				<img src="assets/img/1dotperperson.png" height="550px">
+				<p align="left"><a href="http://www.coopercenter.org/demographics/Racial-Dot-Map">Dustin Cable</a>:<br> 1 dot for every person in the US - a racial dot map. </p>
+			</section>
+			<section>
+				<img src="assets/img/periscopic.png" height="550px">
+				<p align="left"><a href="http://guns.periscopic.com/?year=2013">Periscopic Studio</a>:<br> Gun deaths and stolen lives. </p>
+			</section>
+			<section>
+				<img src="assets/img/senseable.jpg" height="530px">
+				<p align="left"><a href="http://www.nytimes.com/interactive/2013/10/09/us/yellen-fed-chart.html">New York Times</a>:<br> The economy's twists and turns by inflation and unemployment.</p>
+			</section>
+			<section>
+				<img src="assets/img/nyt-1.png" height="550px">
+				<p align="left"><a href="http://guns.periscopic.com/?year=2013">Periscopic Studio</a>:<br> Gun deaths and stolen lives. </p>
+			</section>
+			<section>
+				<img src="assets/img/alan.png" height="530px">
+				<p align="left"><a href="http://mappingmashups.net/">Alan McConchie</a>,:<br> Visualization of crowdsourced data for what people call that sweet, bubbly beverage - soda </p>
+			</section>
+			<section>
+				<img src="assets/img/populationio.png" height="450px">
+				<p align="left"><a href="http://population.io/">Population.io</a>: <br> by (The World Bank) <a href="http://blogs.worldbank.org/team/wolfgang-fengler">Wolfgang Fengler</a> , <a href="http://www.iiasa.ac.at/web/home/research/researchPrograms/WorldPopulation/Staff/K-C-Samir.en.html">K.C. Samir</a>, & <a href="http://benedikt-gross.de/log/">Benedikt Groß</a> visualizing and personalizing global modeled demographics from 1900 - 2100. Plus: an API to download these data.
+			</section>
+			<section>
+				<img src="assets/img/jerthorpviz.png">
+				<p align="left"><a href="http://blog.blprnt.com/">Jer Thorp</a>, <a href="http://o-c-r.org/"> Ben Rubin & Mark Hansen</a>:<br> <a href="https://www.elevator.org/">Elevator Repair service</a> performing the names/titles of the 120,000 objects in MOMA</p>
 			</section>
 
 			<section>
-				<!-- "The Web" -->
-				 <h1>3. "The <em>Web</em>"</h1>
+				<h1> How <em>to make</em> these things? </h1>
+				<ul>
+					<li class="fragment"> learn to program and/or find software for your needs</li>
+					<li class="fragment"> collaborate! </li>
+					<li class="fragment">Both!</li>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h3 align="left"> What does it look like with <em>code</em> ?</h3> <hr>
+				<img src="assets/img/code.png" height="520px">
+				<p align="left"> html + Javascript + css </p>
+			</section>
+			<section>
+				<h3 align="left"> How does this translate?</h3> <hr>
+				<img src="assets/img/cee.png" height="520px">
+				<p align="left"> Map data viewer! </p>
 			</section>
 
 			<section>
-				<h2>The Web</h2>
-				<p>With web maps, the power to <em>zoom, pan, toggle, click, drag,</em> etc. comes from the friendly "web stack" of HTML, CSS, and Javascript and a variety of server technologies.</p> <br>
-				<p>Check out <a href="https://github.com/b-g/tilehut"> Tilehut.js</a> to get started setting up your own tileserver! </p>
+				<h1>How to start/make <em>collaborations</em> ?</h1>
+			</section>
+			<section>
+				<h3 align="left"> A <em>basic compass</em> for collaborations...</h3><hr>
+				<ul>
+					<li class="fragment">Data viz requires data
+						<ul>
+							<li>Data viz people are <em>hungry for new and exciting data</em>. Use your research powers to hook data viz people with your work.</li>
+						</ul>
+					</li>
+					<li class="fragment">Look near and far 
+						<ul>
+							<li>You might have expertise close-to-home (e.g. me!) or you might have to reach out. Generally data viz people will have a web presence and 9 out of 10 times would be <em>happy to hear from you</em>! </li>
+						</ul>
+					</li>
+					<li class="fragment">You're the expert / Take ownership
+						<ul>
+							<li>As the researcher, you know the data better than anyone else. The most powerful collaborations form when <em>the viz story is guided by you</em>! </li>
+						</ul>
+
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h3 align="left"> A basic compass for collaborations... (contd)</h3><hr>
+				<ul>
+					<li class="fragment">To remake, remix, or pioneer?
+						<ul>
+							<li>Sometimes you might just want to remake the same viz for your own data or other times make something new entirely. This is context specific. In general, throughout the data viz pipeline, <em>the viz will evolve</em> - stay open for progression ;) </li>
+						</ul>
+					</li>
+					<li class="fragment">Be aware of the tools
+						<ul>
+							<li>Different tools have <em>different functions and uses</em>. Web technologies (e.g. html, css, js) are great for getting stuff onto the web + adding interactivity. Others, e.g. Python, could be better for data crunching. </li>
+						</ul>
+					</li>
+					<li class="fragment">Know your audience
+						<ul>
+							<li>Having a vision for <em>where your want your viz to go will inform what tools you use </em>and how much you choose to abstract your data. Data viz can be powerful for anything from grant applications to displaying for public awareness.</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h3 align="left"> A basic compass for collaborations... (contd)</h3><hr>
+				<ul>
+					<li class="fragment">Data crunching is <em>90% of the time</em>
+						<ul>
+							<li>Getting the data into the right format is most of the battle. The viz stuff comes at the end. </li>
+						</ul>
+					</li>
+					<li class="fragment">Cost?
+						<ul>
+							<li>It can vary. Sometimes for free or can get up to >$50.00 an hour depending on the level of professionalism, experience, viz requirements etc. <em>Time is valuable for everyone</em> ;)</li>
+						</ul>
+					</li>
+					<li class="fragment">Where can we find data viz people?
+						<ul>
+							<li>Again this varies, but a lot of data viz people I know come from design (<em>interaction design</em>), media art, computer science, <em>journalism</em>*, geography, and cognitive science.</li>
+						</ul>
+					</li>
+				</ul>
 			</section>
 
 			<section>
-				<h2>The Web</h2>
-				<p>While the web stack is indeed a magical combo, today <em>let's not worry</em> about those gritty details.</p><br>
-				<p>Instead, let's <em>let Tilemill and Mapbox work their magic</em> and help us build our first interactive web map.</p>
+				<h1> After all that... why do data viz?</h1>
+			</section>
+			<section>
+			<h3 align="left"> Why?</h3><hr>
+				<ul>
+					<li class="fragment">Mapping and <em>translation</em>
+						<ul>
+							<li>Whether it is to explore our data interally or let others look into the work, we want to make data tangible and to report more than facts, but also impressions/feelings.</li>
+						</ul>
+					</li>
+					<li class="fragment"> <em>Engage</em> broader audience
+						<ul>
+							<li>Many (most) of us are funded by the public and are working on topics directly relevant to them. Science shouldn't live in the ivory tower.</li>
+						</ul>
+					</li>
+					<li class="fragment"> Others?
+						<ul>
+							<li>For the sake of data viz, art, expression, others?</li>
+						</ul>
+					</li>
+				</ul>				
 			</section>
 
 			<section>
-				<h1> Go to <a href='https://github.com/joeyklee/hellowebmaps/tree/master/Tutorial%20I'>Hello Web Maps Tutorial I</a> to get started! </h1>
+				<h1>Quick recap</h1>
 			</section>
-
+	
 			<section>
-				<h1> Thanks <em>MaptimeYVR!</em></h1>
-				<h2> Special thanks to <em>Sarah</em> and <em>Dimitry</em> for organizing :)</h2>
+				<h3 align="left"> What did we cover?</h3>
+				<ul>
+					<li class="fragment">What is data viz</li>
+					<li class="fragment"> What are the tools - code & softwares</li>
+					<li class="fragment"> Advantages and disadvantages of code & software</li>
+					<li class="fragment"> What data viz can look like</li>
+					<li class="fragment"> Collaboration compass</li>
+					<li class="fragment"> Why do it</li>
+				</ul>
 			</section>
-
 			<section>
+				<h1> Thanks! </h1>
+				<h3> Questions? Comments?</h3>
+			</section>
+			<!-- <section>
 				<h2>Vancouver Crime Map (2013)</h2>
 				<iframe id='map2' frameBorder='0' src='https://a.tiles.mapbox.com/v4/joeyklee.k5840079/attribution,zoompan,zoomwheel,legend,geocoder,share.html?access_token=pk.eyJ1Ijoiam9leWtsZWUiLCJhIjoiMlRDV2lCSSJ9.ZmGAJU54Pa-z8KvwoVXVBw' width="960"height="550"></iframe>
 				  </div>
-			</section>
+			</section> -->
 		</div>
 
 	</div>
