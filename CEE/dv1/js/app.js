@@ -148,7 +148,7 @@ $(document).ready(function(){
             var popupContent = "<p><center>Industry:"+ "<br/>" 
                                 + feature.properties.CATEGORY+ "</center></p>";
             layer.bindPopup(popupContent);
-            console.log(layer);
+            // console.log(layer);
         }
 
         // Load Geojson Points using Native Leaflet
@@ -301,11 +301,21 @@ $(document).ready(function(){
 // -----UI interacitons ----- //
 $("#close").click(function(e) {
         e.preventDefault();
-        $("#tabs").toggleClass("toggled");
+        $("#bottomtab").toggleClass("toggled");
         // $("#infotoggle").toggleClass("toggled");
     });
 
-$(function() {
-    $( "#tabs" ).tabs();
-});
+// $(function() {
+//     $( "#bottomtab" ).tabs();
+// });
+$('#collapseOne').on('show.bs.collapse', function () {    
+    $('.panel-heading').animate({
+        backgroundColor: "#fff"
+    }, 500);   
+})
 
+$('#collapseOne').on('hide.bs.collapse', function () {    
+    $('.panel-heading').animate({
+        backgroundColor: "#fff"
+    }, 500);   
+})
