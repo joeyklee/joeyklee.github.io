@@ -4,6 +4,7 @@ $(document).ready(function(){
     $('#legend-button').tooltipster({
         content: $('<span><img src="img/legends-all-white.png" /></span>')
     , position:'left'});
+    $("#close").click();
     $("#thing").click();
 
     $('#layertoggler .ic').on({
@@ -299,15 +300,15 @@ $(document).ready(function(){
 });
 
 // -----UI interacitons ----- //
-$("#close").click(function(e) {
-        e.preventDefault();
-        $("#bottomtab").toggleClass("toggled");
-        // $("#infotoggle").toggleClass("toggled");
-    });
+// $("#close").click(function(e) {
+//         e.preventDefault();
+//         $("#bottomtab").toggleClass("toggled");
+//     });
 
 // $(function() {
 //     $( "#bottomtab" ).tabs();
 // });
+
 $('#collapseOne').on('show.bs.collapse', function () {    
     $('.panel-heading').animate({
         backgroundColor: "#fff"
@@ -319,3 +320,49 @@ $('#collapseOne').on('hide.bs.collapse', function () {
         backgroundColor: "#fff"
     }, 500);   
 })
+
+
+// dialog boxes
+$(function() {
+    $( "#dialog1" ).dialog({
+      autoOpen: false,
+      show: {
+        effect: "fade",
+        duration: 500
+      },
+      hide: {
+        effect: "fade",
+        duration: 500
+      },
+      // width: 500,
+      // height: 350,
+      resizable: false
+    });
+ 
+    $( "#headertitle" ).click(function() {
+      $( "#dialog1" ).dialog( "open" ).blur();
+    });
+  });
+
+$(function() {
+    $( "#dialog2" ).dialog({
+      autoOpen: false,
+      show: {
+        effect: "fade",
+        duration: 500
+      },
+      hide: {
+        effect: "fade",
+        duration: 500
+      },
+      // width: 500,
+      // height: 350,
+      resizable: false
+    });
+ 
+    $( "#opener2" ).click(function() {
+      $( "#dialog2" ).dialog( "open" );
+    });
+  });
+
+

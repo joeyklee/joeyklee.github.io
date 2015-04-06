@@ -1,11 +1,12 @@
 @import url('http://fonts.googleapis.com/css?family=Oswald:400,700|Open+Sans:200,400,600,800');
 
 html,body {
- margin:0; 
- padding:0; 
- height:100%;
- width:100%;
+   margin:0; 
+   padding:0; 
+   height:100%;
+   width:100%;
  }
+
 
 #map { 
   position:absolute;
@@ -43,35 +44,18 @@ html,body {
 }
 */
 
-/**** sidebar ******/
-.sidebar-nav{
-  z-index: 1000;
-    position: fixed;
-    top:60px;
-    right: 0px;
-    width: 50px;
-    /*height:70%;*/
-    height:421px;
-    list-style: none;
-    background: rgba(255,255,255,0.85); /*rgba(44, 62, 80, 0.9);*/
-}
-
+/*************** sidebar ************/
 .sidebar-nav img{
   width:35px;
   height:35px;
 }
 
 .sidebar-nav li {
-    /*text-indent: 5px;*/
     text-align: center;
-    /*line-height: 10px;*/
     padding-top:5px;
     padding-bottom:5px;
     color:#000;
-    border-bottom: 1px solid rgba(44, 62, 80, 0.2); 
-    /*font-family: 'Oswald';*/
-    /*font-size: 12px;*/
-    
+    border-bottom: 1px solid rgba(44, 62, 80, 0.2);    
 }
 
 .sidebar-nav li a {
@@ -92,11 +76,6 @@ html,body {
     text-decoration: none;
 }
 
-/*.sidebar-nav > .sidebar-brand {
-    height: 65px;
-    font-size: 18px;
-    line-height: 60px;
-}*/
 
 .sidebar-nav > .sidebar-brand a {
     color: #fff;
@@ -108,13 +87,13 @@ html,body {
 }
 
 
-/******** side bar menu ********/
+/************** side bar menu **************/
 #infotoggle{
    text-align:center;
 }
-#tabs.toggled {
+/*#tabs.toggled {
     margin-bottom: -187px;
-}
+}*/
 
 #tabs img{
   width:30px;
@@ -165,13 +144,13 @@ html,body {
 /******* header **********/
 #headertitle{
   color: #fff;
-  font-size:28px;
+  font-size:20px;
   font-family: 'Oswald';
   font-weight: 700;
   text-shadow: 1px 2px #2C3E50;
-  text-align: left;
+  /*margin-right: 15px;*/
 }
-#bs-example-navbar-collapse-1{
+/*#bs-example-navbar-collapse-1{
   padding-top: 5px;
 }
 #bs-example-navbar-collapse-1 span{
@@ -180,48 +159,47 @@ html,body {
   font-family: 'Oswald';
   font-weight: 400;
   text-shadow: 1px 2px #2C3E50;
-  text-align: left;
+}*/
+
+#bs-example-navbar-collapse-1{
+  padding-top: 5px;
+}
+.navbar-right span{
+  color: #fff;
+  font-size:16px;
+  font-family: 'Oswald';
+  font-weight: 400;
+  text-shadow: 1px 2px #2C3E50;
 }
 
 .dropdown #thing{
   color: #fff;
-  font-size:20px;
-  font-family: 'Oswald';
-  font-weight: 400;
-  text-shadow: 1px 2px #2C3E50;
-  text-align: left;  
-}
-
-
-.dropdown #legend-button a{ 
-  color: rgba(44, 62, 80, 0.5) !important; /*rgba(44, 62, 80, 0.5);*/
   font-size:16px;
   font-family: 'Oswald';
   font-weight: 400;
-  /*text-shadow: 1px 0px #2C3E50;*/
+  text-shadow: 1px 2px #2C3E50;
+}
+
+.dropdown #legend-button a{ 
+  color: rgba(44, 62, 80, 0.5) !important;
+  font-size:16px;
+  font-family: 'Oswald';
+  font-weight: 400;
 }
 
 .navbar-default{
   background-color: rgba(44, 62, 80, 0.2);
 }
 
-#logoimg{
-  display: inline-block;
-  vertical-align: middle;
-  float: none;
-}
-#logoimg img{
+
+#logoimg {
   width:40px;
   height:40px;
-  margin-top: -5px;
+  margin-top: -7px;
 }
 
-.container {
-  margin-right: 10px;
-  margin-left: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
+.container{
+  width:100%;
 }
 
 
@@ -234,12 +212,11 @@ html,body {
   z-index: 1000;
   display: none;
   float: left;
-  min-width: 50px;
+  min-width: 30px;
   padding: 5px 0;
   margin: 5px 0 0;
   list-style: none;
   font-size: 15px;
-  text-align: left;
   background-color: #ffffff;
   border: 1px solid #cccccc;
   border: 1px solid rgba(0, 0, 0, 0.15);
@@ -248,6 +225,7 @@ html,body {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   background-clip: padding-box;
 }
+
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
   text-decoration: none;
   color: #ffffff;
@@ -257,9 +235,7 @@ html,body {
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
   background-color: rgba(44, 62, 80, 0.5);
   color: #ffffff;
-  /*margin-left:-50px;*/
 }
-
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
   color: #fff;
@@ -267,7 +243,7 @@ html,body {
 }
 
 
-/*** PANEL DEFAULT ***/
+/***************** PANEL DEFAULT ******************/
 /* open close */
 #infotoggle{
    text-align:center;
@@ -389,17 +365,6 @@ html,body {
     border-radius: 0;
 }
 
-/*.panel-title a {
-    color: #FFFFFF;
-    text-align: center;
-    width: 100%;
-    display: block;
-    padding: 10px 15px;
-    font-size: 24px;
-    font-family: Helvetica,Arial,sans-serif;
-    outline: none;
-}*/
-
 .panel-title a:hover, .panel-title a:focus, .panel-title a:active {
     text-decoration: none;
     outline: none;
@@ -451,9 +416,18 @@ html,body {
 }*/
 
 
-/********temp********/
-/*@media (min-width: 768px) and (max-width: 1000px) {
-   .collapse {
-       display: none !important;
-   }
+.ui-widget-header{
+  background:rgba(44, 62, 80, 0.5);
+  color:#fff;
+  border: 1px solid #fff;
+}
+/**:focus {
+    outline: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }*/
+
+.navbar{
+  outline:none;
+}
