@@ -11,6 +11,9 @@ html,body {
 #map { 
   position:absolute;
   width:100%; 
+     min-height: 100%;
+    min-width: 100%;
+    display: block;
 }
 
 
@@ -146,7 +149,7 @@ html,body {
   color: #fff;
   font-size:20px;
   font-family: 'Oswald';
-  font-weight: 700;
+  font-weight: 500;
   text-shadow: 1px 2px #2C3E50;
   /*margin-right: 15px;*/
 }
@@ -209,7 +212,7 @@ html,body {
   vertical-align: center;
   top: 100%;
   left: 0;
-  z-index: 1000;
+  z-index: 200;
   display: none;
   float: left;
   min-width: 30px;
@@ -240,6 +243,21 @@ html,body {
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
   color: #fff;
   background-color: transparent;
+}
+
+.nav-tabs {
+  border-bottom: 1px solid #ecf0f1;
+  background-color: #fff;
+}
+
+.panel-body {
+  padding: 15px;
+  background-color: #fff;
+}
+
+.nav-tabs a {
+  color: rgba(44, 62, 80, 0.5);
+  text-decoration: none;
 }
 
 
@@ -343,7 +361,6 @@ html,body {
 }
 
 
-
 /*************temp***************/
 #accordion {
     position: fixed;
@@ -376,58 +393,16 @@ html,body {
 
 
 
-/*************** old tab style  ***************/
-/*#tabs{
-  bottom:0px;
-  position:fixed;
-  padding-left: 0;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
-  border: 1px solid #aaaaaa;
-  background: #ffffff url("images/ui-bg_glass_65_ffffff_1x400.png") 50% 50% repeat-x;
-  font-weight: normal;
-  color: #212121;
-}
-.ui-widget-header {
-  border: 1px solid #aaaaaa;
-  background: #F1F2F2 url("images/ui-bg_highlight-soft_75_cccccc_1x100.png") 50% 50% repeat-x;
-  color: #222222;
-  font-weight: bold;
-}
-.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited {
-  color: #212121;
-  text-decoration: none;
-}
-.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
-  border: 1px solid #d3d3d3;
-  background: #FFFFFF url("images/ui-bg_glass_75_e6e6e6_1x400.png") 50% 50% repeat-x;
-  font-weight: normal;
-  color: #555555;
-}
-.ui-widget-content {
-  border: 1px solid #aaaaaa;
-  background: #ffffff url("images/ui-bg_flat_75_ffffff_40x100.png") 50% 50% repeat-x;
-  color: #222222;
-}*/
-
-
-.ui-widget-header{
-  background:rgba(44, 62, 80, 0.5);
-  color:#fff;
-  border: 1px solid #fff;
-}
-/**:focus {
-    outline: none;
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-}*/
-
+/*
 .navbar{
   outline:none;
+}
+*/
+
+/************* remove focus ******************/
+.modal-open .modal, #headertitle:focus {
+    outline:none!important
+}
+.modal-open .modal, #help:focus {
+    outline:none!important
 }

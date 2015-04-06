@@ -322,47 +322,51 @@ $('#collapseOne').on('hide.bs.collapse', function () {
 })
 
 
-// dialog boxes
-$(function() {
-    $( "#dialog1" ).dialog({
-      autoOpen: false,
-      show: {
-        effect: "fade",
-        duration: 500
-      },
-      hide: {
-        effect: "fade",
-        duration: 500
-      },
-      // width: 500,
-      // height: 350,
-      resizable: false
-    });
- 
-    $( "#headertitle" ).click(function() {
-      $( "#dialog1" ).dialog( "open" ).blur();
-    });
-  });
+// *************** Dialog Boxes ******************* //
+$('#about').on('shown.bs.modal', function () {
+  $('#myInput').focus()
+})
 
-$(function() {
-    $( "#dialog2" ).dialog({
-      autoOpen: false,
-      show: {
-        effect: "fade",
-        duration: 500
-      },
-      hide: {
-        effect: "fade",
-        duration: 500
-      },
-      // width: 500,
-      // height: 350,
-      resizable: false
-    });
+$('#help').on('shown.bs.modal', function () {
+  $('#myInput').focus()
+})
+
+// $(function() {
+//     $( "#dialog1" ).dialog({
+//       autoOpen: false,
+//       show: {
+//         effect: "fade",
+//         duration: 500
+//       },
+//       hide: {
+//         effect: "fade",
+//         duration: 500
+//       },
+//       resizable: false
+//     });
  
-    $( "#opener2" ).click(function() {
-      $( "#dialog2" ).dialog( "open" );
-    });
-  });
+//     $( "#headertitle" ).click(function() {
+//       $( "#dialog1" ).dialog( "open" );
+//     }).blur();
+//   });
+
+// $(function() {
+//     $( "#dialog2" ).dialog({
+//       autoOpen: false,
+//       show: {
+//         effect: "fade",
+//         duration: 500
+//       },
+//       hide: {
+//         effect: "fade",
+//         duration: 500
+//       },
+//       resizable: false
+//     });
+ 
+//     $( "#opener2" ).click(function() {
+//       $( "#dialog2" ).dialog( "open" );
+//     });
+//   });
 
 
