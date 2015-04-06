@@ -147,7 +147,7 @@ $(document).ready(function(){
         function onEachFeature(feature, layer) {
             // does this feature have a property named popupContent?
             var popupContent = "<p><center>Industry:"+ "<br/>" 
-                                + feature.properties.CATEGORY+ "</center></p>";
+                                + feature.properties.CATEGORY+ " <br><br> Potential heat recovery: <br>"+ feature.properties.PotentE+ "</center></p> ";
             layer.bindPopup(popupContent);
             // console.log(layer);
         }
@@ -305,9 +305,6 @@ $(document).ready(function(){
 //         $("#bottomtab").toggleClass("toggled");
 //     });
 
-// $(function() {
-//     $( "#bottomtab" ).tabs();
-// });
 
 $('#collapseOne').on('show.bs.collapse', function () {    
     $('.panel-heading').animate({
@@ -323,50 +320,13 @@ $('#collapseOne').on('hide.bs.collapse', function () {
 
 
 // *************** Dialog Boxes ******************* //
-$('#about').on('shown.bs.modal', function () {
+$('#aboutmodal').on('shown.bs.modal', function () {
   $('#myInput').focus()
 })
 
-$('#help').on('shown.bs.modal', function () {
+$('#helpmodal').on('shown.bs.modal', function () {
   $('#myInput').focus()
 })
 
-// $(function() {
-//     $( "#dialog1" ).dialog({
-//       autoOpen: false,
-//       show: {
-//         effect: "fade",
-//         duration: 500
-//       },
-//       hide: {
-//         effect: "fade",
-//         duration: 500
-//       },
-//       resizable: false
-//     });
- 
-//     $( "#headertitle" ).click(function() {
-//       $( "#dialog1" ).dialog( "open" );
-//     }).blur();
-//   });
-
-// $(function() {
-//     $( "#dialog2" ).dialog({
-//       autoOpen: false,
-//       show: {
-//         effect: "fade",
-//         duration: 500
-//       },
-//       hide: {
-//         effect: "fade",
-//         duration: 500
-//       },
-//       resizable: false
-//     });
- 
-//     $( "#opener2" ).click(function() {
-//       $( "#dialog2" ).dialog( "open" );
-//     });
-//   });
 
 

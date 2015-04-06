@@ -151,7 +151,7 @@ html,body {
   font-family: 'Oswald';
   font-weight: 500;
   text-shadow: 1px 2px #2C3E50;
-  /*margin-right: 15px;*/
+  margin-left: -26px;
 }
 /*#bs-example-navbar-collapse-1{
   padding-top: 5px;
@@ -199,6 +199,7 @@ html,body {
   width:40px;
   height:40px;
   margin-top: -7px;
+  margin-left: -10px;
 }
 
 .container{
