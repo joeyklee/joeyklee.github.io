@@ -1,0 +1,169 @@
+@import url('http://fonts.googleapis.com/css?family=Oswald:400,700|Open+Sans:200,400,600,800');
+
+html,body {
+   margin:0; 
+   padding:0; 
+   height:100%;
+   width:100%;
+ }
+
+
+#map { 
+  position:absolute;
+  width:100%; 
+  /*min-height: 720px;*/
+  /*min-width: 100%;*/
+  display: block;
+  height:720px;
+}
+
+/*.container{
+	width: 100%;
+}*/
+
+
+.leaflet-overlay-pane svg {
+    width: auto;
+    height: auto;
+}
+/**************** Accordion footer *****************/
+/*#accordion {
+    position: fixed;
+    bottom: 0;
+    width: 100%;    
+    display: block;
+}
+
+.panel-default > .panel-heading{
+    background: #fff;
+}
+
+.panel-heading {
+    padding: 0;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.panel-group .panel {
+    border-radius: 0;
+}
+
+.panel-title a:hover, .panel-title a:focus, .panel-title a:active {
+    text-decoration: none;
+    outline: none;
+}
+
+.panel-group {
+  margin-bottom: 0px;
+}*/
+
+/*footer info toggle */
+/*#infotoggle{
+   text-align:center;
+}
+#close {
+    display:inline-block;
+    padding:2px 5px;
+    background:#ccc;
+    font-size: 12px;
+    font-family: tahoma;
+    position:relative;
+    margin-top: -15px;
+    vertical-align: 15px;
+    margin-bottom: none;
+    z-index:200;
+}
+#close:hover {
+    display:inline-block;
+    padding:2px 5px;
+    background:#ccc;
+    color:#fff;
+    position:relative;
+    margin-top: -15px;
+    vertical-align: 15px;
+    cursor:pointer;
+    z-index:200;
+}*/
+/**** nvd3 chart ****/
+/*#chartcontainer{
+  width:500px;
+  text-align: center;
+  padding:2px;
+  background: rgba(255, 255, 255, 0.95);
+  position: fixed;
+  margin-left:5px;
+  z-index:100;
+  margin-top: -160px;
+  vertical-align: 160px;
+  color:#fff;
+  font-family: "Oswald"
+}*/
+
+/******************** Modal boxes *********************/
+/************* remove focus ******************/
+.modal-open .modal, #about:focus {
+    outline:none!important;
+}
+.modal-open .modal, #help:focus {
+    outline:none!important;
+}
+
+
+
+/******************** Info bottom **********************/
+/*#infobottom{
+ 	display:inline-block;
+ 	width:100%;
+}
+*/
+
+#chart{
+  /*height:100%;*/
+  /*width: 100%;*/
+  background-color: rgba(44, 62, 80, 0.4);
+  margin-left:15px;
+  bottom:0;
+  width:100%;
+}
+
+
+
+
+/******************* navbar top ************************/
+.navbar-default{
+  background-color: rgba(44, 62, 80, 0.2);
+}
+
+
+.section1{
+  margin-top: 10px;
+}
+
+.section2{
+  margin-top: 10px;
+}
+
+
+
+/********************** geomap d3 ************************/
+
+#d3map{
+  padding-left: 30px;
+  padding-top:30px;
+}
+.border {
+  fill-opacity: 0;
+  stroke: #fff;
+  stroke-opacity: 0;
+}
+.border.active {
+  stroke-opacity: 0.5;
+  stroke-width: 2;
+  transition: 10ms;
+}
+
+
+/********************* #map **********************/
+/*#section2{
+  margin-left: -15px;
+}*/
