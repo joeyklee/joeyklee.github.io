@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+	    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+
+	    <!-- bootstrap css-->
+    	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+	    <!-- page style -->
+	  	<link href="css/style.css" rel="stylesheet" type="text/css">
+
+
+	    <title>City CO2</title>
+	</head>
+	<body>
+
+		<!-- Fixed navbar -->
+		<nav class="navbar navbar-default navbar-fixed-top">
+		  <div class="container">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#"> City CO<sub>2</sub></a>
+		    </div>
+		    <div id="navbar" class="navbar-collapse collapse">
+		      <ul class="nav navbar-nav">
+		        <li><a href="#">Project</a></li>
+		        <li><a href="#">Overview</a></li>
+		        <li><a href="#">Mobility</a></li>
+		      </ul>
+		      <ul class="nav navbar-nav navbar-right">
+		        <li><a href="#about">About</a></li>
+		        <li><a href="#contact">Contact</a></li>
+		      </ul>
+		    </div><!--/.nav-collapse -->
+		  </div>
+		</nav>
+
+		<div class="container">
+		  <!-- Main component for a primary marketing message or call to action -->
+		  <div class="row">
+		  	<div class="col-md-12">
+				  <div class="jumbotron">
+				    <h1>Explore Your <br>
+				    City's CO<sub>2</sub>
+				    </h1>
+				    <p>A fleet of mobile sensors is measuring CO<sub>2</sub> in Vancouver, BC
+				    <br> quantifying the CO<sub>2</sub> footprint of the city and helping
+				    <br> us develop solutions for a greener city.
+				    </p>
+				      <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Explore your City CO<sub>2</sub> &raquo;</a>
+				    </p>
+				  </div>
+				</div>
+		  </div>
+		</div> <!-- /container -->
+
+
+		<section class="about">
+		   <div class="container">
+		   	<h1 id="projectabout">
+		   		<!-- The City CO<sub>2</sub> Project -->
+		   		<em>Mobilizing</em> Emission Mapping in Cities
+		   		<!-- <span><em>Mobilizing</em> Emission Mapping in Cities</span> -->
+		   		<!-- <em>Mobilizing</em> Emission Mapping in Cities: The City CO<sub>two</sub> Project -->
+	   		</h1>
+            <div class="row" id="movie">
+                <div class="col-md-12 text-center">
+                	<iframe id="player" src="https://player.vimeo.com/video/124496101" style="width:800px; height:540px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/124496101">City Co2 Teaser</a> from <a href="https://vimeo.com/leejoeyk">Joey Lee</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+                </div>
+            </div>
+            <div class="row">
+            	<div class="col-md-12"><h3>The City CO<sub>2</sub> Project</h3></div>
+                <div class="col-md-6">
+
+                    <p>At the<b> University of British Columbia's Urban Climate Group</b>, we are currently mobilizing a fleet of CO<sub>2</sub> sensors to better map and understand the changing landscape of CO<sub>2</sub> emissions in the city of Vancouver, BC, Canada. With these measurements, we can begin to quanitfy and visualize the local scale variability of CO<sub>2</sub> concentrations at a scale and resolution like never before.</p>
+                    <p>Along with building a fleet of mobile sensors, we develop a web-based CO<sub>2</sub> mapping application to visually explore the data measured throughout the city. By giving the public, practicioners, policy makers, and designers the tools to visually explore the direct impacts of people and the city on the environment, we hope to faciliate new ways of approaching and developing solutions for a low-carbon future.</p>
+                    <p>Why is this important? Cities and the cumulative processes of urbanization are estimated to contribute nearly 70% of greenhouse gas (GHG) emissions worldwide. Cities are undeniably a major contributor to increasing GHG concentrations in the earth's atmosphere, enhancing greenhouse gas forcing and increasing the uncertainty our future climate.</p>
+                </div>
+                <div class="col-md-6">
+                	<p> Current tools monitoring our GHG emissions can not give us feedback at the spatial scales we can relate to and plan around. Traditional methods operate at coarse spatial resolutions (e.g. measured from space over thousands of kilometers) or at sparsely located fixed points. How can we as communities and individuals begin to make more conscious decisions about reducing our emissions if we dont have the tools to take ownership of our emissions? </p>
+                	<p>Climate change is indeed a global phenomenon, but through local-scale policy interventions, urban design, community participation, and behavioral change, cities hold a great potential to reduce their carbond footprint and can lead the way to a more sustainable future. </p>
+                    <p><b> What is your City CO<sub>2</sub>?</b>.</p>
+                </div>
+            </div>
+        </div>
+		</section>
+		
+
+      <section class="workflow">
+      	<div class="container">
+      	  <h1>Overview: From the lab to the streets</h1>
+      	  <div class="row">
+      	  		<div class="col-md-6">
+	              	<div class="col-md-12">
+	              		<h3><img src="assets/img/tools.png" class="sectionheaderimg"> &nbsp; Building the Tools</h3>
+	              	</div>
+	                  <div class="col-md-12">
+                  	    <p>
+                  		  Inspired by opensourced technologies, we are using Arduino to power our CO<sub>2</sub> sensor system. The versatility of the Arduino has allowed us to plug-and-play the Adafruit GPS shield (latitude, longitude, vehicle speed, and elevation) with a LiCor CO2 Infrared Gas Analyzer, as well as a digital thermometer. The sensor is approximately 35.8cm x 27.8cm x 11.8cm and weighs approx. 1.5kgs.
+                  		</p>
+
+	                  	<div id="myCarousel1" class="carousel slide">
+	                  	    <!-- Carousel indicators -->
+	                  	    <ol class="carousel-indicators">
+	                  	       <li data-target="#myCarousel1" data-slide-to="0" class="active"></li>
+	                  	       <li data-target="#myCarousel1" data-slide-to="1"></li>
+	                  	    </ol>   
+	                  	    <!-- Carousel items -->
+	                  	    <div class="carousel-inner">
+	                  	       <div class="item active">
+	                  	          <img src="assets/img/sensorlineup.jpg" alt="First slide">
+	                  	          <center><p class="imagedesc"> Image: Currently 5 sensors have been built and tested.</p></center>
+	                  	       </div>
+	                  	       <div class="item">
+	                  	          <img src="assets/img/boxphoto.jpg" alt="Second slide">
+	                  	          <center><p class="imagedesc"> Image: The components of the sensor.</p></center>
+	                  	       </div>
+	                  	    </div>
+	                  	    <!-- Carousel nav -->
+	                  	    <a class="carousel-control left" href="#myCarousel1" 
+	                  	       data-slide="prev">&lsaquo;</a>
+	                  	    <a class="carousel-control right" href="#myCarousel1" 
+	                  	       data-slide="next">&rsaquo;</a>
+                  		</div> 
+                  		<div> Our lab results show that the system is capable of measuring at +/- 1ppm.</div>
+          		      	<p>We plan to opensource our the tools on <a href="github.com">Github</a> to share our work with the community. Stay tuned!</p>
+          		        
+	                  </div>
+                </div>
+
+              	<div class="col-md-6">
+	              	<div class="col-md-12">
+	              		<h3><img src="assets/img/gears.png" class="sectionheaderimg">&nbsp; Mobilizing the Fleet</h3>
+	              	</div>
+	                  <div class="col-md-12">
+	                  	<p>
+          		      	  Designed to be portable by cars and bikes, we aim to measure greenhouse gas concentrations at high spatial and temporal resolution across all parts of the city. The idea is to "piggyback" on existing infrastructure so that our measurements can be done <em>intensively</em> and <em>extensively</em> and to minimize the carbon footprint of our research efforts. 
+          		      	</p>
+
+	                  	<div id="myCarousel2" class="carousel slide">
+	                  	    <!-- Carousel indicators -->
+	                  	    <ol class="carousel-indicators">
+	                  	       <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+	                  	       <li data-target="#myCarousel2" data-slide-to="1"></li>
+	                  	    </ol>   
+	                  	    <!-- Carousel items -->
+	                  	    <div class="carousel-inner">
+	                  	       <div class="item active">
+	                  	          <img src="assets/img/bikes.jpg" alt="First slide">
+	                  	          <center><p class="imagedesc"> Image: Professor of Geography & Atmospheric Sciences, Dr. Andreas Christen and Senior Research Technician, Rick Ketler taking measurements at UBC.</p></center>
+	                  	       </div>
+	                  	       <div class="item">
+	                  	          <img src="assets/img/boxincar.jpg" alt="Second slide">
+	                  	          <center><p class="imagedesc"> Image: The prototype system in a vehicle.</p></center>
+	                  	       </div>
+	                  	    </div>
+	                  	    <!-- Carousel nav -->
+	                  	    <a class="carousel-control left" href="#myCarousel2" 
+	                  	       data-slide="prev">&lsaquo;</a>
+	                  	    <a class="carousel-control right" href="#myCarousel2" 
+	                  	       data-slide="next">&rsaquo;</a>
+                  		</div> 
+
+	                  	<p>With the addition of these sensors to vehicles, in particular mobility service providers like <a href="Car2Go.com">Car2Go</a>, we can take "mobility-as-a-service" to the next level by providing new information about the city's environment to it's residents.</p>
+	                  	
+	                  </div>
+                </div>
+           </div>
+
+     	   <div class="row">
+     	  		 <div class="col-md-6">
+	              	<div class="col-md-12">
+	              		<h3><img src="assets/img/magnifier.png" class="sectionheaderimg">&nbsp; Data Analysis</h3>
+	              	</div>
+
+	                   <div class="col-md-12">
+	                  	 <p> With the measured data, we will be analyzing various aspects of the elevated concentrations of CO<sub>2</sub> in cities, often referred to as the "urban CO<sub>2</sub> dome". We want to explore these key questions:</p>
+	                  	 <ul>
+	                  	 	<li> Where is the variability in CO<sub>2</sub> concentrations the highest and what does this tell us about the emissions sources near by?</li>
+	                  	 	<li> How does the urban CO<sub>2</sub> dome change over time and across different land use types? How does the landscape and season affect the CO<sub>2</sub> dome?</li>
+	                  	 	<li> What are the issues surrounding the sampling density of a mobile sensor fleet? Is it a viable option for monitoring such pollutants?</li>
+	                  	 	<!-- <li> Can we identify "hotspots" and explain why they exist?</li> -->
+	                  	 </ul>
+                  		
+          		    	<div id="myCarousel3" class="carousel slide">
+          		    	    <!-- Carousel indicators -->
+          		    	    <ol class="carousel-indicators">
+          		    	       <li data-target="#myCarousel3" data-slide-to="0" class="active"></li>
+          		    	       <li data-target="#myCarousel3" data-slide-to="1"></li>
+          		    	       <li data-target="#myCarousel3" data-slide-to="2"></li>
+          		    	    </ol>   
+          		    	    <!-- Carousel items -->
+          		    	    <div class="carousel-inner">
+	          		    	    <div class="item active">
+	          		    	       <img src="assets/img/traverse2.png" alt="First slide">
+	          		    	       <center><p class="imagedesc"> Image: Mobile measurements visualized in Google Earth.</p></center>
+	          		    	    </div>
+          		    	       <div class="item">
+          		    	          <img src="assets/img/map-data-context.png" alt="First slide">
+          		    	          <center><p class="imagedesc"> Image: Measurements from downtown and Stanley Park, Vancouver, BC.</p></center>
+          		    	       </div>
+          		    	       <div class="item">
+          		    	          <img src="assets/img/ubc_exp1_graph1.png" alt="Second slide">
+          		    	          <center><p class="imagedesc"> Image: CO<sub>2</sub> Concentrations from experimental measurement campaign at UBC.</p></center>
+          		    	       </div>
+          		    	       <div class="item">
+          		    	          <img src="assets/img/ubc_exp1_graph2.png" alt="third slide">
+          		    	          <center><p class="imagedesc"> Image: Measurement paths from bikes and cars from experimental measurement campaign at UBC.</p></center>
+          		    	       </div>
+          		    	    </div>
+          		    	    <!-- Carousel nav -->
+          		    	    <a class="carousel-control left" href="#myCarousel3" 
+          		    	       data-slide="prev">&lsaquo;</a>
+          		    	    <a class="carousel-control right" href="#myCarousel3" 
+          		    	       data-slide="next">&rsaquo;</a>
+          				</div>
+
+	                   </div>
+                </div>
+ 
+             	 <div class="col-md-6">
+	              	<div class="col-md-12">
+	              		<h3><img src="assets/img/map.png" class="sectionheaderimg">&nbsp; Visualization</h3>
+	              	</div>
+	                   <div class="col-md-12">
+ 	                  		<p> Along with the tools to measure and monitor CO<sub>2</sub>, we also build a set of interactive web based mapping and visualization tools to examine spatial and temporal dimensions of the CO<sub>2</sub> data. We invite people to filter and aggregate by date and time, CO<sub>2</sub> range, neighborhood and mode of transport and retrieve data for further analysis using our application programming interface (API). The dataviewer is targeted to engage communities, citizen scientists, planners and policy makers to better identify emissions patterns (if any), help raise questions about why these patterns emerge, and in-turn develop local and regional solutions for addressing these questions.</p>
+	                   </div>
+	                  	<div id="myCarousel4" class="carousel slide">
+	                  	    <!-- Carousel indicators -->
+	                  	    <ol class="carousel-indicators">
+	                  	       <li data-target="#myCarousel4" data-slide-to="0" class="active"></li>
+	                  	       <li data-target="#myCarousel4" data-slide-to="1"></li>
+	                  	    </ol>   
+	                  	    <!-- Carousel items -->
+	                  	    <div class="carousel-inner">
+	                  	       <div class="item active">
+	                  	          <img src="assets/img/dataviewer1.png" alt="First slide">
+	                  	          <center><p class="imagedesc"> Image: Prototype of dataviewer (under construction)</p></center>
+	                  	       </div>
+	                  	       <div class="item">
+	                  	          <img src="assets/img/dataviewer2.png" alt="Second slide">
+	                  	          <center><p class="imagedesc"> Image: Teaser if API Endpoints to query data from the database.</p></center>
+	                  	       </div>
+	                  	    </div>
+	                  	    <!-- Carousel nav -->
+	                  	    <a class="carousel-control left" href="#myCarousel4" 
+	                  	       data-slide="prev">&lsaquo;</a>
+	                  	    <a class="carousel-control right" href="#myCarousel4" 
+	                  	       data-slide="next">&rsaquo;</a>
+                 		</div>
+                </div>
+           </div>
+    </section>
+
+
+    <section>
+    	<div class="container">
+    		<h1>Mobility-as-a-Sensor</h1>
+    		<div class="row">
+    			<div class="col-md-12" >
+    				<div class="col-md-12" id="crayonmap"><center><a href="http://joeyklee.github.io/animatedlines/" target="_blank"> <img src="assets/img/colormap2.png"></a></center></div>
+    				<div><center>Click the image to color in the mobile sensing map of one of our first experiments measuring CO<sub>2</sub> using bikes and cars at UBC!</center></div>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+          
+    <section>
+      	<div class="container">
+      	  <h1>References</h1>
+      	  <p>Rosenzweig, C., Solecki, W., and Hammer, S. A. (2010). Cities lead the way in climate-change action. Nature, pages 1–3.</p>
+
+      	</div>
+    </section>
+	
+	<section>
+		<div class="container">
+		<div class="row">
+			<div class="col-md-12"> <hr></div>
+		</div>
+
+		<div class="col-md-12">
+			<div class="row">
+				
+				<div class="col-md-6">
+					<div class="col-md-12"><center><h4>Team</h4></center></div>
+					<div class="col-md-6">
+						<h5>Urban Climate Group</h5>
+						<ul class="list-unstyled credits" >
+							<li>Dr. Andreas Christen <br><span>Supervisor, PI</span> </li>
+							<li>Joey Lee <br><span> MSc Thesis, Research & Visualization</span></li>
+							<li>Zoran Nesic <br> <span> Senior Research Engineer </span></li>
+							<li>Rick Ketler <br> <span>Senior Technician</span></li>
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<h5>Advisory</h5>
+						<ul class="list-unstyled credits">
+							<li>Ron Kellett <br><span> Landscape Architecture and Planning, Thesis Co-supervisor</span></li>
+							<li> Les Lavkulich <br><span> TerreWEB Advisor and Committee Member </span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="col-md-12"><center><h4>Funding and Support by</h4></center></div>
+					<p>NSERC Discovery Grant ‘Direct measurement of greenhouse gas exchange in urban ecosystems’ (Christen), NSERC CREATE/Terrestrial Research on Ecosystems and World Wide Education and Broadcast (TerreWEB) and the Canada Foundation for Innovation CFI (Christen) and BCKDF.</p>
+					<p> Special Thanks to: <a href="Benedikt-gross.de">Benedikt Groß</a>, <a href="http://stephanbogner.de/">Stephan Bogner</a>, <a href="47nord.de">47Nord</a>, <a href="http://briantjacobs.com/">Brian Jacobs</a>, & <a href="chrispie.com">Christopher Pietsch</a> for visualization support and inspiration.</p>
+				</div>
+			</div>
+		</div>
+
+	</section>
+
+	
+		<!-- jquery -->
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+
+		<!-- boostrap -->
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+
+	</body>
+</html>
+
+
+
+<!-- <section>
+        <div class="container">
+          <h1>The City CO<sub>two</sub> Project</h1>
+          <p>
+          	Nearly 70% of greenhouse gas (GHG) emissions worldwide have been attributed to cities. While cities are a major contributor to increasing GHG concentrations in the earth's atmosphere - and thus climate change - they also have the greatest potential to reduce their carbon footprint.  
+          </p> 
+          <p>
+          	Through policy interventions, urban design, community participation, and behavioral change, cities hold the key to a more sustainable future.
+          </p>
+          <p>
+          	However, the current tools monitoring our GHG emissions can not give us feedback at the spatial scales we can relate to and plan around. Traditional methods operate at coarse spatial resolutions (e.g. measured from space over thousands of kilometers) or at sparsely located fixed points.
+          </p>
+          <p>
+          	How can we as communities and individuals begin to make more conscious decisions about reducing our emissions if we dont have the tools to take ownership of our emissions?
+          	</p>
+
+          <p>
+          	Given improvements in technology and the growth of the opensource community, new opportunities exist to help benchmarch our emissions in our communities. Using a mobile approach to sensing and monitoring emissions, we can use cars and bikes to measure greenhouse gas concentrations at a local level/neighborhood level.
+          </p> 
+          <p>
+          	Inspired by opensourced technologies, we are using Arduino to power our CO2 sensor system. The versatility of the Arduino has allowed us to plug-and-play the Adafruit GPS shield (latitude, longitude, vehicle speed, and elevation) with a LiCor CO2 Infrared Gas Analyzer, as well as a XYZ digital thermometer. The sensor is approximately X x X x X and weighs X kgs.
+          </p>
+        </div>
+      </section> -->
