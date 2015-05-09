@@ -58,13 +58,19 @@ $(document).ready(function() {
 
 
 		d3.json("data/co2data.geojson", function(data) {
-			// console.log(data);
+			// console.log(data.features.length);
+			// remove any weird points
+			data.features = data.features.filter(function(d){
+				return d.properties.co2 !== 0;
+			});
+			// console.log(data.features.length);
+
 			pts = data;
 
 			// var layerGroup = L.layerGroup().addTo(map);
 
 
-			var cellWidth = 5;
+			var cellWidth = 2.5;
 			var units = 'kilometers';
 			// var grid = turf.hexGrid(bbox, cellWidth, units);
 			// var grid = turf.squareGrid(bbox, cellWidth, units);
@@ -141,9 +147,7 @@ $(document).ready(function() {
 			var rawPoints = L.featureGroup().bringToFront();
 			// -------------- Set Scales -------------- //
 			(function render(){
-				
 				console.log(data);
-				
 				// console.log(data.features.length);
 		       // get max and min
 		       // var dataMax = d3.max(data.features, function(d){
@@ -397,7 +401,8 @@ $(function() {
 		$('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
 	});
 
-	// console.log($("#reportrange span").daterangepicker("getDate"));
+	// console.log($("#reportrange span").daterangepicker("getDate");
+		console.log($("#reportrange span").val());
 	// console.log($("#reportrange").daterangepicker("getDate"));
 
 });
