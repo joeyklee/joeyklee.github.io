@@ -3,8 +3,8 @@
         var map = L.map('map', {
             center: [49.26, -123.10],
             zoom: 13,
-            minZoom: 10,
-            maxZoom: 20,
+            //minZoom:10,
+            //maxZoom:20,
             attributionControl: true,
             zoomControl: true
         });
@@ -33,44 +33,119 @@
 
         }); // end d3
 
-        var ifile = 'data/0108.geojson';
+
+        var way_1641 = L.layerGroup();
+        var way_0205 = L.layerGroup();
+        var way_0150 = L.layerGroup();
+        var way_0151 = L.layerGroup();
+        var way_0108 = L.layerGroup();
+
+        var ifile = {"1641":'data/1641.geojson',
+                    "0205":'data/0205.geojson',
+                    "0150": 'data/0150.geojson',
+                    "0151": 'data/0151.geojson',
+                    "0108": 'data/0108_1.geojson'};
         var waycolor = '#3366FF';
-        d3.json(ifile, function(data) {
-            // console.log(data.features[0].geometry.coordinates);
-            var coords = data.features[0].geometry.coordinates;
 
-            var newcoords = [];
-            coords.forEach(function(d) {
-                var temp = [d[1], d[0]];
-                newcoords.push(temp);
-            });
+        loadRoute(ifile["1641"], '#3366FF', way_1641);
+        loadRoute(ifile["0205"], '#CC33FF', way_0205);
+        loadRoute(ifile["0150"], '#00CC99', way_0150);
+        loadRoute(ifile["0151"], '#003366', way_0151);
+        loadRouteMulti(ifile["0108"], '#FF0000', way_0108);
 
-            var pathPattern = L.polylineDecorator(newcoords, {
-                patterns: [{
-                    offset: 0,
-                    repeat: 10,
-                    symbol: L.Symbol.dash({
-                        pixelSize: 5,
-                        pathOptions: {
-                            color: waycolor,
-                            weight: 2,
-                            opacity: 1
-                        }
+        var baseMaps = {
+            "1641": way_1641,
+            "0205": way_0205,
+            "0150": way_0150,
+            "0151": way_0151,
+            "0108": way_0108
+        };
+
+        L.control.layers(baseMaps, null).addTo(map);
+        
+        function loadRoute(ifile, waycolor, layerobject){
+            d3.json(ifile, function(data) {
+                // console.log(data.features[0].geometry.coordinates);
+                var coords = data.features[0].geometry.coordinates;
+
+                var newcoords = [];
+                coords.forEach(function(d) {
+                    var temp = [d[1], d[0]];
+                    newcoords.push(temp);
+                });
+
+                var pathPattern = L.polylineDecorator(newcoords, {
+                    patterns: [{
+                        offset: 0,
+                        repeat: 10,
+                        symbol: L.Symbol.dash({
+                            pixelSize: 5,
+                            pathOptions: {
+                                color: waycolor,
+                                weight: 2,
+                                opacity: 1
+                            }
+                        })
+                    }, {
+                        offset: 25,
+                        repeat: 50,
+                        symbol: L.Symbol.arrowHead({
+                            pixelSize: 10,
+                            pathOptions: {
+                                fillOpacity: 0.75,
+                                weight: 0
+                            }
+                        })
+                    }]
+                }).addTo(layerobject);
+            }); // end d3
+        };
+
+        function loadRouteMulti(ifile, waycolor, layerobject){
+            d3.json(ifile, function(data) {
+                // console.log(data.features[0].geometry.coordinates);
+                var coords = data.features[0].geometry.coordinates;
+
+                var newcoords = [];
+                coords.forEach(function(d){
+                    // console.log(d)
+                    d.forEach(function(e){
+                        // console.log(e);
+                        var temp = [e[1], e[0]];
+                        newcoords.push(temp);
                     })
-                }, {
-                    offset: 25,
-                    repeat: 50,
-                    symbol: L.Symbol.arrowHead({
-                        pixelSize: 10,
-                        pathOptions: {
-                            fillOpacity: 0.75,
-                            weight: 0
-                        }
-                    })
-                }]
-            }).addTo(map);
+                })
 
-        }); // end d3
+                var pathPattern = L.polylineDecorator(newcoords, {
+                    patterns: [{
+                        offset: 0,
+                        repeat: 10,
+                        symbol: L.Symbol.dash({
+                            pixelSize: 5,
+                            pathOptions: {
+                                color: waycolor,
+                                weight: 2,
+                                opacity: 1
+                            }
+                        })
+                    }, {
+                        offset: 25,
+                        repeat: 50,
+                        symbol: L.Symbol.arrowHead({
+                            pixelSize: 10,
+                            pathOptions: {
+                                fillOpacity: 0.75,
+                                weight: 0
+                            }
+                        })
+                    }]
+                }).addTo(layerobject);
+            }); // end d3
+        };
+
+
+
+
     } // end init()
 
 // var map = new L.Map('map', {
