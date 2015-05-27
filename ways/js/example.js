@@ -47,10 +47,10 @@
         var way_0151 = L.layerGroup();
         var way_0108 = L.layerGroup();
 
-        var ifile = {"1641":'data/1641.geojson',
-                    "0205":'data/0205.geojson',
-                    "0150": 'data/0150.geojson',
-                    "0151": 'data/0151.geojson',
+        var ifile = {"1641":'data/1641_1.geojson',
+                    "0205":'data/0205_1.geojson',
+                    "0150": 'data/0150_1.geojson',
+                    "0151": 'data/0151_1.geojson',
                     "0108": 'data/0108_1.geojson'};
         var waycolor = '#3366FF';
 
