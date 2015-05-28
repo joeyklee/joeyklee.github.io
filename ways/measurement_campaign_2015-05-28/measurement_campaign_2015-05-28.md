@@ -54,7 +54,10 @@ To see each of the transects in more detail, use [this interactive map](http://j
 On **Wednesday** evening, please pick up your respective vehicle (if applicable) from the Geography department and take it home with you. 
 
 ### Snacks:
-Feel free to bring some snacks. The drive will take between 2.5 - 3 hours. I will try to provide some things for us to eat and pass them out when we meet Thursday morning
+Feel free to bring some snacks. The drive will take between 2.5 - 3 hours. I will provide bagels, croissants, and orange juice in the morning, so come on time! 
+
+### Record your gas mileage:
+SUPER IMPORTANT SO THAT WE CAN REIMBURSE YOU: Record your gas mileage before and after - joey will also take photos -- so that we can properly reimburse you for the driving. 
 
 
 ##  Experiment: Thursday, April 28th
@@ -80,6 +83,8 @@ Images:
 ### Step 3: 15 minute sensor warm-up period.
 In order to get all the sensors warmed up and ready to measure, we will run all of the sensors in the vehicles for 15 minutes. 
 
+While this is happening, record the current car mileage for each vehicle.
+
 ### Step 4: Go! (~10:30am)
 Each of us will go our separate ways to start measuring along our prescribed transects until the route is completed. Each of the routes will lead you back to the meeting point, David Thompson Secondary School. See transect assignments above. 
 
@@ -87,6 +92,9 @@ Each of us will be driving approximately 70 - 80 km. Depending on traffic, this 
 
 ### Step 5: Meet back at David Thompson Secondary School
 Joey will collect the sensors. 
+
+## Step 5.5: Record how many km you drove
+Note how many km were driven per car for reimbursement purposes.
 
 ### Step 6: Return the vehicles to UBC and/or go free. 
 
