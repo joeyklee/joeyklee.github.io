@@ -1,25 +1,51 @@
 ﻿function init() {
 
-        var map = L.map('map', {
-            center: [49.26, -123.10],
-            zoom: 13,
-            //minZoom:10,
-            //maxZoom:20,
-            attributionControl: true,
-            zoomControl: true
-        });
+        // var map = L.map('map', {
+        //     center: [49.26, -123.10],
+        //     zoom: 13,
+        //     //minZoom:10,
+        //     //maxZoom:20,
+        //     attributionControl: true,
+        //     zoomControl: true
+        // });
+
+        L.mapbox.accessToken = 'pk.eyJ1Ijoiam9leWtsZWUiLCJhIjoiMlRDV2lCSSJ9.ZmGAJU54Pa-z8KvwoVXVBw';
+        var map = L.mapbox.map('map', 'mapbox.streets',{
+            zoomControl: false
+        }).setView([49.26, -123.10], 13);
+
+        map.on('ready', function(){
+            new L.Control.MiniMap(L.mapbox.tileLayer('mapbox.streets'), {
+                position:'topright', 
+                width:200, 
+                height:200,
+                zoomLevelOffset: -3,
+                aimingRectOptions:{
+                    fillOpacity:0.05,
+                    stroke:2,
+                    color: '#FF9966'
+                }
+            }).addTo(map);
+        })
+
+        // var googleLayer = new L.Google('ROADMAP');
+        // map.addLayer(googleLayer);
+
+        // map.addLayer('mapbox.streets');
 
         // var OpenStreetMap_Mapnik = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         //     maxZoom: 19,
         //     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         // }).addTo(map);
-        var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.png', {
-            attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-            subdomains: 'abcd',
-            minZoom: 0,
-            maxZoom: 20,
-            ext: 'png'
-        }).addTo(map);
+        // var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.png', {
+        //     attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        //     subdomains: 'abcd',
+        //     minZoom: 0,
+        //     maxZoom: 20,
+        //     ext: 'png'
+        // }).addTo(map);
+
+        var marker = L.marker([49.221076, -123.069158]).addTo(map);
 
         var studyarea = 'data/studyarea.geojson';
         d3.json(studyarea, function(data) {
@@ -47,14 +73,16 @@
         var way_0151 = L.layerGroup();
         var way_0108 = L.layerGroup();
 
-        var ifile = {"1641":'data/1641_1.geojson',
-                    "0205":'data/0205_1.geojson',
-                    "0150": 'data/0150_1.geojson',
-                    "0151": 'data/0151_1.geojson',
-                    "0108": 'data/0108_1.geojson'};
+        var ifile = {
+            "1641": 'data/1641_1.geojson',
+            "0205": 'data/0205_1.geojson',
+            "0150": 'data/0150_1.geojson',
+            "0151": 'data/0151_1.geojson',
+            "0108": 'data/0108_1.geojson'
+        };
         var waycolor = '#3366FF';
 
-        loadRoute(ifile["1641"], '#3366FF', way_1641);
+        loadRoute(ifile["1641"], '#7519FF', way_1641);
         loadRoute(ifile["0205"], '#CC33FF', way_0205);
         loadRoute(ifile["0150"], '#00CC99', way_0150);
         loadRoute(ifile["0151"], '#003366', way_0151);
@@ -69,8 +97,8 @@
         };
 
         L.control.layers(baseMaps, null).addTo(map);
-        
-        function loadRoute(ifile, waycolor, layerobject){
+
+        function loadRoute(ifile, waycolor, layerobject) {
             d3.json(ifile, function(data) {
                 // console.log(data.features[0].geometry.coordinates);
                 var coords = data.features[0].geometry.coordinates;
@@ -89,17 +117,18 @@
                             pixelSize: 5,
                             pathOptions: {
                                 color: waycolor,
-                                weight: 2,
-                                opacity: 1
+                                weight: 3,
+                                opacity: 0.75
                             }
                         })
                     }, {
                         offset: 25,
-                        repeat: 50,
+                        repeat: 100,
                         symbol: L.Symbol.arrowHead({
                             pixelSize: 10,
                             pathOptions: {
-                                fillOpacity: 0.75,
+                                color: waycolor,
+                                fillOpacity: 1,
                                 weight: 0
                             }
                         })
@@ -108,15 +137,15 @@
             }); // end d3
         };
 
-        function loadRouteMulti(ifile, waycolor, layerobject){
+        function loadRouteMulti(ifile, waycolor, layerobject) {
             d3.json(ifile, function(data) {
                 // console.log(data.features[0].geometry.coordinates);
                 var coords = data.features[0].geometry.coordinates;
 
                 var newcoords = [];
-                coords.forEach(function(d){
+                coords.forEach(function(d) {
                     // console.log(d)
-                    d.forEach(function(e){
+                    d.forEach(function(e) {
                         // console.log(e);
                         var temp = [e[1], e[0]];
                         newcoords.push(temp);
@@ -128,11 +157,11 @@
                         offset: 0,
                         repeat: 10,
                         symbol: L.Symbol.dash({
-                            pixelSize: 5,
+                            pixelSize: 10,
                             pathOptions: {
                                 color: waycolor,
-                                weight: 2,
-                                opacity: 1
+                                weight: 5,
+                                opacity: 0.75
                             }
                         })
                     }, {
@@ -141,7 +170,8 @@
                         symbol: L.Symbol.arrowHead({
                             pixelSize: 10,
                             pathOptions: {
-                                fillOpacity: 0.75,
+                                color: waycolor,
+                                fillOpacity: 1,
                                 weight: 0
                             }
                         })
@@ -149,7 +179,6 @@
                 }).addTo(layerobject);
             }); // end d3
         };
-
 
 
 
