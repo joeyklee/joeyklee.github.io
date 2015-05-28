@@ -15,12 +15,12 @@ In case anything happens during the drive, please do not hesitate to call.
 	911
 
 ## Vehicle Assignments:
-* Andreas - TBD
+* Andreas - Micromet truck
 * Thea - UBC Geography Van
 	* I've picked up the keys for you, they are in room 249.
 	* The Geography van is in the same parkade as the Micromet truck under the music building
 	* model: 2015 dodge caravan
-* Nick - Micromet Truck
+* Alex - own car
 * Joey - own car
 * Mark - own car
 
