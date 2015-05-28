@@ -89,11 +89,11 @@
         loadRouteMulti(ifile["0108"], '#FF0000', way_0108);
 
         var baseMaps = {
-            "1641": way_1641,
-            "0205": way_0205,
-            "0150": way_0150,
-            "0151": way_0151,
-            "0108": way_0108
+            "Andreas: 1641": way_1641,
+            "Thea: 0205": way_0205,
+            "Alex: 0150": way_0150,
+            "Mark: 0151": way_0151,
+            "Joey: 0108": way_0108
         };
 
         L.control.layers(baseMaps, null).addTo(map);
