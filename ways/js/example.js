@@ -84,7 +84,7 @@
 
         loadRoute(ifile["1641"], '#7519FF', way_1641);
         loadRoute(ifile["0205"], '#CC33FF', way_0205);
-        loadRoute(ifile["0150"], '#00CC99', way_0150);
+        loadRoute(ifile["0150"], '#006600', way_0150);
         loadRoute(ifile["0151"], '#003366', way_0151);
         loadRouteMulti(ifile["0108"], '#FF0000', way_0108);
 
@@ -157,16 +157,16 @@
                         offset: 0,
                         repeat: 10,
                         symbol: L.Symbol.dash({
-                            pixelSize: 10,
+                            pixelSize: 5,
                             pathOptions: {
                                 color: waycolor,
-                                weight: 5,
+                                weight: 3,
                                 opacity: 0.75
                             }
                         })
                     }, {
                         offset: 25,
-                        repeat: 50,
+                        repeat: 100,
                         symbol: L.Symbol.arrowHead({
                             pixelSize: 10,
                             pathOptions: {
