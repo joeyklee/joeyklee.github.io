@@ -35,7 +35,7 @@ To see each of the transects in more detail, use [this interactive map](http://j
 
 ![](img/0205.png)
 
-* Nick - route 0150
+* Alex - route 0150
 
 ![](img/0150.png)
 
