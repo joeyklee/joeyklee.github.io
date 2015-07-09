@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ICUC 2015 - Mobile Sensor Network to Map CO2 in Urban Environments</title>
+    <meta name="description" content="ICUC 2015 - Mobile Sensor Network to Map CO2 in Urban Environments">
+    <meta name="author" content="Joey Lee">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="assets/style/reveal.css">
+    <link rel="stylesheet" href="assets/style/night.css" id="theme">
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="assets/style/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="reveal">
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section>
+                <h1><em>A Mobile Sensor Network to Map CO<sub>2</sub> in Urban Environments</em> </h1>
+                <p>
+                    <small>
+                        <a href="http://www.jk-lee.com" target='_blank'>Joey Lee, MSc (Fall, 2015)</a> <br>
+                        <a href="http://ibis.geog.ubc.ca/~achristn/">Department of Geography <br> The University of British Columbia</a> <br>
+                        <a href="https://github.com/joeyklee" target='_blank'>@joeyklee</a> 
+                    </small>
+                    <br>
+                    <br>
+                    <small>9th International Conference on Urban Climates</small>
+                    <br>
+                    <small>Toulouse, France, 2015</small>
+                </p>
+            </section>
+            <!-- <section>
+                <h3 align="left">Why am I here?</h3>
+                <hr>
+                <h2 align="left">I'm interested in the <em>cumulative process of making maps</em>: </h2>
+                <h3>Data aquisition -> <br> data mining -> <br>visualization -> <br>communication -> <br>interaction.</h3>
+            </section> -->
+            <section>
+                <h3 align="left">This talk is about a pilot study:<h3> <hr>
+                <ul>
+                    <li class="fragment">5 mobile CO<sub>2</sub> sensors - deployed in a focused measurement campaign</li>
+                    <li class="fragment">Evaluation of relationship between observed mixing ratios and traffic and building emissions inventories.</li>
+                    <li class="fragment">Mapping CO<sub>2</sub> emissions derived from the observed mixing ratios using the Trace Gas Flux Density model. </li>
+                </ul>
+            </section>
+            
+            <section>
+                <h1 align="left">Context</em><h1>
+            </section>
+
+            <section>
+                <h3 align="left"> The <em>Question</em>: <h3> <hr>
+                <h2 align="left"> Can we <em>map</em> greenhouse gases (GHG) and other pollutants, specifically <em>CO<sub>2</sub></em>, at high spatio-temporal resolution across the city <em>with a network of mobile sensors</em>?</h2>
+            </section>
+
+            <!-- <section>
+                <h3 align="left">Why is this important? <h3> <hr>
+                <ul>
+                    <li class="fragment">Cities and the cumulative processes of urbanization are a major source of greenhouse gases into the atmosphere (Estimated 70%, Rosenzweig 2010). </li>
+                    <li class="fragment">Currently there are a lack of tools to monitor GHGs in cities. </li>
+                    <li class="fragment">Existing tools are limited by funding, time, expertise, spatial range. </li>
+                    <li class="fragment"> More than 50% of people globally live in cities - local policy, design, and behavioral change can be highly influential.</li>
+                </ul>
+            </section> -->
+
+            <!-- <section>
+                <h3 align="left">Mobility as a Sensor Platform <h3> <hr>
+                <ul>
+                    <li class="fragment"> > 3.5K registered vehicles in Vancouver, nearly half of the population has a car.</li>
+                    <li class="fragment"> >600 taxi cabs in Vancouver </li>
+                    <li class="fragment"> >1000 vehicles from mobility providers (Car2Go, Modo, Evo).  </li>
+                    <li class="fragment"> Some of Vancouver's busiest streets are traversed by > 2000 vehicles in one hour, on average, during the morning rush hour.</li>
+                    <li class="fragment"> Conclusion: Infrastructure already exists to map the environment.</li>
+                </ul>
+            </section> -->
+
+            <section>
+                <h1 align="left"> The Mobile Sensor System</em><h1>
+                <!-- <div><img src="assets/img/sensorlineup.JPG" height="300" align="center"></div> -->
+            </section>
+
+            <section>
+                <h3 align="left">System Setup<h3>
+                <hr>
+                <div><img src="assets/img/boxphoto-annotated.jpg"  align="center"></div>
+            </section>
+
+            <section>
+                <h3 align="left">System Setup<h3>
+                <hr>
+                <div><img src="assets/img/sensorlineup.JPG" height="600" align="center"></div>
+            </section>
+
+            <section>
+                <h3 align="left"> System <em>Specifications</em><h3>
+                <hr>
+                <ul>
+                    <li class="fragment">Runs on 12 V Power supply</li>
+                    <li class="fragment">Measures CO2 mixing ratios (ppm), Geoposition, and Air temperature at 1-second intervals</li>
+                    <li class="fragment"><em>Size</em>: 35.8 cm x 27.8 cm x 11.8 cm, weight: 2.6 kg. </li>
+                    <li class="fragment"> <em>Precision</em>: +/- 1.1 ppm</li>
+                    <li class="fragment"> <em>Accuracy</em>: +/- 3ppm, with maximum drift of +/- 4 ppm over seven days.</li>
+                    <li class="fragment"> <em>Total delayed response time</em>: 13 s with 3 m sample tube at flow rate of 700cc/min.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h1 align="left">Mapping CO<sub>2</sub> Emissions: <em>Methods</em><h1>
+            </section>
+            <!-- <section>
+                <h3 align="left"> Overview: A Simple Approach <h3> <hr>
+                <img src="assets/img/studyarea-01.jpg" align="center">
+            </section> -->
+
+            <section>
+                <h3 align="left"> Study Area: area: 12.7 km<sup>2</sup>  <h3> <hr>
+                <img src="assets/img/studyarea-01.jpg" align="center">
+            </section>
+            <section>
+                <h3 align="left"> Study Area: Land Use Types<h3> <hr>
+                <!-- <div><img src="assets/img/study-area-all.png" height="500" align="center"></div> -->
+            </section>
+
+            <section>
+                <h3 align="left"> Study: Meteorology <h3> <hr>
+                <img src="assets/img/meteo-01.png" aling="center">
+                <ul>
+                    <li> Temperature: 20° - 22° C</li>
+                    <li> Weak horizontal advection: ws @ 2.5m/s, +/- 0.5 </li>
+                    <li> Sunny, cloudless - late spring, early summer, day. </li> <br>
+                    <small>* data measured at Sunset Eddy Flux Tower (SE corner of transect)</small>
+                </ul>
+            </section>
+            <section>
+                <h3 align="left"> Sampling Methods: Vehicle Installation<h3> <hr>
+                <div align="center"><img src="assets/img/vehicle-installation2.png"></div>
+                <!-- <p align="right"> text text text</p> -->
+            </section>
+            <section>
+                <h3 align="left"> Sampling Methods: Bike Installation<h3> <hr>
+                <div align="center"><img src="assets/img/bike-test.JPG"></div>
+            </section>
+            <section>
+                <h3 align="left"> Goal: Traverse nearly all grid cells in transect in 3.5 hours. <h3> <hr>
+                <div align="center"><img src="assets/img/ways-diagram-01.png"></div>
+            </section>
+
+            <section>
+                <h3 align="left"> Traffic Emissions Inventory<h3> <hr>
+                <div align="center"><img src="assets/img/traffic-counts-workflow-01.png"></div>
+            </section>
+
+            <section>
+                <h3 align="left"> Building Emissions Inventory: Van der Laan, 2011<h3> <hr>
+                <div align="center"><img src="assets/img/building-emissions-inventory-01.png"></div>
+            </section>
+
+            <section>
+                <h3 align="left"> Calculated Emissions<h3> <hr>
+                <!-- <div align="center"><img src="assets/img/traffic-counts-workflow-01.png"></div> -->
+            </section>
+
+            <section>
+                <h1 align="left">Mapping CO<sub>2</sub> Emissions: <em>Results</em> <h1>
+            </section>
+            <section>
+                <h4 align="left"> Observed Mixing Ratios: Average & Median per 100m grid cell by neighborhood <h4> <hr>
+                <div align="center"><img src="assets/img/mixing-ratios-bgw-01.jpg"></div>
+            </section>
+            <section>
+                <h4 align="left"> Observed Mixing Ratios Skewness: ~80% of cells mean CO2 > median CO2 <h4> <hr>
+                <div align="center"><img src="assets/img/mixing-ratios-skew-01.jpg"></div>
+            </section>
+
+            <section>
+                <h3 align="left"> CO2 Mixing Ratios Vs. Traffic Emissions Inventory:<h3> <hr>
+                <!-- <div align="center"><img src="assets/img/mixing-ratios-skew-01.jpg"></div> -->
+            </section>
+            <section>
+                <h3 align="left"> CO2 Mixing Ratios Vs. Total Emissions Inventory:<h3> <hr>
+                <!-- <div align="center"><img src="assets/img/mixing-ratios-skew-01.jpg"></div> -->
+            </section>
+            <section>
+                <h3 align="left"> Calculated CO2 emissions vs. Total Emissions Inventory<h3> <hr>
+                <!-- <div align="center"><img src="assets/img/mixing-ratios-skew-01.jpg"></div> -->
+            </section>
+            <section>
+                <h3 align="left"> Limitations<h3> <hr>
+                <ul>
+                    <li class="fragment"> Strict meteorological requirements: needs weak horizontal advection and strong vertical mixing!</li>
+                    <li class="fragment"> Calculating CO2 emissions requires intstrumentation (e.g. flux tower).</li>
+                    <li class="fragment"> Sampling Density: is 3 km<sup>2</sup>h<sup>-1</sup> enough? </li>
+                    <li class="fragment"> </li>
+                    <li class="fragment"> </li>
+                    <li class="fragment"> </li>
+                    <li class="fragment"> </li>
+                </ul>
+            </section>
+
+            
+
+            <section>
+                <h3 align="left"> Conclusions & Future Directions<h3> <hr>
+                <ul>
+                    <li> Mobile CO2 sensing shows potential to map emissions </li>
+                    <li> Potential applications for pollutant mapping applications</li>
+                    <li> Visualization & feedback opportunities in progress</li>
+                    <li> ... </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3 align="left"> Recap<h3> <hr>
+                <ul>
+                    <li> </li>
+                    <li> </li>
+                    <li> </li>
+                    <li> ... </li>
+                </ul>
+            </section>
+
+
+            <section>
+                <h3 align="left"> Acknowledgements<h3> <hr>
+                <ul>
+                    <li> Terreweb</li>
+                    <li> NSERC Discovery Grant</li>
+                    <li> UBC Geography</li>
+                    <li> ...</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h1>Special Thanks to Andreas, Zoran, and Rick. </h1>
+            </section>
+
+            <section>
+                <h3>The slides & links can be found on github:</h3>
+                <h2>
+                <p>
+                    <a href='joeyklee.github.io/presentations/ICUC-JLEE-2015' target='_blank'>joeyklee.github.io/ICUC-JLEE-2015</a>
+                </p>
+                </h2>
+            </section>
+            <section>
+                <h1> Thanks! </h1>
+                <h3> Questions? Comments?</h3>
+            </section>
+            <!-- <section>
+                <h2>Vancouver Crime Map (2013)</h2>
+                <iframe id='map2' frameBorder='0' src='https://a.tiles.mapbox.com/v4/joeyklee.k5840079/attribution,zoompan,zoomwheel,legend,geocoder,share.html?access_token=pk.eyJ1Ijoiam9leWtsZWUiLCJhIjoiMlRDV2lCSSJ9.ZmGAJU54Pa-z8KvwoVXVBw' width="960"height="550"></iframe>
+                  </div>
+            </section> -->
+        </div>
+    </div>
+    <script src="assets/js/head.min.js"></script>
+    <script src="assets/js/reveal.js"></script>
+    <script>
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [{
+            src: 'lib/js/classList.js',
+            condition: function() {
+                return !document.body.classList;
+            }
+        }, {
+            src: 'plugin/markdown/marked.js',
+            condition: function() {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: 'plugin/markdown/markdown.js',
+            condition: function() {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: 'plugin/highlight/highlight.js',
+            async: true,
+            condition: function() {
+                return !!document.querySelector('pre code');
+            },
+            callback: function() {
+                hljs.initHighlightingOnLoad();
+            }
+        }, {
+            src: 'plugin/zoom-js/zoom.js',
+            async: true
+        }, {
+            src: 'plugin/notes/notes.js',
+            async: true
+        }]
+    });
+    </script>
+</body>
+
+</html>
