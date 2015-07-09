@@ -57,7 +57,7 @@ $(document).ready(function() {
 
 
 
-		d3.json("data/co2data.geojson", function(data) {
+		d3.json("data/sensor_108_20150528.geojson", function(data) {
 			// console.log(data.features.length);
 			// remove any weird points
 			data.features = data.features.filter(function(d){
@@ -67,18 +67,19 @@ $(document).ready(function() {
 
 			pts = data;
 
+			// console.log(pts);
 			// var layerGroup = L.layerGroup().addTo(map);
 
 
-			var cellWidth = 2.5;
+			var cellWidth = 0.2;
 			var units = 'kilometers';
 			// var grid = turf.hexGrid(bbox, cellWidth, units);
-			// var grid = turf.squareGrid(bbox, cellWidth, units);
-			var grid = turf.triangleGrid(bbox, cellWidth, units);
+			var grid = turf.squareGrid(bbox, cellWidth, units);
+			// var grid = turf.triangleGrid(bbox, cellWidth, units);
 
-			var color = d3.scale.linear()
-				.domain([400, 550])
-				.range(["orange", "red"]);
+			var color = d3.scale.log()
+				.domain([390, 500])
+				.range(["yellow", "red"]);
 
 
 			var aggregations = [{
