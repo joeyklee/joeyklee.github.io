@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>ICUC 2015 - Mobile Sensor Network to Map CO2 in Urban Environments</title>
-    <meta name="description" content="ICUC 2015 - Mobile Sensor Network to Map CO2 in Urban Environments">
+    <meta name="description" content="ICUC 2015 - Mobile Sensor Network to Map CO<sub>2</sub> in Urban Environments">
     <meta name="author" content="Joey Lee">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -34,13 +34,14 @@
                 <h1><em>A Mobile Sensor Network to Map CO<sub>2</sub> in Urban Environments</em> </h1>
                 <p>
                     <small>
-                        <a href="http://www.jk-lee.com" target='_blank'>Joey Lee, MSc (Fall, 2015)</a> <br>
+                        <a href="http://www.jk-lee.com" target='_blank'>Joey Lee, Andreas Christen, Zoran Nesic, & Rick Ketler</a> <br>
                         <a href="http://ibis.geog.ubc.ca/~achristn/">Department of Geography <br> The University of British Columbia</a> <br>
                         <a href="https://github.com/joeyklee" target='_blank'>@joeyklee</a> 
                     </small>
                     <br>
                     <br>
-                    <small>9th International Conference on Urban Climates</small>
+                    <small>9th International Conference on Urban Climate</small>
+                    <small>July 24, 2015</small>
                     <br>
                     <small>Toulouse, France, 2015</small>
                 </p>
@@ -51,21 +52,16 @@
                 <h2 align="left">I'm interested in the <em>cumulative process of making maps</em>: </h2>
                 <h3>Data aquisition -> <br> data mining -> <br>visualization -> <br>communication -> <br>interaction.</h3>
             </section> -->
-            <section>
+            <!-- <section>
                 <h3 align="left">This talk is about a pilot study:<h3> <hr>
                 <ul>
                     <li class="fragment">5 mobile CO<sub>2</sub> sensors - deployed in a focused measurement campaign</li>
                     <li class="fragment">Evaluation of relationship between observed mixing ratios and traffic and building emissions inventories.</li>
                     <li class="fragment">Mapping CO<sub>2</sub> emissions derived from the observed mixing ratios using the Trace Gas Flux Density model. </li>
                 </ul>
-            </section>
-            
+            </section> -->
             <section>
-                <h1 align="left">Context</em><h1>
-            </section>
-
-            <section>
-                <h3 align="left"> The <em>Question</em>: <h3> <hr>
+                <h3 align="left"> Research <em>Question</em>: <h3> <hr>
                 <h2 align="left"> Can we <em>map</em> greenhouse gases (GHG) and other pollutants, specifically <em>CO<sub>2</sub></em>, at high spatio-temporal resolution across the city <em>with a network of mobile sensors</em>?</h2>
             </section>
 
@@ -112,11 +108,11 @@
                 <hr>
                 <ul>
                     <li class="fragment">Runs on 12 V Power supply</li>
-                    <li class="fragment">Measures CO2 mixing ratios (ppm), Geoposition, and Air temperature at 1-second intervals</li>
+                    <li class="fragment">Measures CO<sub>2</sub> mixing ratios (ppm), geoposition and speed, and air temperature at 1-second intervals</li>
                     <li class="fragment"><em>Size</em>: 35.8 cm x 27.8 cm x 11.8 cm, weight: 2.6 kg. </li>
                     <li class="fragment"> <em>Precision</em>: +/- 1.1 ppm</li>
-                    <li class="fragment"> <em>Accuracy</em>: +/- 3ppm, with maximum drift of +/- 4 ppm over seven days.</li>
-                    <li class="fragment"> <em>Total delayed response time</em>: 13 s with 3 m sample tube at flow rate of 700cc/min.</li>
+                    <li class="fragment"> <em>Accuracy</em>: +/- 3 ppm, with maximum drift of +/- 4 ppm over seven days.</li>
+                    <li class="fragment"> <em>Total delayed response time</em>: 13 s with 3 m sample tube at flow rate of 700 cc/min.</li>
                 </ul>
             </section>
 
@@ -132,19 +128,20 @@
                 <h3 align="left"> Study Area: area: 12.7 km<sup>2</sup>  <h3> <hr>
                 <img src="assets/img/studyarea-01.jpg" align="center">
             </section>
+
             <section>
-                <h3 align="left"> Study Area: Land Use Types<h3> <hr>
-                <!-- <div><img src="assets/img/study-area-all.png" height="500" align="center"></div> -->
+                <h3 align="left"> Study Area: Land Cover Overview<h3> <hr>
+                <div><img src="assets/img/landcover-types-01.jpg" width="75%" align="center"></div>
             </section>
 
             <section>
                 <h3 align="left"> Study: Meteorology <h3> <hr>
                 <img src="assets/img/meteo-01.png" aling="center">
                 <ul>
-                    <li> Temperature: 20° - 22° C</li>
-                    <li> Weak horizontal advection: ws @ 2.5m/s, +/- 0.5 </li>
+                    <li> Temperature: 20° - 22° C.</li>
+                    <li> Weak winds: 2.5 m/s at 30m height above city.</li>
                     <li> Sunny, cloudless - late spring, early summer, day. </li> <br>
-                    <small>* data measured at Sunset Eddy Flux Tower (SE corner of transect)</small>
+                    <small>* data measured at Urban Climate Tower "Vancouver Sunset" (SE section of Transect)</small>
                 </ul>
             </section>
             <section>
@@ -156,10 +153,10 @@
                 <h3 align="left"> Sampling Methods: Bike Installation<h3> <hr>
                 <div align="center"><img src="assets/img/bike-test.JPG"></div>
             </section>
-            <section>
+            <!-- <section>
                 <h3 align="left"> Goal: Traverse nearly all grid cells in transect in 3.5 hours. <h3> <hr>
                 <div align="center"><img src="assets/img/ways-diagram-01.png"></div>
-            </section>
+            </section> -->
 
             <section>
                 <h3 align="left"> Traffic Emissions Inventory<h3> <hr>
@@ -167,59 +164,76 @@
             </section>
 
             <section>
-                <h3 align="left"> Building Emissions Inventory: Van der Laan, 2011<h3> <hr>
-                <div align="center"><img src="assets/img/building-emissions-inventory-01.png"></div>
+                <h3 align="left"> Building Emissions Inventory<h3> <hr>
+                <div align="center"><img src="assets/img/building-emissions-inventory-workflow-01.png"></div>
             </section>
 
             <section>
                 <h3 align="left"> Calculated Emissions<h3> <hr>
-                <!-- <div align="center"><img src="assets/img/traffic-counts-workflow-01.png"></div> -->
+                <div align="center"><img src="assets/img/flux-tower-aerodynamic-resistance-01.png"></div>
             </section>
 
             <section>
                 <h1 align="left">Mapping CO<sub>2</sub> Emissions: <em>Results</em> <h1>
             </section>
             <section>
-                <h4 align="left"> Observed Mixing Ratios: Average & Median per 100m grid cell by neighborhood <h4> <hr>
-                <div align="center"><img src="assets/img/mixing-ratios-bgw-01.jpg"></div>
+                <h4 align="left"> Raw Data Visualized in Google Earth <h4> <hr>
+                <div align="center"><img src="assets/img/geo2kml-all.png"></div>
             </section>
             <section>
-                <h4 align="left"> Observed Mixing Ratios Skewness: ~80% of cells mean CO2 > median CO2 <h4> <hr>
+                <h4 align="left"> Observed Mixing Ratios: Average & Median per 100m grid cell by neighborhood <h4> <hr>
+                <div align="center"><img src="assets/img/co2_avg-latitude-01.png" width="75%"></div>
+            </section>
+            <section>
+                <h4 align="left"> Observed Mixing Ratios: Average CO<sub>2</sub> & Skewness per 100m Grid Cell <h4> <hr>
+                <div align="center"><img src="assets/img/measured_co2_grouped-02.jpg" width="65%"></div>
+            </section>
+            <!-- <section>
+                <h4 align="left"> Observed Mixing Ratios Skewness: ~80% of cells mean CO<sub>2</sub> > median CO<sub>2</sub> <h4> <hr>
                 <div align="center"><img src="assets/img/mixing-ratios-skew-01.jpg"></div>
+            </section> -->
+
+            <section>
+                <h3 align="left"> CO<sub>2</sub> Mixing Ratios Vs. Traffic Emissions Inventory:<h3> <hr>
+                <div align="center"><img src="assets/img/results_boxplot_avgCo2+trafficInventory-01.png"></div>
+            </section>
+            <section>
+                <h3 align="left"> CO<sub>2</sub> Mixing Ratios Vs. Total Emissions Inventory:<h3> <hr>
+                <div align="center"><img src="assets/img/results_boxplot_avgCo2+totalInventory-01.png"></div>
             </section>
 
             <section>
-                <h3 align="left"> CO2 Mixing Ratios Vs. Traffic Emissions Inventory:<h3> <hr>
-                <!-- <div align="center"><img src="assets/img/mixing-ratios-skew-01.jpg"></div> -->
+                <h3 align="left"> Calculated CO<sub>2</sub> emissions vs. Traffic Emissions Inventory<h3> <hr>
+                <div align="center"><img src="assets/img/results_loglog_avgCo2+trafficInventory-01.png"></div>
             </section>
             <section>
-                <h3 align="left"> CO2 Mixing Ratios Vs. Total Emissions Inventory:<h3> <hr>
-                <!-- <div align="center"><img src="assets/img/mixing-ratios-skew-01.jpg"></div> -->
+                <h3 align="left"> Calculated CO<sub>2</sub> emissions vs. Building Emissions Inventory<h3> <hr>
+                <div align="center"><img src="assets/img/results_loglog_avgCo2+buildingCo2Inventory-01.png"></div>
             </section>
             <section>
-                <h3 align="left"> Calculated CO2 emissions vs. Total Emissions Inventory<h3> <hr>
-                <!-- <div align="center"><img src="assets/img/mixing-ratios-skew-01.jpg"></div> -->
+                <h3 align="left"> Calculated CO<sub>2</sub> emissions vs. Total Emissions Inventory<h3> <hr>
+                <div align="center"><img src="assets/img/results_loglog_avgCo2Emissions+totalInventory-01.png"></div>
             </section>
-            <section>
+            <!-- <section>
                 <h3 align="left"> Limitations<h3> <hr>
                 <ul>
                     <li class="fragment"> Strict meteorological requirements: needs weak horizontal advection and strong vertical mixing!</li>
-                    <li class="fragment"> Calculating CO2 emissions requires intstrumentation (e.g. flux tower).</li>
+                    <li class="fragment"> Calculating CO<sub>2</sub> emissions requires intstrumentation (e.g. flux tower).</li>
                     <li class="fragment"> Sampling Density: is 3 km<sup>2</sup>h<sup>-1</sup> enough? </li>
                     <li class="fragment"> </li>
                     <li class="fragment"> </li>
                     <li class="fragment"> </li>
                     <li class="fragment"> </li>
                 </ul>
-            </section>
+            </section> -->
 
             
 
             <section>
                 <h3 align="left"> Conclusions & Future Directions<h3> <hr>
                 <ul>
-                    <li> Mobile CO2 sensing shows potential to map emissions </li>
-                    <li> Potential applications for pollutant mapping applications</li>
+                    <li> Mobile CO<sub>2</sub> sensing shows potential to map emissions </li>
+                    <li> Potential applications for pollutant mapping.</li>
                     <li> Visualization & feedback opportunities in progress</li>
                     <li> ... </li>
                 </ul>
