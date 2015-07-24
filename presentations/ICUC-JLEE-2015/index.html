@@ -46,63 +46,58 @@
                     <small>Toulouse, France, 2015</small>
                 </p>
             </section>
-            <!-- <section>
-                <h3 align="left">Why am I here?</h3>
-                <hr>
-                <h2 align="left">I'm interested in the <em>cumulative process of making maps</em>: </h2>
-                <h3>Data aquisition -> <br> data mining -> <br>visualization -> <br>communication -> <br>interaction.</h3>
-            </section> -->
-            <!-- <section>
-                <h3 align="left">This talk is about a pilot study:<h3> <hr>
+            <section>
+                <h3 align="left"> Overview <h3> <hr>
                 <ul>
-                    <li class="fragment">5 mobile CO<sub>2</sub> sensors - deployed in a focused measurement campaign</li>
-                    <li class="fragment">Evaluation of relationship between observed mixing ratios and traffic and building emissions inventories.</li>
-                    <li class="fragment">Mapping CO<sub>2</sub> emissions derived from the observed mixing ratios using the Trace Gas Flux Density model. </li>
+                    <li>We present a pilot study to show the potential for a mobile sensor network to monitor greenhouse gas concentrations and to derive emissions in cities. </li>
                 </ul>
-            </section> -->
+                
+                <div><img src="assets/img/process-diagram-icons.png"  align="center"></div>
+            </section>
+            
             <section>
                 <h3 align="left"> Research <em>Question</em>: <h3> <hr>
-                <h2 align="left"> Can we <em>map</em> greenhouse gases (GHG) and other pollutants, specifically <em>CO<sub>2</sub></em>, at high spatio-temporal resolution across the city <em>with a network of mobile sensors</em>?</h2>
+                <h2 align="left"> Can we map greenhouse gases,  specifically CO2, at a spatial resolution of neighborhoods / blocks across the city with a network of mobile sensors?</h2>
             </section>
 
-            <!-- <section>
-                <h3 align="left">Why is this important? <h3> <hr>
+            <section>
+                <h3 align="left"> Motivations: Why Mobile Sensing?</em><h3>
+                <hr>
                 <ul>
-                    <li class="fragment">Cities and the cumulative processes of urbanization are a major source of greenhouse gases into the atmosphere (Estimated 70%, Rosenzweig 2010). </li>
-                    <li class="fragment">Currently there are a lack of tools to monitor GHGs in cities. </li>
-                    <li class="fragment">Existing tools are limited by funding, time, expertise, spatial range. </li>
-                    <li class="fragment"> More than 50% of people globally live in cities - local policy, design, and behavioral change can be highly influential.</li>
+                    <li class="fragment">Cities are a major source of GHGs into the atmosphere (Estimated 70%, Rosenzweig 2010).</li>
+                    <ul>
+                    <li class="fragment">Currently there are a lack of tools to monitor CO2 emissions in cities; existing tools are limited by funding, time, expertise, spatial & temporal resolution.</li>
+                    <li class="fragment">There’s a need to validate fine scale emissions inventories.</li>
+                    </ul>
                 </ul>
-            </section> -->
+                
+                <ul>
+                    <li class="fragment">Emerging Opportunities</li>
+                    <ul>
+                    <li class="fragment"> Rise of flexible (open source), compact technologies.</li>
+                    <li class="fragment"> Enhanced access to mobility services/platforms</li>
+                    </ul>
+                </ul>
+            </section>
+            <section>
+                <h1 align="left"> But how do you go from concentrations to emissions?<h1>
+            </section>
+            <section>
+                <h3 align="left"> Proposed Approach: Using the aerodynamic resistance (with a number of assumptions!)<h3> <hr>
+                <div><img src="assets/img/flux-tower-withequations-03.png"  align="center"></div>
+            </section>
 
-            <!-- <section>
-                <h3 align="left">Mobility as a Sensor Platform <h3> <hr>
-                <ul>
-                    <li class="fragment"> > 3.5K registered vehicles in Vancouver, nearly half of the population has a car.</li>
-                    <li class="fragment"> >600 taxi cabs in Vancouver </li>
-                    <li class="fragment"> >1000 vehicles from mobility providers (Car2Go, Modo, Evo).  </li>
-                    <li class="fragment"> Some of Vancouver's busiest streets are traversed by > 2000 vehicles in one hour, on average, during the morning rush hour.</li>
-                    <li class="fragment"> Conclusion: Infrastructure already exists to map the environment.</li>
-                </ul>
-            </section> -->
 
             <section>
                 <h1 align="left"> The Mobile Sensor System</em><h1>
-                <!-- <div><img src="assets/img/sensorlineup.JPG" height="300" align="center"></div> -->
             </section>
 
             <section>
                 <h3 align="left">System Setup<h3>
                 <hr>
                 <div><img src="assets/img/boxphoto-annotated.jpg"  align="center"></div>
+                <small>1. IRGA – Licor LI-820 (Licor Inc, Lincoln, NB, USA), 2. Adafruit GPS (Adafruit Industries, Manhattan, NY, USA), 3. Arduino Mega (Arduino CC, Ivrea, Italy) . *Not Shown: OneWire Digital Temperature Thermometer (Maxim Integrated One Wire Digital Temperature Sensor - DS18B20, San Jose, CA, USA )</small>
             </section>
-
-            <section>
-                <h3 align="left">System Setup<h3>
-                <hr>
-                <div><img src="assets/img/sensorlineup.JPG" height="600" align="center"></div>
-            </section>
-
             <section>
                 <h3 align="left"> System <em>Specifications</em><h3>
                 <hr>
@@ -117,85 +112,104 @@
             </section>
 
             <section>
-                <h1 align="left">Mapping CO<sub>2</sub> Emissions: <em>Methods</em><h1>
+                <h3 align="left">Built & Tested: 5 mobile systems<h3>
+                <hr>
+                <div><img src="assets/img/sensorlineup.JPG" width="70%" align="center"></div>
+                <small>Image: In total 5 sensors were built – the image shows the full setup including the sample inlet tube and the temperature probes. </small>
             </section>
+
+            
+
+            <section>
+                <h2 align="left">Mapping Emissions – Methods: Measurement Campaign<h2> <br>
+                <h3 align="left">May 25th, 2015
+</h3>
+            </section>
+
+            <section>
+                <h3 align="left"> Study Area: 12.7 km2 transect, Vancouver, BC<h3> <hr>
+                <img src="assets/img/studyarea-WITHSS-01.jpg" align="center">
+                <small>Image: 12 km2 transect study area in Vancouver, BC. The transect is 1km x 12.7km covering the major land cover types in the city. Sunset Urban Climate tower is shown in orange.</small>
+            </section>
+
             <!-- <section>
-                <h3 align="left"> Overview: A Simple Approach <h3> <hr>
-                <img src="assets/img/studyarea-01.jpg" align="center">
-            </section> -->
-
-            <section>
-                <h3 align="left"> Study Area: area: 12.7 km<sup>2</sup>  <h3> <hr>
-                <img src="assets/img/studyarea-01.jpg" align="center">
-            </section>
-
-            <section>
                 <h3 align="left"> Study Area: Land Cover Overview<h3> <hr>
                 <div><img src="assets/img/landcover-types-01.jpg" width="75%" align="center"></div>
+            </section> -->
+            <section>
+                <h3 align="left"> Study Area: Tour of Vancouver<h3> <hr>
+                <!-- <div><img src="assets/img/landcover-types-01.jpg" width="75%" align="center"></div> -->
+                <iframe src="https://player.vimeo.com/video/134364996" width="700" height="550" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/134364996">Traverse through Vancouver</a> from <a href="https://vimeo.com/leejoeyk">Joey Lee</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
             </section>
 
             <section>
-                <h3 align="left"> Study: Meteorology <h3> <hr>
+                <h3 align="left"> Study Area: Meteorology - May 25th,  2015<h3> <hr>
                 <img src="assets/img/meteo-01.png" aling="center">
                 <ul>
+                    <li>Measurement period: 10:30 – 14:00 </li>
+                    <li>With convective and steady weather:</li>
+                    <ul>
                     <li> Temperature: 20° - 22° C.</li>
-                    <li> Weak winds: 2.5 m/s at 30m height above city.</li>
-                    <li> Sunny, cloudless - late spring, early summer, day. </li> <br>
+                    <li> Weak winds: 2.5 m/s.</li>
+                    <li> Cloudless </li>
+                    </ul>
                     <small>* data measured at Urban Climate Tower "Vancouver Sunset" (SE section of Transect)</small>
                 </ul>
             </section>
             <section>
                 <h3 align="left"> Sampling Methods: Vehicle Installation<h3> <hr>
                 <div align="center"><img src="assets/img/vehicle-installation2.png"></div>
-                <!-- <p align="right"> text text text</p> -->
+                <small>Image A: Shows the temperature probe covered by PVC tube and reflective tape and sample inlet tube at 2m height - ±0.5°C Accuracy from -10°C to +85°C ; Image B: Shows sensor installation in vehicle.</small>
+                
             </section>
             <section>
                 <h3 align="left"> Sampling Methods: Bike Installation<h3> <hr>
-                <div align="center"><img src="assets/img/bike-test.JPG"></div>
+                <div align="center"><img src="assets/img/bike-setup-1-01.jpg"></div>
+                <small>Image: Shows the installation of the sensor on a bike rack – the inlet is at approximately 2m height.</small>
             </section>
-            <!-- <section>
-                <h3 align="left"> Goal: Traverse nearly all grid cells in transect in 3.5 hours. <h3> <hr>
+            <section>
+                <h3 align="left"> Sampling Methods: Deployment Transects<h3> <hr>
                 <div align="center"><img src="assets/img/ways-diagram-01.png"></div>
-            </section> -->
+                <small>Image: The image shows 5 planned transect routes for the measurement campaign. Goal: to cover (almost) all navigable roads (and some trails) along the transect in 3.5 hours.</small>
+            </section>
+
+            <section>
+                <h1 align="left"> Pilot Study - Mapping CO2 Emissions: Results</em><h1>
+            </section>
+
+            <section>
+                <h3 align="left"> Raw Data: Visualized in Google Earth<h3> <hr>
+                <div align="center"><img src="assets/img/geo2kml-all-annotated2-01.png"></div>
+            </section>
+            <section>
+                <h3 align="left"> Average CO2 Mixing Ratios per 100m Grid Cell<h3> <hr>
+                <div align="center"><img src="assets/img/mixing-ratios-avg-FINAL-01.png"></div>
+            </section>
+            <section>
+                <h3 align="left"> Calculated Emissions: Concentrations to Emissions<h3> <hr>
+                <div align="center"><img src="assets/img/calculated-emissions-true-2-01.jpg" width="70%"></div>
+                <small>Image: Calculated emissions map generated using the aerodynamic resistance approach using CO2 concentration measurements. </small>
+            </section>
+
+            <section>
+                <h2 align="left"> Mapping Emissions – Methods: Emissions Inventory</em><h2>
+            </section>
 
             <section>
                 <h3 align="left"> Traffic Emissions Inventory<h3> <hr>
                 <div align="center"><img src="assets/img/traffic-counts-workflow-01.png"></div>
+                <small>Image: The traffic emissions inventory derived from Vancouver’s traffic count data and calculated per grid cell using fuel consumption and emissions factors.</small>
             </section>
 
             <section>
                 <h3 align="left"> Building Emissions Inventory<h3> <hr>
                 <div align="center"><img src="assets/img/building-emissions-inventory-workflow-01.png"></div>
-            </section>
+                <small>Image: Building emissions inventory generated by combining factors of building morphology, urban context, and population density derived from  LiDAR, building topology, and census data.</small>
 
-            <section>
-                <h3 align="left"> Calculated Emissions<h3> <hr>
-                <div align="center"><img src="assets/img/flux-tower-aerodynamic-resistance-01.png"></div>
             </section>
-
-            <section>
-                <h1 align="left">Mapping CO<sub>2</sub> Emissions: <em>Results</em> <h1>
-            </section>
-            <section>
-                <h4 align="left"> Raw Data Visualized in Google Earth <h4> <hr>
-                <div align="center"><img src="assets/img/geo2kml-all.png"></div>
-            </section>
-            <section>
-                <h4 align="left"> Observed Mixing Ratios: Average & Median per 100m grid cell by neighborhood <h4> <hr>
-                <div align="center"><img src="assets/img/co2_avg-latitude-01.png" width="75%"></div>
-            </section>
-            <section>
-                <h4 align="left"> Observed Mixing Ratios: Average CO<sub>2</sub> & Skewness per 100m Grid Cell <h4> <hr>
-                <div align="center"><img src="assets/img/measured_co2_grouped-02.jpg" width="65%"></div>
-            </section>
-            <!-- <section>
-                <h4 align="left"> Observed Mixing Ratios Skewness: ~80% of cells mean CO<sub>2</sub> > median CO<sub>2</sub> <h4> <hr>
-                <div align="center"><img src="assets/img/mixing-ratios-skew-01.jpg"></div>
-            </section> -->
-
             <section>
                 <h3 align="left"> CO<sub>2</sub> Mixing Ratios Vs. Traffic Emissions Inventory:<h3> <hr>
-                <div align="center"><img src="assets/img/results_boxplot_avgCo2+trafficInventory-01.png"></div>
+                <div align="center"><img src="assets/img/results_boxplot_avgCo2+trafficInventory-final.png"></div>
             </section>
             <section>
                 <h3 align="left"> CO<sub>2</sub> Mixing Ratios Vs. Total Emissions Inventory:<h3> <hr>
@@ -214,46 +228,23 @@
                 <h3 align="left"> Calculated CO<sub>2</sub> emissions vs. Total Emissions Inventory<h3> <hr>
                 <div align="center"><img src="assets/img/results_loglog_avgCo2Emissions+totalInventory-01.png"></div>
             </section>
-             <!-- <section>
-                <h3 align="left"> Calculated CO<sub>2</sub> Emissions over- and -under- estimation areas. <h3> <hr>
-                <div align="center"><img src="assets/img/results_boxplot_avgCo2+totalInventory-01.png"></div>
-            </section> -->
-            <!-- <section>
-                <h3 align="left"> Limitations<h3> <hr>
-                <ul>
-                    <li class="fragment"> Strict meteorological requirements: needs weak horizontal advection and strong vertical mixing!</li>
-                    <li class="fragment"> Calculating CO<sub>2</sub> emissions requires intstrumentation (e.g. flux tower).</li>
-                    <li class="fragment"> Sampling Density: is 3 km<sup>2</sup>h<sup>-1</sup> enough? </li>
-                    <li class="fragment"> </li>
-                    <li class="fragment"> </li>
-                    <li class="fragment"> </li>
-                    <li class="fragment"> </li>
-                </ul>
-            </section> -->
+   
 
             <section>
                 <h3 align="left"> Conclusions & Future Directions<h3> <hr>
                 <ul>
-                    <li> Mobile CO<sub>2</sub> sensing shows potential to map emissions. </li>
-                    <li> Potential applications for pollutant mapping.</li>
-                    <li> Visualization & feedback opportunities in progress.</li>
-                    <li> Collaboration potential with local mobility providers for longterm & spatially extensive/intensive monitoring. </li>
-                </ul>
-            </section>
-
-            <section>
-                <h3 align="left"> Recap<h3> <hr>
-                <ul>
-                    <li class="fragment"> A Mobile CO<sub>2</sub> sensing system was developed using opensource components.</li>
+                    <li class="fragment"> A mobile CO2 sensing system was developed using open source components. </li>
                     <li class="fragment"> The system was tested in Vancouver and evaluated against traffic and building emissions inventories.</li>
-                    <li class="fragment"> The study shows the potential for pervasive mobile sensing in GHG and pollutant monitoring in cities.</li>
-                    <li class="fragment"> Future opportunities exist for long term monitoring and to provide feddback through visualization. </li>
+                    <li class="fragment"> The study shows the potential for pervasive mobile sensing in GHG and pollutant monitoring in cities, but relies on specific conditions and assumptions.</li>
+                    <li class="fragment"> Currently exploring visualization & feedback opportunities for planning and open science. </li>
+                    <li class="fragment">Collaboration potential with local mobility providers for long term & spatially extensive/intensive monitoring</li>
                 </ul>
             </section>
 
 
             <section>
                 <h3 align="left"> Acknowledgements & Funding<h3> <hr>
+                <small>
                 <ul>
                     <li> NSERC Discovery Grant</li>
                     <li> NSERC CREATE - Terrestrial Ecosystems Research and World Wide Education & Broadcast Program (TerreWEB).</li>
@@ -263,17 +254,19 @@
                     <li> Data: OpenStreetMap.org, Vancouver Open Data, EPiCC Project, UBC Micrometeorology</li>
                     <li> Tools: Python, R, QGIS, GDAL/OGR</li>
                 </ul>
-            </section>
-            <section>
-                <h3 align="left"> References<h3> <hr>
                 <ul>
-                    <li> Van der Laan, "Scaling Urban Energy Use and Greenhouse Gas Emissions through LiDAR", MSc Thesis, 2011</li>
-                    <li> Christen - AGU Poster (for the building emissions scaling)</li>
-                    <li> ...</li>
+                    <li>References</li>
+                    <ul>
+                    <li>Van der Laan, "Scaling Urban Energy Use and Greenhouse Gas Emissions through LiDAR", MSc Thesis, 2011.</li>
+                    <li>Rosenzweig, C., Solecki, W., and Hammer, S. A. (2010). Cities lead the way inclimate-change action. Nature, pages 1–3. </li>
+                    </ul>
+                </ul>
+            </small>
             </section>
+        
             
             <section>
-                <h1>Special Thanks to Andreas, Zoran, and Rick for countless hours dedicated to the project. </h1>
+                <h1>Special Thanks to Andreas, Zoran, and Rick </h1>
             </section>
 
             <section>
@@ -287,6 +280,8 @@
             <section>
                 <h1> Thanks! </h1>
                 <h3> Questions? Comments?</h3>
+                <br>
+                <small>Many thanks to the ICUC & IAUC Community!</small>
             </section>
             <!-- <section>
                 <h2>Vancouver Crime Map (2013)</h2>
