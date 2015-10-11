@@ -1,0 +1,68 @@
+ @font-face { font-family: AerialBold-Buildings; src: url('AerialBold-Buildings.ttf'); } 
+ @font-face { font-family: AerialBold-Provence;  src: url('AerialBold-Provence.ttf');}
+ @font-face { font-family: AerialBold-Suburbia;  src: url('AerialBold-Suburbia.ttf');}
+
+
+.navbar-nav > li > a, .navbar-brand {
+    padding-top:4px !important; 
+    padding-bottom:0 !important;
+    height: 28px;
+    font-size: 14px;
+    letter-spacing: 0.75px;
+}
+.navbar {
+	min-height:28px !important;
+	/*background-color: #000;*/
+	color: #3CA4CC;
+}
+
+img{
+
+}
+
+
+/* horizontal letters */
+.buildings{
+	font-family: AerialBold-Buildings;
+	font-size: 105px;
+	padding: 20px;
+}
+
+.suburbia{
+	font-family: AerialBold-Suburbia;
+	font-size: 105px;	
+	padding: 20px;
+}
+.provence{
+	font-family: AerialBold-Provence;
+	font-size: 125px;	
+	padding: 20px;
+	font-weight: 100px;
+}
+
+/* vertical letters */
+/*.buildings{
+	font-family: AerialBold-Buildings;
+	font-size: 250px;
+	padding: 20px;
+	text-align: center;
+}
+
+.suburbia{
+	font-family: AerialBold-Suburbia;
+	font-size: 230px;	
+	padding: 20px;
+	text-align: center;
+}
+.provence{
+	font-family: AerialBold-Provence;
+	font-size: 250px;	
+	padding: 20px;
+	font-weight: 100px;
+	text-align: center;
+}*/
+
+.header{
+	padding: 20px;
+	text-align: center;	
+}
