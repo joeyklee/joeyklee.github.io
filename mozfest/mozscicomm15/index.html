@@ -1,0 +1,565 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+<title>Sunday</title>
+
+</head>
+<body>
+<h1>Sunday</h1>
+
+<h2>10:00AM</h2>
+
+<h3>Sunday Keynotes</h3>
+
+<pre><code>Sunday, 10:00 AM
+Everyone, Floor 4 - Big Space
+</code></pre>
+
+<h2>11:30 AM</h2>
+
+<h3>Collaborative Community Spaces</h3>
+
+<pre><code>Vineel Reddy Pindi
+Sunday, 11:30 AM
+The Global Village, Floor 6 - 601
+Global Village Garden
+</code></pre>
+
+<h3>Your Privacy and Security on the Web (Using the Firefox browser and more)</h3>
+
+<pre><code>Ankit Gadgil
+Sunday, 11:30 AM
+Digital Citizenship, Floor 4 - Library
+Backdoors + Cryptowars
+</code></pre>
+
+<h3>Citizen (social) Science</h3>
+
+<pre><code>Kieron Kirkland
+Sunday, 11:30 AM
+Digital Citizenship, Floor 4 - Library
+Building a Crowd
+</code></pre>
+
+<h3>Organize Better, More Inclusive Hackathons: It’s Easier Than You Think</h3>
+
+<pre><code>Leah Bannon
+Sunday, 11:30 AM
+Journalism, Floor 7 - 706
+Healthy Events and Networks, Science communication
+</code></pre>
+
+<h3>Science Inquiry and Game Design, A Harmonic Convergence</h3>
+
+<pre><code>Ashlyn Sparrow, David Bild
+Sunday, 11:30 AM
+Journalism, Floor 7 - 702
+Games and Understanding
+</code></pre>
+
+<h3>Neither Pod nor Cast: designing the future of podcasting</h3>
+
+<pre><code>Joe Germuska
+Sunday, 11:30 AM
+Journalism, Floor 7 - 700
+Journalism Conversations, Arts Award pathway, Science communication
+</code></pre>
+
+<h3>Mapping the Matrix: Open Cartography with Scientific and Spatial Data</h3>
+
+<pre><code>Aurelia Moser, David Riordan, Stuart Lynn
+Sunday, 11:30 AM
+Open Science, Floor 9 - 903
+Tools and Analysis, Science communication
+</code></pre>
+
+<h2>12:45 PM</h2>
+
+<h3>Open - Sourcing Collaborative Educational Projects</h3>
+
+<pre><code>Julie Koslowsky
+Sunday, 12:45 PM
+Building Participation, Floor 4 - 402
+Scaling Participatory Learning Experiences,
+</code></pre>
+
+<h3>Data in Motion: SVG Animation for Information Visualization</h3>
+
+<pre><code>Julia Smith
+Sunday, 12:45 PM
+Journalism, Floor 7 - 703
+Mobile and Accessibility, New Technologies for Participation -- Challenge
+</code></pre>
+
+<h3>Machine Learning 101</h3>
+
+<pre><code>Francis Tseng
+Sunday, 12:45 PM
+Journalism, Floor 7 - 706
+New Technologies for Participation -- Challenge, Tools and Analysis, Science communication
+</code></pre>
+
+<h3>Data is beautiful. What’s Wikidata and why does it matter to me?</h3>
+
+<pre><code>Jens Ohlig, Nicole Ebber
+Sunday, 12:45 PM
+Open Science, Floor 9 - 902
+Open data
+</code></pre>
+
+<h3>Teaching the Basics of Privacy</h3>
+
+<pre><code>Tom Farrow, Harry Smith
+Sunday, 12:45 PM
+youthZone - Through the lens of youths, Floor 2 - 213
+Backdoors + Cryptowars, Don't Feed the Trolls,
+</code></pre>
+
+<h2>1:30PM</h2>
+
+<pre><code>Sunday Fireside Chat
+
+Sunday, 01:30 PM
+Everyone, Floor 4 - Big Space
+</code></pre>
+
+<h2>2:45PM</h2>
+
+<h3>How to make real books on the Open Web</h3>
+
+<pre><code>Daniel James
+Sunday, 02:45 PM
+The Global Village, Floor 6 - 602
+Global Village Athena Library
+</code></pre>
+
+<h3>Data journalism in the interest of an offline public</h3>
+
+<pre><code>Samar Halarnkar
+Sunday, 02:45 PM
+Journalism, Floor 7 - 706
+Data and Impact
+</code></pre>
+
+<h3>Jupyter notebooks and Python data analysis</h3>
+
+<pre><code>Thomas Kluyver
+Sunday, 02:45 PM
+Open Science, Floor 9 - 903
+Tools and Analysis, Science communication
+</code></pre>
+
+<h3>GeoTag-X</h3>
+
+<pre><code>S.P. Mohanty
+Sunday, 02:45 PM
+Open Science, Floor 9 - 902
+Open Research Accelerator
+</code></pre>
+
+<h3>Teaching the Web with the New Thimble</h3>
+
+<pre><code>Kieran Sedgwick
+Sunday, 02:45 PM
+Mozilla Learning Networks, Floor 8 - 801
+Learning &amp; Leading
+</code></pre>
+
+<h2>4PM</h2>
+
+<h3>Capturing a visual thought</h3>
+
+<pre><code>Bryan Mathers
+Sunday, 04:00 PM
+The Global Village, Floor 6 - 601
+Global Village Garden
+</code></pre>
+
+<h3>Hacking for Journalists/Journalism for Hackers 101</h3>
+
+<pre><code>Samantha Sunne, Judith Morales
+Sunday, 04:00 PM
+Journalism, Floor 7 - 700
+Journalism Conversations, Science communication
+</code></pre>
+
+<h3>This is Not a Map: Building Interactive Maps with Creative Themes and Geometries</h3>
+
+<pre><code>Aurelia Moser
+Sunday, 04:00 PM
+Mozilla Learning Networks, Floor 8 - 803
+Learning &amp; Leading,
+</code></pre>
+
+<h2>All DAY:</h2>
+
+<h3>The Maker Cart: a hands on introduction to Maker Education</h3>
+
+<pre><code>Carlos Izsak,
+Sunday, All Day
+youthZone - Through the lens of youths, Floor 2 - 212
+Craft - Bridging your digital divide
+Create your own projection mapping with Parapara Animation
+
+Noriatsu Kudo, Daisuke Akatsuka
+Sunday, All Day
+youthZone - Through the lens of youths, Floor 2 - 212
+Craft - Bridging your digital divide, Arts Award pathway
+LEGO2NANO: an Open Atomic Force Microscope Project
+
+Joe Bailey, Tom Catling, Ellie Doney
+Sunday, All Day
+youthZone - Through the lens of youths, Floor 2 - 212
+Craft - Bridging your digital divide
+</code></pre>
+
+<h3>“Hello World!” Memory Bank</h3>
+
+<pre><code>Jude Thomas
+Sunday, All Day
+The Global Village, Floor 6 - 605
+Global Village Garage
+</code></pre>
+
+<h3>Ambient animal and environmental data</h3>
+
+<pre><code>Maxine Glancy
+Sunday, All Day
+The Global Village, Floor 6 - 605
+Global Village Garden, Library
+</code></pre>
+
+<h3>Graphical Whispers</h3>
+
+<pre><code>Michael Saunby
+Sunday, All Day
+The Global Village, Floor 6 - 601
+Global Village Garden
+</code></pre>
+
+<h3>Arts Award - Individual Pathway creator in schools and youth centres (Open space, 2nd floor)</h3>
+
+<pre><code>Julie Neville
+Sunday, All Day
+youthZone - Through the lens of youths, Floor 2 - 200
+News to me!
+</code></pre>
+
+<h3>CoderDojo</h3>
+
+<pre><code>Johnny Claffey
+Sunday, All Day
+youthZone - Through the lens of youths, Floor 2 - 211
+Tech - What else you can do with it, Arts Award pathway
+</code></pre>
+
+<h3>Craft - Bridging your digital divide (Open space, 2nd floor)</h3>
+
+<pre><code>Marie Flies Pathway leader w/
+Sunday, All Day
+youthZone - Through the lens of youths
+Craft - Bridging your digital divide
+</code></pre>
+</body>
+</html>
