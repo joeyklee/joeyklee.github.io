@@ -1,0 +1,51 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <title></title>
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.2/mapbox.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.2/mapbox.css' rel='stylesheet' />
+  <style>
+    body { margin:0; padding:0; }
+    .map { position:absolute; top:0; bottom:0; width:100%; }
+  </style>
+</head>
+<body>
+<div id='map-one' class='map'> </div>
+<script>
+L.mapbox.accessToken = 'pk.eyJ1Ijoic2FyYWhtcHJ6IiwiYSI6InRVbVB0Q1UifQ.i0QaaEN1j9uf0xy4P6APyQ';
+var mapOne = L.mapbox.map('map-one', 'mapbox.light')
+  .setView([49.284813, -123.096764], 13);
+var myLayer = L.mapbox.featureLayer().addTo(mapOne);
+
+var geojson = [
+  {
+    "type": "Feature",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-123.096764,49.284813]
+    },
+    "properties": {
+      "icon": {
+          "iconUrl": "https://raw.githubusercontent.com/konkurito/site_map/master/img/Kon_Mapbox_Icon_Solid.png?token=ADdEp75Nh2PLf86Mcqh91x08oVyMJcnjks5WTOrIwA%3D%3D", //github image folder icon address
+          "iconSize": [50, 50], // size of the icon
+          "iconAnchor": [25, 35], // point of the icon which will correspond to marker's location
+          "popupAnchor": [0, -25], // point from which the popup should open relative to the iconAnchor
+          "className": "dot"
+      }
+    }
+  },
+
+];
+myLayer.on('layeradd', function(e) {
+  var marker = e.layer,
+      feature = marker.feature;
+  marker.setIcon(L.icon(feature.properties.icon));
+});
+myLayer.setGeoJSON(geojson);
+mapOne.scrollWheelZoom.disable();
+</script>
+</body>
+</html>
