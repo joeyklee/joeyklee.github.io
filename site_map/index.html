@@ -15,10 +15,21 @@
 <body>
 <div id='map-one' class='map'> </div>
 <script>
+
 L.mapbox.accessToken = 'pk.eyJ1Ijoic2FyYWhtcHJ6IiwiYSI6InRVbVB0Q1UifQ.i0QaaEN1j9uf0xy4P6APyQ';
-var mapOne = L.mapbox.map('map-one', 'mapbox.light')
-  .setView([49.284813, -123.096764], 13);
+var mapOne = L.mapbox.map('map-one', 'mapbox.light', {
+  attributionControl:false,
+  maxZoom: 18,
+  minZoom: 10
+}).setView([49.284813, -123.096764], 13);
 var myLayer = L.mapbox.featureLayer().addTo(mapOne);
+
+var credits = L.control.attribution().addTo(mapOne);
+credits.addAttribution("© <a href='https://www.konkurito.com/'>Konkurito</a> © <a href='https://www.mapbox.com/map-feedback/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap contributors</a>");
+
+
+
+// L.mapbox.tileLayer('insertmapidhere').addTo(mapOne);
 
 var geojson = [
   {
@@ -29,7 +40,7 @@ var geojson = [
     },
     "properties": {
       "icon": {
-          "iconUrl": "https://raw.githubusercontent.com/konkurito/site_map/master/img/Kon_Mapbox_Icon_Solid.png?token=ADdEp75Nh2PLf86Mcqh91x08oVyMJcnjks5WTOrIwA%3D%3D", //github image folder icon address
+          "iconUrl": "img/Kon_Mapbox_Icon_Solid.png", //github image folder icon address
           "iconSize": [47,62], // size of the icon
           "iconAnchor": [47/2,60], // point of the icon which will correspond to marker's location
           "popupAnchor": [0, -25], // point from which the popup should open relative to the iconAnchor
@@ -39,13 +50,8 @@ var geojson = [
   },
 
 ];
-myLayer.on('layeradd', function(e) {
-  var marker = e.layer,
-      feature = marker.feature;
-  marker.setIcon(L.icon(feature.properties.icon));
-});
-myLayer.setGeoJSON(geojson);
-mapOne.scrollWheelZoom.disable();
+  myLayer.on('layeradd', function(e) { var marker = e.layer, feature = marker.feature; marker.setIcon(L.icon(feature.properties.icon)); }); myLayer.setGeoJSON(geojson); mapOne.scrollWheelZoom.disable();
+
 </script>
 </body>
 </html>
