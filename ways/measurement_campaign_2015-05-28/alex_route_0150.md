@@ -1,4 +1,4 @@
-# Alex, Route 0150
+#Route 0150
 ## Instructions
 
 1. **HEAD NORTH ON COMMERCIAL ST**
