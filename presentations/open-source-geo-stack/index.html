@@ -22,8 +22,8 @@
     document.getElementsByTagName('head')[0].appendChild(link);
     </script>
     <!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
 </head>
 <style type="text/css">
 .reveal .slides h1,
@@ -56,15 +56,15 @@ h3 {
             <section data-background="img/IMG_0375.JPG">
                 <h2 style="background:rgba(0,0,0,0.5)">"Future GIS is NOT GIS" - David 'O Sullivan</h2>
                 <!-- <p>
-						Geography has become a standard unit of analysis + has become a challenge inherent (and of interest) to many disciplines
-					</p> -->
+                        Geography has become a standard unit of analysis + has become a challenge inherent (and of interest) to many disciplines
+                    </p> -->
             </section>
             <!-- <section>
-					<h2>Maps are for everyone</h2>
-					<p>
-						
-					</p>
-				</section> -->
+                    <h2>Maps are for everyone</h2>
+                    <p>
+                        
+                    </p>
+                </section> -->
             <section id="fragments">
                 <h2>Where to start?</h2>
                 <p>Python (fiona, shapely, geopandas, rastertools, plotly, etc), GDAL/OGR, R (maptools, rgdal, rgeos, rleaflet, plotly, etc), Carto, Mapbox, QGIS, GRASS, ArcGIS, D3.js, Leaflet.js, Processing's Unfolding, Java GeoTools, Tableau, Excel, Google Maps, Postgres/PostGIS, SQLite, Lightning Viz, Adobe Illustrator, Mac's SketchApp, Mapzen's Tangram, MongoDB, Node.js, Turf.js... 😱</p>
@@ -72,7 +72,7 @@ h3 {
             <section data-background="img/plotly-r.png">
                 <!-- <pre><code class="hljs">
                 #https://plot.ly/r/choropleth-maps/
-						library(plotly)
+                        library(plotly)
 df <- read.csv("https://raw.githubusercontent.com/plotly/datasets/master/2011_us_ag_exports.csv")
 df$hover <- with(df, paste(state, '<br>', "Beef", beef, "Dairy", dairy, "<br>",
                            "Fruits", total.fruits, "Veggies", total.veggies,
@@ -91,13 +91,16 @@ plot_ly(df, z = total.exports, text = hover, locations = code, type = 'choroplet
         locationmode = 'USA-states', color = total.exports, colors = 'Purples',
         marker = list(line = l), colorbar = list(title = "Millions USD")) %>%
   layout(title = '2011 US Agriculture Exports by State<br>(Hover for breakdown)', geo = g)
-					</code></pre> -->
+                    </code></pre> -->
             </section>
             <section data-background="img/bw-parking-tickets.png"></section>
             <section data-background="img/cf-nyc-citywide.jpg"></section>
             <section data-background="img/LA_Pools_Shapes-640x896.png"></section>
             <section data-background="img/abc-book-cover.jpg">
                 <h3 style="background:rgba(0,0,0,0.5)">Maps both shape and are shaped by the tools (and people) that make them</h3>
+            </section>
+            <section>
+                <h1>Graphical User Interfaces</h1>
             </section>
             <section>
                 <h1>QGIS: Quantum GIS</h1>
@@ -115,7 +118,10 @@ brew install qgis-214
 
 # as found in: 
 # https://github.com/OSGeo/homebrew-osgeo4mac
-            	</code></pre>
+                </code></pre>
+            </section>
+            <section>
+                <h1>For the desktop</h1>
             </section>
             <section data-background="">
                 <h1>GDAL/OGR</h1>
@@ -166,12 +172,15 @@ brew install qgis-214
                 <!-- https://i1.wp.com/spatialanalysis.co.uk/wp-content/uploads/2012/02/bike_ggplot.png -->
             </section>
             <section>
-                some tutorials/documentation here:
+                <p>some tutorials/documentation here:</p>
                 <ul>
                     <li>https://github.com/joeyklee/aloha-r</li>
                     <li>http://climvis.de/classint-how-to-use-r-package-classint-to-choose-univariate-class-intervals/</li>
                     <li>http://www.inside-r.org/packages/cran/rgeos/docs?tab=r</li>
                 </ul>
+            </section>
+            <section>
+                <h1>Geo on the Web</h1>
             </section>
             <section>
                 <h2>Carto</h2>
@@ -224,17 +233,21 @@ brew install qgis-214
             <section>
                 <p>Today we saw:</p>
                 <ul>
-                    <li>qgis</li>
-                    <li>leaflet.js
-                        <ul>
-                            <li>carto</li>
-                            <li>mapbox studio, mapbox.js, turf.js</li>
-                        </ul>
-                    </li>
-                    <li>gdal/ogr</li>
-                    <li>Python's Geopandas library</li>
-                    <li>a bunch of R libraries</li>
-                    <li>Plotly's API for R, Python, and Javascript</li>
+                    <li>Desktop</li>
+                    <ul>
+                        <li>qgis</li>
+                        <li>gdal/ogr</li>
+                        <li>Python's Geopandas library</li>
+                        <li>a bunch of R libraries</li>
+                    </ul>
+                    <li>Geo on the Web</li>
+                    <ul>
+                        <li>leaflet.js
+                        <li>carto</li>
+                        <li>mapbox studio, mapbox.js, turf.js</li>
+                        </li>
+                        <li>Plotly's API for R, Python, and Javascript</li>
+                    </ul>
                 </ul>
             </section>
             <section>
@@ -242,6 +255,7 @@ brew install qgis-214
                 <ul>
                     <li>There's lots of tools for making maps</li>
                     <li>Maps are for everyone</li>
+                    <li>Maps can take many forms</li>
                     <li>The tools you choose will shape how you (and others) will interact with the mapping process</li>
                 </ul>
             </section>
