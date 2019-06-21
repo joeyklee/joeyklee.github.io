@@ -1,9 +1,0 @@
-{
-  "name": "cityco2",
-  "version": "0.0.1",
-  "dependencies": {
-    "jquery": "latest",
-    "bootstrap": "latest"
-  },
-  "private": true
-}
